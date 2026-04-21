@@ -1,0 +1,1568 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unitary Marketing IA - Innovación Sin Límites</title>
+
+    <!-- SEO & Social Media Info -->
+    <link rel="icon" type="image/png" href="Diseño 2/Luan.png">
+    <meta property="og:title" content="Unitary Marketing IA | Omnipresencia Global">
+    <meta property="og:description" content="Agencia de Marketing Digital potenciada por IA. Escalamos tu marca con avatares, automatización y narrativa de élite.">
+    <meta property="og:image" content="Diseño 2/Luan.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- React & ReactDOM -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+    <!-- Framer Motion -->
+    <script src="https://unpkg.com/framer-motion@11.0.8/dist/framer-motion.js"></script>
+
+    <!-- Babel for browser JSX parsing -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+        const { motion, AnimatePresence } = window.Motion;
+
+        // --- COMPONENTS ---
+
+        const Navbar = () => {
+            const [scrolled, setScrolled] = useState(false);
+            const [activeSection, setActiveSection] = useState('inicio');
+
+            useEffect(() => {
+                const handleScroll = () => {
+                    setScrolled(window.scrollY > 50);
+                };
+                window.addEventListener('scroll', handleScroll);
+                return () => window.removeEventListener('scroll', handleScroll);
+            }, []);
+
+            useEffect(() => {
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '-30% 0px -70% 0px', 
+                    threshold: 0
+                };
+
+                const sections = ['inicio', 'servicios', 'luan', 'portfolio', 'redes-sociales', 'cotizador', 'contacto'];
+                
+                const observerCallback = (entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            setActiveSection(entry.target.id);
+                        }
+                    });
+                };
+
+                const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+                sections.forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) observer.observe(el);
+                });
+
+                return () => observer.disconnect();
+            }, []);
+
+            return (
+                <motion.nav
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className={`navbar`}
+                    style={{
+                        background: scrolled ? 'rgba(5, 5, 10, 0.95)' : 'rgba(5, 5, 10, 0)',
+                        borderBottom: scrolled ? '1px solid rgba(0, 209, 255, 0.2)' : '1px solid transparent'
+                    }}
+                >
+                    <div style={{ fontSize: '1.8rem', fontWeight: 900, display: 'flex', alignItems: 'center', gap: '8px' }} className="text-cyan">
+                        <span>UNITARY</span>
+                    </div>
+
+                    <div className="nav-links">
+                        <a href="#inicio" className={`nav-link ${activeSection === 'inicio' ? 'active' : ''}`}>Inicio</a>
+                        <a href="#servicios" className={`nav-link ${activeSection === 'servicios' ? 'active' : ''}`}>Servicios</a>
+                        <a href="#luan" className={`nav-link ${activeSection === 'luan' ? 'active' : ''}`}>Luan</a>
+                        <a href="#portfolio" className={`nav-link ${activeSection === 'portfolio' ? 'active' : ''}`}>Portfolio</a>
+                        <a href="#redes-sociales" className={`nav-link ${activeSection === 'redes-sociales' ? 'active' : ''}`}>Redes Sociales</a>
+                        <a href="#contacto" className={`nav-link ${activeSection === 'contacto' ? 'active' : ''}`}>Contacto</a>
+                    </div>
+
+                    <a href="#cotizador" className="btn btn-primary" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', boxSizing: 'border-box', boxShadow: activeSection === 'cotizador' ? '0 0 20px rgba(0, 209, 255, 0.8)' : '' }}>
+                        Cotizador IA
+                    </a>
+                </motion.nav>
+            );
+        };
+
+        // ─── Hero: Split-screen monumental layout ─────────────────────────────────
+        const Hero = () => (
+            <section id="inicio" className="hero-section">
+                {/* Background glows */}
+                <div className="glow-blob glow-cyan" style={{ top: '20%', left: '-10%', width: '600px', height: '600px', opacity: 0.2 }}></div>
+                <div className="glow-blob glow-purple" style={{ bottom: '20%', right: '-10%', width: '600px', height: '600px', opacity: 0.2 }}></div>
+
+                {/* LEFT COLUMN: Text */}
+                <motion.div
+                    initial={{ opacity: 0, x: -60 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1.2, ease: "easeOut" }}
+                    className="hero-left"
+                >
+                    <h1 className="hero-title">
+                        Unitary<br />
+                        Marketing<br />
+                        Digital AI
+                    </h1>
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 1, duration: 1 }}
+                    >
+                        <p className="hero-subtitle">INNOVACIÓN SIN LÍMITES</p>
+                    </motion.div>
+                </motion.div>
+
+                {/* RIGHT COLUMN: Video monumental */}
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.95, x: 100 }}
+                    animate={{ opacity: 1, scale: 1, x: 0 }}
+                    transition={{ duration: 1.5, ease: "easeOut" }}
+                    className="hero-right"
+                >
+                    <div className="hero-video-wrapper">
+                        <video autoPlay loop muted playsInline>
+                            <source src="Diseño 2/p2v_Veo%203.1%20Image%20to%20Video_2026-03-10_14-18-18.mp4" type="video/mp4" />
+                        </video>
+                    </div>
+                </motion.div>
+            </section>
+        );
+
+        // ─── BentoGrid: 4 equal columns, matching Next.js ────────────────────────
+        const services = [
+            {
+                title: "Ecosistemas de Automatización Inteligente",
+                description: "Integración nativa de Kommo CRM y n8n. Luan, nuestro socio IA, califica leads 24/7.",
+                image: "Diseño 2/Automatización.png",
+                benefit: "Tu empresa a la velocidad de la luz."
+            },
+            {
+                title: "Marketing Exponencial con IA",
+                description: "Avatares hiperrealistas con HeyGen, estrategias de ROI real y alcance global instantáneo.",
+                image: "Diseño 2/Marketing.png",
+                benefit: "Marca omnipresente con la eficiencia de un algoritmo."
+            },
+            {
+                title: "Activos Digitales High-End",
+                description: "Desarrollo con React, Node.js y WordPress. Hosting premium optimizado para conversión.",
+                image: "Diseño 2/Web.png",
+                benefit: "Experiencias que transforman visitas en clientes."
+            },
+            {
+                title: "El Arte de la Ejecución Digital",
+                description: "Proyectos reales: dashboards financieros y sincronización de datos de impacto.",
+                image: "Diseño 2/Portfolio.png",
+                benefit: "Resultados que hablan más fuerte que las promesas."
+            }
+        ];
+
+        const BentoGrid = () => (
+            <section id="servicios" className="section container">
+                <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+                    <h2 style={{
+                        fontSize: 'clamp(2rem, 4vw, 3rem)',
+                        fontWeight: 900,
+                        background: 'linear-gradient(to right, #00FFFF, #FF00FF)',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                        backgroundClip: 'text',
+                        textTransform: 'uppercase',
+                        letterSpacing: '-0.04em',
+                        paddingBottom: '4px',
+                    }}>
+                        Nuestro Ecosistema
+                    </h2>
+                    <div style={{ width: '96px', height: '4px', background: 'linear-gradient(to right, #00FFFF, #FF00FF)', margin: '1rem auto 0' }}></div>
+                </div>
+
+                <div className="bento-uniform-grid">
+                    {services.map((service, index) => (
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, margin: "-50px" }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            className="glass-card magic-glass bento-card-uniform"
+                        >
+                            <div style={{ position: 'relative', zIndex: 10, display: 'flex', flexDirection: 'column', height: '100%' }}>
+                                <h3 style={{
+                                    fontFamily: "'Inter', sans-serif",
+                                    fontSize: '1rem',
+                                    fontWeight: 900,
+                                    color: '#fff',
+                                    marginBottom: '0.5rem',
+                                    lineHeight: 1.2,
+                                    textTransform: 'uppercase',
+                                    letterSpacing: '0.02em',
+                                }}>{service.title}</h3>
+                                <p style={{ fontFamily: "'Roboto', sans-serif", color: '#A1A1AA', fontSize: '0.875rem', marginBottom: '0.5rem', lineHeight: 1.6 }}>
+                                    {service.description}
+                                </p>
+                                <p style={{ fontFamily: "'Roboto', sans-serif", color: '#00FFFF', fontSize: '0.85rem', fontWeight: 600, marginBottom: '1.5rem', fontStyle: 'italic' }}>
+                                    ✨ {service.benefit}
+                                </p>
+                                <div style={{
+                                    marginTop: 'auto',
+                                    position: 'relative',
+                                    width: '100%',
+                                    aspectRatio: '1 / 1',
+                                    borderRadius: '12px',
+                                    overflow: 'hidden',
+                                    background: 'rgba(0,0,0,0.4)',
+                                    border: '1px solid rgba(255,255,255,0.05)',
+                                    padding: '8px',
+                                }}>
+                                    <img
+                                        src={service.image}
+                                        alt={service.title}
+                                        style={{ width: '100%', height: '100%', objectFit: 'contain', transition: 'transform 0.7s ease' }}
+                                        className="bento-card-img"
+                                    />
+                                    <div style={{
+                                        position: 'absolute', inset: 0,
+                                        background: 'linear-gradient(to top, rgba(5,5,5,0.4), transparent)',
+                                        opacity: 0.6, pointerEvents: 'none',
+                                    }}></div>
+                                </div>
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
+            </section>
+        );
+
+        // ─── SocialProof: Infinite ticker, matching Next.js ──────────────────────
+        const partners = [
+            { name: "LENCERÍA UMBRA", url: "https://www.instagram.com/lenceriaumbra/" },
+            { name: "FINALLY LENCERÍA", url: "https://www.instagram.com/finally.lenceria_/" },
+            { name: "BRUJITALIBRIANAA", url: "https://www.instagram.com/brujalibrianaa/" }
+        ];
+
+        // ─── Luan: Tu Socio IA ───────────────────────────────────────────────────
+        const LuanSection = () => {
+            const videoRef = useRef(null);
+            const hasAutoplayed = useRef(false);
+            const [showPlayBtn, setShowPlayBtn] = useState(false);
+
+            const handlePlay = () => {
+                if (videoRef.current) {
+                    videoRef.current.currentTime = 0;
+                    videoRef.current.play();
+                    setShowPlayBtn(false);
+                }
+            };
+
+            const handleVideoEnded = () => {
+                setShowPlayBtn(true);
+            };
+
+            const handleViewportEnter = () => {
+                if (videoRef.current && !hasAutoplayed.current) {
+                    hasAutoplayed.current = true;
+                    const playPromise = videoRef.current.play();
+                    
+                    if (playPromise !== undefined) {
+                        playPromise.catch(error => {
+                            console.log("Autoplay con audio bloqueado. Requiere interacción previa.", error);
+                            setShowPlayBtn(true);
+                        });
+                    }
+                }
+            };
+
+            return (
+                <section id="luan" className="section container" style={{ position: 'relative', marginTop: '6rem', marginBottom: '2rem' }}>
+                    <div className="glow-blob glow-cyan" style={{ top: '10%', right: '10%', width: '400px', height: '400px', opacity: 0.25 }}></div>
+                    <div className="glow-blob glow-purple" style={{ bottom: '10%', left: '10%', width: '400px', height: '400px', opacity: 0.15 }}></div>
+
+                    <div className="luan-grid">
+                        
+                        {/* LEFT COLUMN: Text */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                            style={{ position: 'relative', zIndex: 10 }}
+                        >
+                            <h2 style={{
+                                fontFamily: "'Inter', sans-serif",
+                                fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+                                fontWeight: 900,
+                                lineHeight: 1.1,
+                                marginBottom: '1.5rem',
+                                color: '#fff',
+                                letterSpacing: '-0.02em'
+                            }}>
+                                Luan: <br/> <span className="text-cyan">Tu Nuevo Socio Senior de IA</span>
+                            </h2>
+                            <p style={{
+                                fontFamily: "'Roboto', sans-serif",
+                                color: '#A1A1AA',
+                                fontSize: '1.2rem',
+                                lineHeight: 1.6,
+                                marginBottom: '2.5rem',
+                                maxWidth: '90%'
+                            }}>
+                                La infraestructura invisible que escala tus procesos. Luan no es un bot, es un agente de inteligencia avanzada diseñado para cerrar ventas mientras vos dormís.
+                            </p>
+
+                            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '3.5rem' }}>
+                                <div style={{ background: 'rgba(0, 209, 255, 0.05)', border: '1px solid rgba(0, 209, 255, 0.4)', padding: '0.6rem 1.2rem', borderRadius: '50px', color: '#00FFFF', fontWeight: 700, fontSize: '0.85rem', boxShadow: '0 0 15px rgba(0, 209, 255, 0.15)', backdropFilter: 'blur(5px)' }}>⚡ Operaciones 24/7</div>
+                                <div style={{ background: 'rgba(0, 209, 255, 0.05)', border: '1px solid rgba(0, 209, 255, 0.4)', padding: '0.6rem 1.2rem', borderRadius: '50px', color: '#00FFFF', fontWeight: 700, fontSize: '0.85rem', boxShadow: '0 0 15px rgba(0, 209, 255, 0.15)', backdropFilter: 'blur(5px)' }}>🌐 +50 Idiomas</div>
+                                <div style={{ background: 'rgba(0, 209, 255, 0.05)', border: '1px solid rgba(0, 209, 255, 0.4)', padding: '0.6rem 1.2rem', borderRadius: '50px', color: '#00FFFF', fontWeight: 700, fontSize: '0.85rem', boxShadow: '0 0 15px rgba(0, 209, 255, 0.15)', backdropFilter: 'blur(5px)' }}>🎯 Error 0%</div>
+                            </div>
+
+                            <button className="btn btn-primary" onClick={() => window.dispatchEvent(new CustomEvent('openLuanChat'))} style={{ padding: '1rem 3rem', fontSize: '1.1rem', boxShadow: '0 0 20px rgba(0, 209, 255, 0.4), inset 0 0 10px rgba(0, 209, 255, 0.2)' }}>
+                                Hablar con Luan
+                            </button>
+                        </motion.div>
+
+                        {/* RIGHT COLUMN: Video glass-card */}
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true, amount: 0.5 }}
+                            onViewportEnter={handleViewportEnter}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                            style={{ position: 'relative', zIndex: 10, display: 'flex', justifyContent: 'center' }}
+                        >
+                            <div className="glass-card magic-glass" style={{ padding: '0', overflow: 'hidden', borderRadius: '24px', position: 'relative', aspectRatio: '4/5', width: '100%', maxWidth: '500px', boxShadow: '0 0 50px rgba(0, 209, 255, 0.25), inset 0 0 30px rgba(0, 209, 255, 0.1)' }}>
+                                <video 
+                                    ref={videoRef}
+                                    playsInline 
+                                    onEnded={handleVideoEnded}
+                                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}>
+                                    <source src="Diseño 2/Luan.mp4" type="video/mp4" />
+                                </video>
+                                <div style={{ position: 'absolute', inset: 0, borderRadius: '24px', pointerEvents: 'none', background: 'linear-gradient(to top, rgba(0,0,0,0.6), transparent 30%)' }}></div>
+                                
+                                {showPlayBtn && (
+                                    <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(0,0,0,0.4)', borderRadius: '24px', zIndex: 20 }}>
+                                        <button 
+                                            onClick={handlePlay}
+                                            style={{
+                                                background: 'rgba(0, 209, 255, 0.2)',
+                                                border: '1px solid rgba(0, 209, 255, 0.5)',
+                                                color: '#fff',
+                                                width: '80px',
+                                                height: '80px',
+                                                borderRadius: '50%',
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                cursor: 'pointer',
+                                                backdropFilter: 'blur(10px)',
+                                                boxShadow: '0 0 20px rgba(0, 209, 255, 0.4)',
+                                                transition: 'all 0.3s ease'
+                                            }}
+                                            onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.1)'; e.currentTarget.style.background = 'rgba(0, 209, 255, 0.4)'; }}
+                                            onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.background = 'rgba(0, 209, 255, 0.2)'; }}
+                                        >
+                                            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '4px' }}>
+                                                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                )}
+                            </div>
+                        </motion.div>
+                    </div>
+                </section>
+            );
+        };
+
+        const SocialProof = () => {
+            const tripled = [...partners, ...partners, ...partners, ...partners, ...partners, ...partners];
+            return (
+                <section style={{ width: '100%', marginTop: '8rem', marginBottom: '3rem', overflow: 'hidden' }}>
+                    <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+                        <h2 style={{ fontSize: '0.75rem', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.3em', color: '#6B7280' }}>
+                            Impacto Unitary
+                        </h2>
+                    </div>
+                    <div style={{ position: 'relative', width: '100%' }}>
+                        {/* Lateral fades */}
+                        <div style={{ position: 'absolute', top: 0, bottom: 0, left: 0, width: '128px', background: 'linear-gradient(to right, #05050A, transparent)', zIndex: 10, pointerEvents: 'none' }}></div>
+                        <div style={{ position: 'absolute', top: 0, bottom: 0, right: 0, width: '128px', background: 'linear-gradient(to left, #05050A, transparent)', zIndex: 10, pointerEvents: 'none' }}></div>
+                        {/* Ticker */}
+                        <motion.div
+                            style={{ display: 'flex', gap: '8rem', alignItems: 'center', whiteSpace: 'nowrap' }}
+                            animate={{ x: ["0%", "-50%"] }}
+                            transition={{ duration: 30, ease: "linear", repeat: Infinity }}
+                        >
+                            {tripled.map((partner, index) => (
+                                <div key={index} style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', minWidth: '150px' }}>
+                                    <a 
+                                        href={partner.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        style={{
+                                            fontSize: 'clamp(1rem, 1.5vw, 1.5rem)',
+                                            fontWeight: 700,
+                                            color: 'rgba(255,255,255,0.6)',
+                                            cursor: 'pointer',
+                                            textDecoration: 'none',
+                                            transition: 'all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1)',
+                                            display: 'inline-block'
+                                        }}
+                                        onMouseEnter={e => {
+                                            e.target.style.color = '#00FFFF';
+                                            e.target.style.textShadow = '0 0 10px #00FFFF, 0 0 20px #00FFFF';
+                                            e.target.style.transform = 'scale(1.1)';
+                                        }}
+                                        onMouseLeave={e => {
+                                            e.target.style.color = 'rgba(255,255,255,0.6)';
+                                            e.target.style.textShadow = 'none';
+                                            e.target.style.transform = 'scale(1)';
+                                        }}
+                                    >
+                                        {partner.name}
+                                    </a>
+                                </div>
+                            ))}
+                        </motion.div>
+                    </div>
+                </section>
+            );
+        };
+
+        // ─── Footer: Minimal, matching Next.js ───────────────────────────────────
+        const Footer = () => {
+            const [activeModal, setActiveModal] = useState(null);
+
+            const legalTexts = {
+                "Términos de Servicio": "Bienvenido a Unitary Marketing IA. Al utilizar nuestros ecosistemas web y soluciones integradas, aceptas estos términos y condiciones que rigen nuestra relación algorítmica y comercial. Queda prohibida la copia o reproducción no autorizada de nuestras arquitecturas propietarias sin consentimiento explícito.",
+                "Política de Privacidad": "En Unitary Marketing IA, la privacidad de tus datos estratégicos es vital. Procesamos la información operativa exclusivamente para optimizar tus agentes de IA y conversiones de usuario. Nos comprometemos a nunca comercializar, transferir o exponer tus vectores de información a actores no autorizados externos a nuestro ecosistema.",
+                "Política de Cookies": "Utilizamos cookies esenciales y de análisis para mantener las redes de sesión activas y medir de manera anónima el rendimiento de nuestras arquitecturas de marketing. Al continuar interactuando con esta terminal, apruebas el uso de herramientas de rastreo exclusivas para escalar la experiencia analítica."
+            };
+
+            useEffect(() => {
+                if (activeModal) document.body.style.overflow = 'hidden';
+                else document.body.style.overflow = 'unset';
+                return () => document.body.style.overflow = 'unset';
+            }, [activeModal]);
+
+            return (
+                <footer style={{
+                    position: 'relative',
+                    zIndex: 50,
+                    borderTop: '1px solid rgba(255,255,255,0.1)',
+                    background: 'rgba(0,0,0,0.6)',
+                    backdropFilter: 'blur(12px)',
+                    paddingTop: '3rem',
+                    paddingBottom: '2rem',
+                }}>
+                    <div className="container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }}
+                            style={{
+                                fontSize: '1.5rem',
+                                fontWeight: 900,
+                                letterSpacing: '0.2em',
+                                color: 'rgba(255,255,255,0.9)',
+                                marginBottom: '1.5rem',
+                                filter: 'drop-shadow(0 0 8px rgba(255,255,255,0.5))',
+                            }}
+                        >
+                            UNITARY AI
+                        </motion.div>
+
+                        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '2rem', marginBottom: '2rem', fontSize: '0.875rem', fontWeight: 500 }}>
+                            {Object.keys(legalTexts).map(link => (
+                                <a key={link} href="#" onClick={(e) => { e.preventDefault(); setActiveModal(link); }} style={{ color: '#A1A1AA', textDecoration: 'none', transition: 'all 0.3s ease' }}
+                                    onMouseEnter={e => { e.target.style.color = '#00FFFF'; e.target.style.filter = 'drop-shadow(0 0 10px #00FFFF)'; }}
+                                    onMouseLeave={e => { e.target.style.color = '#A1A1AA'; e.target.style.filter = 'none'; }}
+                                >
+                                    {link}
+                                </a>
+                            ))}
+                        </div>
+
+                        <p style={{ color: '#A1A1AA', fontSize: '0.75rem', opacity: 0.6 }}>
+                            &copy; {new Date().getFullYear()} Unitary Marketing IA. El futuro es ahora.
+                        </p>
+                    </div>
+
+                    <AnimatePresence>
+                        {activeModal && (
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                style={{
+                                    position: 'fixed',
+                                    top: 0,
+                                    left: 0,
+                                    width: '100%',
+                                    height: '100vh',
+                                    background: 'rgba(0, 0, 0, 0.5)',
+                                    backdropFilter: 'blur(10px)',
+                                    WebkitBackdropFilter: 'blur(10px)',
+                                    zIndex: 9999,
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    padding: '1rem',
+                                }}
+                                onClick={() => setActiveModal(null)}
+                            >
+                                <motion.div
+                                    initial={{ scale: 0.9, opacity: 0, y: 20 }}
+                                    animate={{ scale: 1, opacity: 1, y: 0 }}
+                                    exit={{ scale: 0.95, opacity: 0, y: 10 }}
+                                    style={{
+                                        background: 'rgba(10, 10, 15, 0.85)',
+                                        border: '1px solid rgba(0, 209, 255, 0.3)',
+                                        borderRadius: '16px',
+                                        padding: '2.5rem',
+                                        maxWidth: '600px',
+                                        width: '100%',
+                                        position: 'relative',
+                                        boxShadow: '0 0 30px rgba(0, 209, 255, 0.1)',
+                                    }}
+                                    onClick={(e) => e.stopPropagation()}
+                                >
+                                    <button 
+                                        onClick={() => setActiveModal(null)}
+                                        style={{
+                                            position: 'absolute',
+                                            top: '15px',
+                                            right: '15px',
+                                            background: 'transparent',
+                                            border: 'none',
+                                            color: '#A1A1AA',
+                                            fontSize: '2rem',
+                                            cursor: 'pointer',
+                                            transition: 'color 0.3s ease',
+                                            lineHeight: 1,
+                                            padding: '0 5px'
+                                        }}
+                                        onMouseEnter={(e) => e.target.style.color = '#00FFFF'}
+                                        onMouseLeave={(e) => e.target.style.color = '#A1A1AA'}
+                                    >
+                                        &times;
+                                    </button>
+                                    <h3 style={{ color: '#fff', fontSize: '1.5rem', marginBottom: '1.5rem', fontWeight: 800 }}>
+                                        {activeModal}
+                                    </h3>
+                                    <p style={{ color: '#A1A1AA', fontSize: '1rem', lineHeight: 1.6, fontFamily: "'Roboto', sans-serif" }}>
+                                        {legalTexts[activeModal]}
+                                    </p>
+                                </motion.div>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+                </footer>
+            );
+        };
+
+        // ─── Contact: Terminal Cyber-Glass ──────────────────────────────────────────
+        const Contact = () => {
+            const [formData, setFormData] = useState({ nombre: '', email: '', empresa: '', mensaje: '' });
+            const [errors, setErrors] = useState({});
+            const [isSubmitting, setIsSubmitting] = useState(false);
+            const [isSuccess, setIsSuccess] = useState(false);
+
+            const validate = () => {
+                const newErrors = {};
+                if (!formData.nombre.trim()) newErrors.nombre = true;
+                if (!formData.email.trim()) newErrors.email = true;
+                if (!formData.empresa.trim()) newErrors.empresa = true;
+                if (!formData.mensaje.trim()) newErrors.mensaje = true;
+                setErrors(newErrors);
+                return Object.keys(newErrors).length === 0;
+            };
+
+            const handleSubmit = async (e) => {
+                e.preventDefault();
+                if (!validate()) return;
+                
+                setIsSubmitting(true);
+                try {
+                    await new Promise(resolve => setTimeout(resolve, 1500));
+                } catch (error) {
+                    console.error('Error al enviar mensaje:', error);
+                } finally {
+                    setIsSubmitting(false);
+                    setIsSuccess(true);
+                    setFormData({ nombre: '', email: '', empresa: '', mensaje: '' });
+                    setTimeout(() => setIsSuccess(false), 6000);
+                }
+            };
+
+            const handleChange = (e) => {
+                setFormData({ ...formData, [e.target.name]: e.target.value });
+                if (errors[e.target.name]) {
+                    setErrors({ ...errors, [e.target.name]: false });
+                }
+            };
+
+            return (
+                <section id="contacto" className="section container" style={{ position: 'relative', marginTop: '6rem', marginBottom: '4rem', background: '#050505', borderRadius: '32px', padding: '4rem 2rem' }}>
+                    <div className="glow-blob" style={{ position: 'absolute', top: '50%', left: '30%', transform: 'translate(-50%, -50%)', width: '800px', height: '800px', opacity: 0.3, background: 'radial-gradient(circle, rgba(0,209,255,0.4) 0%, rgba(0,0,0,0) 70%)', zIndex: 0, filter: 'blur(60px)' }}></div>
+
+                    <div style={{ textAlign: 'center', marginBottom: '5rem', position: 'relative', zIndex: 10 }}>
+                        <motion.h2 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            style={{
+                                fontFamily: "'Inter', sans-serif",
+                                fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+                                fontWeight: 900,
+                                color: '#fff',
+                                textTransform: 'uppercase',
+                                letterSpacing: '-0.02em',
+                                marginBottom: '1.5rem',
+                            }}
+                        >
+                            El Futuro de tu Marca <br/><span className="text-cyan">Empieza Acá</span>
+                        </motion.h2>
+                        <motion.p 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.1 }}
+                            style={{
+                                fontFamily: "'Roboto', sans-serif",
+                                color: 'rgba(255,255,255,0.8)',
+                                fontSize: '1.2rem',
+                                maxWidth: '750px',
+                                margin: '0 auto',
+                                lineHeight: 1.8
+                            }}
+                        >
+                            Integramos diseño estratégico, marketing de impacto y automatización avanzada para convertir su presencia digital en un motor de crecimiento constante y eficiente.
+                        </motion.p>
+                    </div>
+
+                    <div className="contacto-grid" style={{ position: 'relative', zIndex: 10 }}>
+                        
+                        <motion.div
+                            initial={{ opacity: 0, x: -50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                            style={{ order: 1 }}
+                        >
+                            <form className="cyber-terminal" onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem', height: '100%' }}>
+                                {isSuccess ? (
+                                    <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} style={{ textAlign: 'center', padding: '3rem 0', margin: 'auto' }}>
+                                        <div style={{ width: '80px', height: '80px', borderRadius: '50%', background: 'rgba(0, 209, 255, 0.1)', border: '2px solid #00FFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 2rem', boxShadow: '0 0 20px rgba(0, 209, 255, 0.3)' }}>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#00FFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                                        </div>
+                                        <h3 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#fff', marginBottom: '1rem' }}>¡Terminal Conectada!</h3>
+                                        <p style={{ color: '#A1A1AA', fontSize: '1.1rem' }}>Nuestro equipo de estrategia diseñará tu arquitectura muy pronto.</p>
+                                    </motion.div>
+                                ) : (
+                                    <>
+                                        <div className="input-group-row">
+                                            <div className="cyber-input-group">
+                                                <input
+                                                    type="text"
+                                                    name="nombre"
+                                                    placeholder=" "
+                                                    value={formData.nombre}
+                                                    onChange={handleChange}
+                                                    className={`cyber-input ${errors.nombre ? 'error' : ''}`}
+                                                />
+                                                <label className="cyber-label">Nombre completo</label>
+                                            </div>
+                                            <div className="cyber-input-group">
+                                                <input
+                                                    type="email"
+                                                    name="email"
+                                                    placeholder=" "
+                                                    value={formData.email}
+                                                    onChange={handleChange}
+                                                    className={`cyber-input ${errors.email ? 'error' : ''}`}
+                                                />
+                                                <label className="cyber-label">Correo electrónico</label>
+                                            </div>
+                                        </div>
+                                        <div className="cyber-input-group">
+                                            <input
+                                                type="text"
+                                                name="empresa"
+                                                placeholder=" "
+                                                value={formData.empresa}
+                                                onChange={handleChange}
+                                                className={`cyber-input ${errors.empresa ? 'error' : ''}`}
+                                            />
+                                            <label className="cyber-label">Tu Proyecto / Marca</label>
+                                        </div>
+                                        <div className="cyber-input-group textarea-group" style={{ flexGrow: 1 }}>
+                                            <textarea
+                                                name="mensaje"
+                                                placeholder=" "
+                                                value={formData.mensaje}
+                                                onChange={handleChange}
+                                                className={`cyber-input ${errors.mensaje ? 'error' : ''}`}
+                                            ></textarea>
+                                            <label className="cyber-label">¿Cuál es el próximo gran desafío?</label>
+                                        </div>
+                                        
+                                        <button 
+                                            type="submit" 
+                                            disabled={isSubmitting}
+                                            className="btn-cyber-pulse"
+                                            style={{ marginTop: '1rem' }}
+                                        >
+                                            {isSubmitting ? 'Iniciando Secuencia...' : 'INICIAR TRANSFORMACIÓN DIGITAL'}
+                                        </button>
+                                    </>
+                                )}
+                            </form>
+                        </motion.div>
+
+                        <motion.div 
+                            initial={{ opacity: 0, x: 50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                            style={{ display: 'flex', flexDirection: 'column', gap: '2rem', order: 2 }}
+                        >
+                            <div className="cyber-terminal" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                                <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#fff', marginBottom: '2.5rem', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Acceso Inmediato</h3>
+                                
+                                <a href="https://wa.me/5491124026700?text=Hola%20Luan!%20Quiero%20iniciar%20la%20transformación%20digital%20de%20mi%20marca." target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginBottom: '2rem', textDecoration: 'none', color: '#fff', transition: 'all 0.3s ease' }} onMouseEnter={e => e.currentTarget.style.color = '#00FFFF'} onMouseLeave={e => e.currentTarget.style.color = '#fff'}>
+                                    <div className="pulse-green" style={{ flexShrink: 0, width: '60px', height: '60px', borderRadius: '50%', background: 'rgba(0, 255, 100, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(0, 255, 100, 0.4)' }}>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00FF64" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+                                    </div>
+                                    <div>
+                                        <div style={{ fontSize: '0.85rem', color: '#A1A1AA', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '4px' }}>WhatsApp</div>
+                                        <div style={{ fontSize: '1.2rem', fontWeight: 600 }}>Consultoría Instantánea</div>
+                                    </div>
+                                </a>
+
+                                <a href="mailto:contacto@unitary.ai" style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginBottom: '2rem', textDecoration: 'none', color: '#fff', transition: 'all 0.3s ease' }} onMouseEnter={e => e.currentTarget.style.color = '#B026FF'} onMouseLeave={e => e.currentTarget.style.color = '#fff'}>
+                                    <div style={{ flexShrink: 0, width: '60px', height: '60px', borderRadius: '50%', background: 'rgba(176, 38, 255, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(176, 38, 255, 0.3)', transition: 'all 0.3s ease', boxShadow: '0 0 15px rgba(176, 38, 255, 0.15)' }}>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#B026FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                                    </div>
+                                    <div>
+                                        <div style={{ fontSize: '0.85rem', color: '#A1A1AA', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '4px' }}>Email Directo</div>
+                                        <div style={{ fontSize: '1.2rem', fontWeight: 600 }}>contacto@unitary.ai</div>
+                                    </div>
+                                </a>
+
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', color: '#fff' }}>
+                                    <div style={{ flexShrink: 0, width: '60px', height: '60px', borderRadius: '50%', background: 'rgba(255, 255, 255, 0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(255, 255, 255, 0.1)' }}>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                                    </div>
+                                    <div>
+                                        <div style={{ fontSize: '0.85rem', color: '#A1A1AA', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '4px' }}>Sede Central</div>
+                                        <div style={{ fontSize: '1rem', fontFamily: "'Roboto', sans-serif", fontWeight: 300, lineHeight: 1.5, color: '#e2e8f0' }}>Malvinas Argentinas, Adrogué,<br/>Provincia de Buenos Aires, Argentina</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+
+                    </div>
+                </section>
+            );
+        };
+
+        // ─── LuanChat: Floating Chat Component ───────────────────────────────────
+        const LuanChat = () => {
+            const [isOpen, setIsOpen] = useState(false);
+            const [message, setMessage] = useState('');
+            const [isSending, setIsSending] = useState(false);
+
+            useEffect(() => {
+                const handleOpen = () => setIsOpen(true);
+                window.addEventListener('openLuanChat', handleOpen);
+                return () => window.removeEventListener('openLuanChat', handleOpen);
+            }, []);
+
+            const handleSendMessage = async () => {
+                if (!message.trim()) return;
+                setIsSending(true);
+                try {
+                    await fetch('https://tu-servidor-n8n.com/webhook/luan-chat', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ message })
+                    });
+                    setMessage('');
+                    setIsOpen(false);
+                } catch (error) {
+                    console.error('Error al enviar mensaje:', error);
+                } finally {
+                    setIsSending(false);
+                }
+            };
+
+            return (
+                <div style={{ position: 'fixed', bottom: '2rem', right: '2rem', zIndex: 50 }}>
+                    <AnimatePresence>
+                        {isOpen && (
+                            <motion.div
+                                initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                                animate={{ opacity: 1, y: 0, scale: 1 }}
+                                exit={{ opacity: 0, y: 20, scale: 0.95 }}
+                                className="glass-card magic-glass"
+                                style={{
+                                    position: 'absolute',
+                                    bottom: '80px',
+                                    right: '0',
+                                    width: '300px',
+                                    padding: '1.5rem',
+                                    borderRadius: '16px',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    gap: '1rem',
+                                    boxSizing: 'border-box'
+                                }}
+                            >
+                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                    <h3 style={{ margin: 0, color: '#fff', fontSize: '1.1rem', fontWeight: 700 }}>LuanChat</h3>
+                                    <button onClick={() => setIsOpen(false)} style={{ background: 'none', border: 'none', color: '#A1A1AA', cursor: 'pointer', fontSize: '1.2rem', padding: 0 }}>&times;</button>
+                                </div>
+                                <div style={{ color: '#A1A1AA', fontSize: '0.875rem' }}>Hola, ¿en qué te puedo ayudar hoy?</div>
+                                <textarea
+                                    style={{ width: '100%', padding: '0.75rem', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(0,0,0,0.5)', color: '#fff', minHeight: '80px', resize: 'none', boxSizing: 'border-box' }}
+                                    placeholder="Escribe tu mensaje..."
+                                    value={message}
+                                    onChange={e => setMessage(e.target.value)}
+                                ></textarea>
+                                <button className="btn btn-primary" onClick={handleSendMessage} disabled={isSending || !message.trim()} style={{ opacity: isSending ? 0.7 : 1, width: '100%' }}>
+                                    {isSending ? 'Enviando...' : 'Enviar'}
+                                </button>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+                    <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="btn btn-primary"
+                        style={{ width: '60px', height: '60px', borderRadius: '50%', padding: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', boxShadow: '0 4px 20px rgba(0, 209, 255, 0.4)' }}
+                        onClick={() => setIsOpen(!isOpen)}
+                    >
+                        💬
+                    </motion.button>
+                </div>
+            );
+        };
+
+        // ─── Portfolio: Asymmetric Bento Grid ────────────────────────────────────
+        const portfolioItems = [
+            {
+                id: 1,
+                category: "AUTOMATIZACIÓN",
+                title: "Infraestructura de Datos",
+                type: "image",
+                media: "Diseño 2/Flujo.jpg",
+                author: "Workflows Unitary Marketing IA",
+                className: "asym-ia portfolio-card",
+                techDesc: "Arquitectura escalable constituida con N8N para desarrollar desde agentes IA hasta planillas digitales."
+            },
+            {
+                id: 2,
+                category: "WEB ARCHITECTURE",
+                title: "Ecosistema Frontend Premium",
+                type: "image",
+                media: "Diseño 2/WebPort.jpg",
+                author: "Unitary Marketing IA",
+                className: "asym-web portfolio-card",
+                techDesc: "Desarrollo de ecosistemas web y portfolios de alto impacto, diseñados con arquitecturas modernas para una presencia digital dominante."
+            },
+            {
+                id: 3,
+                category: "AVATARS & MULTILINGUAL",
+                title: "Omnipresencia Global: Narrativa de Élite",
+                type: "video",
+                media: "Diseño 2/Idioma.mp4",
+                author: "Avatares IA Unitary Marketing IA",
+                className: "asym-vert portfolio-card",
+                techDesc: "Producción audiovisual generativa combinando scripts IA, avatares digitales y post-producción automatizada."
+            },
+            {
+                id: 4,
+                category: "CRM AUTOMATION",
+                title: "Gestión Inteligente de Leads",
+                type: "image",
+                media: "Diseño 2/Lead.jpg",
+                author: "KOMMO (CMR) Unitary Marketing IA",
+                className: "asym-vert portfolio-card",
+                techDesc: "Centralizá, calificá y gestioná leads de distintos canales de comunicación (redes sociales, WhatsApp, Telegram)."
+            },
+            {
+                id: 5,
+                category: "DATA ANALYSIS",
+                title: "Centro de control de indicadores",
+                type: "image",
+                media: "Diseño 2/Dashboard.jpg",
+                author: "Dashboard Unitary Marketing IA",
+                className: "asym-dash portfolio-card",
+                techDesc: "Conectá tus redes sociales a nuestro centro de control para analizar el tráfico con nuestra IA."
+            },
+            {
+                id: 6,
+                category: "FINANCE SYSTEMS",
+                title: "Carga de datos",
+                type: "image",
+                media: "Diseño 2/UniLedger.png",
+                author: "UniLedger Unitary Marketing IA",
+                className: "asym-dash portfolio-card",
+                techDesc: "Analizá tus finanzas de forma rápida y precisa con nuestro sistema de gestión financiera. Sistema de carga de datos rápido y preciso. Análisis rápidos y completos con nuestra IA."
+            },
+            {
+                id: 7,
+                category: "OPERATIONS IA",
+                title: "Ecosistema Digital: El Cerebro Operativo",
+                type: "video",
+                media: "Diseño 2/Transición.mp4",
+                author: "Digitalización de documentos Unitary Marketing IA",
+                className: "asym-content portfolio-card",
+                techDesc: "Transformá tu sistema de gestión implementando documentos digitales que se adaptan a nuestros flujos para el control y análisis de tu empresa."
+            }
+        ];
+
+        const Portfolio = () => {
+            const [filter, setFilter] = useState("Todos");
+            const [selectedItem, setSelectedItem] = useState(null);
+            const categories = ["Todos", "AUTOMATIZACIÓN", "WEB ARCHITECTURE", "AVATARS & MULTILINGUAL", "CRM AUTOMATION", "DATA ANALYSIS", "FINANCE SYSTEMS", "OPERATIONS IA"];
+
+            const filteredItems = filter === "Todos" ? portfolioItems : portfolioItems.filter(item => item.category === filter);
+
+            useEffect(() => {
+                if (selectedItem) document.body.style.overflow = 'hidden';
+                else document.body.style.overflow = 'unset';
+                return () => document.body.style.overflow = 'unset';
+            }, [selectedItem]);
+
+            return (
+                <section id="portfolio" className="section container">
+                    <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+                        <h2 style={{
+                            fontFamily: "'Inter', sans-serif",
+                            fontSize: 'clamp(2rem, 4vw, 3rem)',
+                            fontWeight: 900,
+                            background: 'linear-gradient(to right, #00FFFF, #FF00FF)',
+                            WebkitBackgroundClip: 'text',
+                            WebkitTextFillColor: 'transparent',
+                            backgroundClip: 'text',
+                            textTransform: 'uppercase',
+                            letterSpacing: '-0.04em',
+                            paddingBottom: '4px',
+                        }}>
+                            Nuestro Portfolio
+                        </h2>
+                        <div style={{ width: '96px', height: '4px', background: 'linear-gradient(to right, #00FFFF, #FF00FF)', margin: '1rem auto 0' }}></div>
+                    </div>
+
+                    {/* Filter Bar */}
+                    <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
+                        {categories.map(cat => (
+                            <button
+                                key={cat}
+                                onClick={() => setFilter(cat)}
+                                className={`btn ${filter === cat ? 'btn-primary' : 'btn-outline'}`}
+                                style={{ padding: '8px 20px', fontSize: '0.8rem' }}
+                            >
+                                {cat}
+                            </button>
+                        ))}
+                    </div>
+
+                    {/* Grid */}
+                    <motion.div layout className="portfolio-grid grid-auto-flow-dense">
+                        <AnimatePresence mode="popLayout">
+                            {filteredItems.map((item) => (
+                                <motion.div
+                                    key={item.id}
+                                    layout="position"
+                                    initial={{ opacity: 0, scale: 0.95 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    exit={{ opacity: 0, scale: 0.95 }}
+                                    transition={{ duration: 0.5, type: "spring", bounce: 0.2 }}
+                                    className={item.className}
+                                    onClick={() => setSelectedItem(item)}
+                                    style={{ display: 'flex', height: '100%', minHeight: '100%' }}
+                                >
+                                    <div className="portfolio-media-wrapper" style={{ width: '100%' }}>
+                                        <div className="card-bg" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0 }}>
+                                            {item.type === "image" && (
+                                                <img src={item.media} alt={item.title} style={{ display: 'block', width: '100%', height: '100%', objectFit: 'cover', position: 'relative', zIndex: 1 }} />
+                                            )}
+                                            {item.type === "video" && (
+                                                <video src={item.media} autoPlay loop muted playsInline style={{ display: 'block', width: '100%', height: '100%', objectFit: 'cover', position: 'relative', zIndex: 1 }} />
+                                            )}
+                                        </div>
+                                        <div className="overlay"></div>
+                                    </div>
+
+                                    {/* Content Info Overlaid inside card */}
+                                     <div className="portfolio-content">
+                                         <span style={{ fontFamily: "'Inter', sans-serif", color: 'rgba(0, 209, 255, 0.7)', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem', display: 'block' }}>
+                                             {item.category} • UNITARY MARKETING IA
+                                         </span>
+                                         <h3 style={{ fontFamily: "'Inter', sans-serif", fontSize: '1.5rem', fontWeight: 900, color: '#fff', margin: 0, lineHeight: 1.2 }}>
+                                            {item.title}
+                                        </h3>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </AnimatePresence>
+                    </motion.div>
+
+                    {/* Modal Lightbox */}
+                    <AnimatePresence>
+                        {selectedItem && (
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                className="portfolio-modal-overlay"
+                                onClick={() => setSelectedItem(null)}
+                            >
+                                <motion.div
+                                    initial={{ scale: 0.9, opacity: 0, y: 30 }}
+                                    animate={{ scale: 1, opacity: 1, y: 0 }}
+                                    exit={{ scale: 0.9, opacity: 0, y: 30 }}
+                                    transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                                    className="portfolio-modal-content"
+                                    onClick={(e) => e.stopPropagation()}
+                                >
+                                    <button onClick={() => setSelectedItem(null)} style={{position: 'absolute', top: '16px', right: '16px', background: 'rgba(0,0,0,0.6)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', width: '40px', height: '40px', borderRadius: '50%', cursor: 'pointer', zIndex: 100, backdropFilter: 'blur(10px)', fontSize: '1.2rem', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>&times;</button>
+                                    
+                                    <div style={{ width: '100%', height: '60vh', background: '#000', position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden' }}>
+                                        {selectedItem.type === "video" ? (
+                                            <video src={selectedItem.media} autoPlay loop controls playsInline style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
+                                        ) : (
+                                            <img src={selectedItem.media} style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
+                                        )}
+                                    </div>
+                                     <div style={{ padding: '2.5rem', background: 'rgba(10,10,15,0.95)', borderTop: '1px solid rgba(0, 209, 255, 0.2)' }}>
+                                         <span style={{ fontFamily: "'Inter', sans-serif", color: 'rgba(0, 209, 255, 0.7)', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', display: 'block', marginBottom: '0.5rem' }}>
+                                             {selectedItem.category} • UNITARY MARKETING IA
+                                         </span>
+                                         <h2 style={{ fontFamily: "'Inter', sans-serif", fontSize: '2rem', fontWeight: 900, color: '#fff', margin: '0 0 1rem 0' }}>{selectedItem.title}</h2>
+                                         <p style={{ fontFamily: "'Roboto', sans-serif", color: '#A1A1AA', fontSize: '1.1rem', lineHeight: 1.6, maxWidth: '800px' }}>{selectedItem.techDesc}</p>
+                                     </div>
+                                </motion.div>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+                </section>
+            );
+        };
+
+        // ─── Redes Sociales ──────────────────────────────────────────────────────
+        const RedesSociales = () => {
+            const cards = [
+                {
+                    platform: "LinkedIn",
+                    icon: "linkedin",
+                    description: "Estrategias de pensamiento de líder y networking automatizado.",
+                    buttonText: "Explorar Canal",
+                    url: "https://www.linkedin.com/in/luan-unitary-25876b3b8/"
+                },
+                {
+                    platform: "Instagram",
+                    icon: "instagram",
+                    description: "Contenido de alto impacto generado por IA para una conexión humana inmediata.",
+                    buttonText: "Explorar Canal",
+                    url: "https://www.instagram.com/luan.unitary/"
+                },
+                {
+                    platform: "TikTok",
+                    icon: "music",
+                    description: "Escalabilidad audiovisual: un mensaje, infinitos idiomas.",
+                    buttonText: "Ver Laboratorio",
+                    url: "https://www.tiktok.com/@luan.unitary?lang=es-419"
+                }
+            ];
+
+            return (
+                <section id="redes-sociales" className="section container" style={{ marginTop: '8rem', marginBottom: '4rem', position: 'relative' }}>
+                    <div className="glow-blob glow-cyan" style={{ top: '20%', left: '10%', width: '300px', height: '300px', opacity: 0.15 }}></div>
+                    <div style={{ textAlign: 'center', marginBottom: '4rem', position: 'relative', zIndex: 10 }}>
+                        <motion.h2 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                            style={{
+                            fontFamily: "'Inter', sans-serif",
+                            fontSize: 'clamp(2rem, 4vw, 3rem)',
+                            fontWeight: 900,
+                            color: '#fff',
+                            textTransform: 'uppercase',
+                            letterSpacing: '-0.02em',
+                            marginBottom: '1rem'
+                        }}>
+                            Omnipresencia Digital: <br className="mobile-break" /><span className="text-cyan">El Eco de la IA</span>
+                        </motion.h2>
+                        <motion.p 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                            style={{ fontFamily: "'Roboto', sans-serif", color: '#A1A1AA', fontSize: '1.2rem', maxWidth: '800px', margin: '0 auto', lineHeight: 1.6 }}>
+                            No solo publicamos contenido; dominamos ecosistemas digitales con estrategias de alcance global y ejecución automatizada.
+                        </motion.p>
+                    </div>
+
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', position: 'relative', zIndex: 10 }}>
+                        {cards.map((card, idx) => (
+                            <motion.div
+                                key={idx}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                whileHover={{ scale: 1.05 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.2 * idx }}
+                            >
+                                <a href={card.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+                                    <div className="glass-card magic-glass" style={{ height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', padding: '2.5rem', borderRadius: '24px', boxShadow: '0 0 30px rgba(0,255,255,0.05)', position: 'relative', overflow: 'hidden' }}>
+                                        <div style={{ position: 'absolute', top: 0, right: 0, width: '150px', height: '150px', background: 'radial-gradient(circle, rgba(0, 209, 255, 0.15) 0%, transparent 70%)', transform: 'translate(30%, -30%)' }}></div>
+                                        <div style={{ marginBottom: '1.5rem', color: '#00FFFF', filter: 'drop-shadow(0 0 10px rgba(0,209,255,0.5))' }}>
+                                            <i data-lucide={card.icon} style={{ width: '48px', height: '48px' }}></i>
+                                        </div>
+                                        <h3 style={{ fontFamily: "'Inter', sans-serif", fontSize: '1.5rem', fontWeight: 800, color: '#fff', marginBottom: '1rem' }}>{card.platform}</h3>
+                                        <p style={{ fontFamily: "'Roboto', sans-serif", color: '#A1A1AA', fontSize: '1rem', lineHeight: 1.6, flexGrow: 1, marginBottom: '2rem' }}>{card.description}</p>
+                                        <div style={{
+                                            background: 'transparent',
+                                            border: '1px solid rgba(0, 209, 255, 0.3)',
+                                            color: '#00FFFF',
+                                            padding: '0.75rem 1.5rem',
+                                            borderRadius: '50px',
+                                            fontFamily: "'Inter', sans-serif",
+                                            fontWeight: 600,
+                                            fontSize: '0.9rem',
+                                            cursor: 'pointer',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            gap: '0.5rem',
+                                            transition: 'all 0.3s ease',
+                                            width: '100%',
+                                            justifyContent: 'center'
+                                        }}
+                                        onMouseEnter={e => { e.currentTarget.style.background = 'rgba(0, 209, 255, 0.1)'; e.currentTarget.style.boxShadow = '0 0 20px rgba(0, 209, 255, 0.3)'; }}
+                                        onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.boxShadow = 'none'; }}
+                                        >
+                                            {card.buttonText} <i data-lucide="arrow-right" style={{ width: '16px', height: '16px' }}></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </motion.div>
+                        ))}
+                    </div>
+                </section>
+            );
+        };
+
+        // --- Cotizador IA ---
+        const Cotizador = () => {
+            const [currentStep, setCurrentStep] = useState(1);
+            const [selections, setSelections] = useState([]);
+            const [volume, setVolume] = useState('Boutique');
+            const [isProcessing, setIsProcessing] = useState(false);
+            const [animatedScore, setAnimatedScore] = useState(0);
+
+            useEffect(() => {
+                if (window.lucide) window.lucide.createIcons();
+            }, [currentStep, selections]);
+
+            const services = [
+                { id: 'Agentes IA & CRM', icon: 'bot', description: 'Ventas 24/7 en Kommo', points: 25 },
+                { id: 'Web & Landing', icon: 'layout', description: 'Interfaces de alta conversión', points: 20 },
+                { id: 'Apps & Figma', icon: 'smartphone', description: 'Soluciones móviles a medida', points: 25 },
+                { id: 'Portafolios', icon: 'star', description: 'Vitrinas digitales de impacto', points: 15 }
+            ];
+
+            const volumes = [
+                { id: 'Boutique', label: 'Boutique', description: 'Enfoque ágil y personalizado para resultados inmediatos.', multiplier: 1 },
+                { id: 'Escalabilidad', label: 'Escalabilidad', description: 'Automatización robusta para crecer a gran volumen.', multiplier: 1.5 },
+                { id: 'Dominio Total', label: 'Dominio Total', description: 'Infraestructura de élite para el liderazgo del mercado.', multiplier: 2 }
+            ];
+
+            const toggleService = (id) => {
+                setSelections(prev => prev.includes(id) ? prev.filter(s => s !== id) : [...prev, id]);
+            };
+
+            const calculatePowerScore = () => {
+                if (selections.length === 0) return 0;
+                let base = 0;
+                services.forEach(s => { if (selections.includes(s.id)) base += s.points; });
+                const mult = volumes.find(v => v.id === volume)?.multiplier || 1;
+                return Math.min(Math.round(base * mult), 100);
+            };
+
+            const finalScore = calculatePowerScore();
+
+            useEffect(() => {
+                if (currentStep === 3) {
+                    let start = 0;
+                    const duration = 1500;
+                    const increment = finalScore / (duration / 16);
+                    const timer = setInterval(() => {
+                        start += increment;
+                        if (start >= finalScore) {
+                            clearInterval(timer);
+                            setAnimatedScore(finalScore);
+                        } else {
+                            setAnimatedScore(Math.floor(start));
+                        }
+                    }, 16);
+                    return () => clearInterval(timer);
+                }
+            }, [currentStep, finalScore]);
+
+            const handleCheckout = () => {
+                setIsProcessing(true);
+                const results = selections.length > 0 ? selections.join(', ') : 'Plan Base';
+                const msg = `Hola Luan! Configuré mi Plan Unitary 2.0.\nServicios: [${results}]\nNivel: [${volume}]\nSolicito auditoría estratégica.`;
+                setTimeout(() => {
+                    setIsProcessing(false);
+                    window.open('https://wa.me/5491124026700?text=' + encodeURIComponent(msg), '_blank');
+                }, 2000);
+            };
+
+            let monitorText = "";
+            if (currentStep === 1) {
+                monitorText = "Sincronizando flujos estratégicos... Seleccionando pilares de infraestructura.";
+            } else if (currentStep === 2) {
+                monitorText = "Dimensionando impacto... Ajustando coherencia sistémica.";
+            } else if (currentStep === 3) {
+                monitorText = `Cálculo finalizado. El sistema ha detectado una optimización del ${finalScore}% en su estructura digital. La Unitaridad de este plan garantiza un retorno de autoridad y eficiencia inmediato.`;
+            }
+
+            const UnitarityNucleus = () => (
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2rem', width: '100%' }}>
+                    <div style={{
+                        position: 'relative',
+                        width: '250px',
+                        height: '250px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                    }}>
+                        {/* Pulso suave */}
+                        <motion.div
+                            animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.6, 0.3] }}
+                            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                            style={{
+                                position: 'absolute',
+                                width: '100%',
+                                height: '100%',
+                                borderRadius: '50%',
+                                background: 'radial-gradient(circle, rgba(0, 209, 255, 0.4) 0%, transparent 70%)',
+                                zIndex: 0
+                            }}
+                        />
+                        {/* Borde de cristal */}
+                        <div style={{
+                            position: 'relative',
+                            width: '200px',
+                            height: '200px',
+                            borderRadius: '50%',
+                            border: '2px solid rgba(0, 209, 255, 0.3)',
+                            background: 'rgba(0, 209, 255, 0.05)',
+                            backdropFilter: 'blur(10px)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            boxShadow: '0 0 40px rgba(0, 209, 255, 0.4), inset 0 0 30px rgba(0, 209, 255, 0.2)',
+                            overflow: 'hidden',
+                            zIndex: 1
+                        }}>
+                            {/* Video del Motor IA Unitary */}
+                            <video src="Diseño 2/Video del logo Unitary.mp4" autoPlay loop muted playsInline style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'drop-shadow(0 0 40px #00d1ff)' }} />
+                        </div>
+                    </div>
+
+                    <div style={{
+                        background: 'rgba(5, 5, 10, 0.8)',
+                        border: '1px solid rgba(0, 209, 255, 0.3)',
+                        borderRadius: '12px',
+                        padding: '1.5rem',
+                        width: '100%',
+                        maxWidth: '400px',
+                        boxShadow: '0 0 20px rgba(0, 209, 255, 0.1)',
+                        backdropFilter: 'blur(10px)'
+                    }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
+                            <div style={{ position: 'relative', width: '12px', height: '12px' }}>
+                                <motion.div
+                                    animate={{ scale: [1, 2.5], opacity: [0.8, 0] }}
+                                    transition={{ repeat: Infinity, duration: 1.5, ease: "easeOut" }}
+                                    style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', borderRadius: '50%', background: '#00FFFF' }}
+                                />
+                                <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', borderRadius: '50%', background: '#00FFFF', boxShadow: '0 0 10px #00FFFF' }} />
+                            </div>
+                            <span style={{ color: '#00FFFF', fontSize: '0.9rem', fontWeight: 700, letterSpacing: '0.1em' }}>MONITOR DE COHERENCIA</span>
+                        </div>
+                        <div style={{ minHeight: '80px', display: 'flex', alignItems: 'center' }}>
+                            <AnimatePresence mode="wait">
+                                <motion.p
+                                    key={monitorText}
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                    style={{ margin: 0, fontSize: '0.9rem', color: '#fff', fontFamily: 'monospace', lineHeight: 1.5 }}
+                                >
+                                    <span style={{ color: '#00FFFF' }}>&gt;</span> {monitorText}
+                                    <motion.span animate={{ opacity: [1, 0, 1] }} transition={{ repeat: Infinity, duration: 0.8 }} style={{ display: 'inline-block', width: '8px', height: '1.2em', background: '#00FFFF', marginLeft: '5px', verticalAlign: 'middle' }} />
+                                </motion.p>
+                            </AnimatePresence>
+                        </div>
+                    </div>
+                </div>
+            );
+
+            return (
+                <section id="cotizador" className="section container" style={{ marginTop: '8rem', marginBottom: '8rem', position: 'relative' }}>
+                    <div className="glow-blob glow-cyan" style={{ top: '20%', right: '5%', width: '500px', height: '500px', opacity: 0.1 }}></div>
+                    <div className="glow-blob glow-purple" style={{ bottom: '10%', left: '5%', width: '400px', height: '400px', opacity: 0.1 }}></div>
+
+                    <div style={{ textAlign: 'center', marginBottom: '5rem', position: 'relative', zIndex: 10 }}>
+                        <motion.h2 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 900, textTransform: 'uppercase', color: '#fff', letterSpacing: '-0.02em', margin: 0 }}>
+                            Motor <span className="text-cyan">IA Unitary 2.0</span>
+                        </motion.h2>
+                        <p style={{ color: '#A1A1AA', fontSize: '1.1rem', marginTop: '1rem' }}>Sincroniza tu arquitectura de crecimiento en tiempo real</p>
+                    </div>
+
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+                        <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+                            <UnitarityNucleus />
+                        </motion.div>
+
+                        <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="cyber-terminal" style={{ position: 'relative', overflow: 'hidden', padding: '2.5rem', background: 'rgba(10, 10, 15, 0.6)' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
+                                {currentStep > 1 ? (
+                                    <button onClick={() => setCurrentStep(prev => prev - 1)} style={{ background: 'transparent', border: 'none', color: 'rgba(255,255,255,0.8)', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '1rem', fontWeight: 600, padding: 0, zIndex: 20, position: 'relative' }}>
+                                        <i data-lucide="arrow-left" style={{ width: '20px', height: '20px' }}></i> Atrás
+                                    </button>
+                                ) : <div style={{ width: '70px' }}></div>}
+                                <div style={{ display: 'flex', gap: '15px' }}>
+                                    {[1, 2, 3].map(s => (
+                                        <div key={s} style={{ width: '10px', height: '10px', borderRadius: '50%', background: currentStep >= s ? '#00FFFF' : 'rgba(255,255,255,0.1)', boxShadow: currentStep >= s ? '0 0 10px #00FFFF' : 'none' }}></div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            <div style={{ minHeight: '420px', display: 'flex', flexDirection: 'column' }}>
+                                <AnimatePresence mode="wait">
+                                    {currentStep === 1 && (
+                                        <motion.div key="step1" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.4 }}>
+                                            <h3 style={{ fontSize: '1.4rem', color: '#fff', marginBottom: '2rem', fontWeight: 800 }}>Módulos de Arquitectura:</h3>
+                                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
+                                                {services.map(s => (
+                                                    <div key={s.id} onClick={() => toggleService(s.id)} style={{
+                                                        background: selections.includes(s.id) ? 'rgba(0, 209, 255, 0.1)' : 'rgba(255, 255, 255, 0.03)',
+                                                        border: selections.includes(s.id) ? '1px solid #00FFFF' : '1px solid rgba(255, 255, 255, 0.1)',
+                                                        padding: '1.5rem',
+                                                        borderRadius: '12px',
+                                                        cursor: 'pointer',
+                                                        display: 'flex',
+                                                        flexDirection: 'column',
+                                                        gap: '10px',
+                                                        transition: 'all 0.3s ease',
+                                                        boxShadow: selections.includes(s.id) ? '0 0 15px rgba(0, 209, 255, 0.2)' : 'none'
+                                                    }}>
+                                                        <div style={{ color: selections.includes(s.id) ? '#00FFFF' : '#A1A1AA' }}>
+                                                            <i data-lucide={s.icon} style={{ width: '28px', height: '28px' }}></i>
+                                                        </div>
+                                                        <div>
+                                                            <div style={{ color: '#fff', fontWeight: 600, fontSize: '1.1rem', marginBottom: '4px' }}>{s.id}</div>
+                                                            <div style={{ color: '#A1A1AA', fontSize: '0.85rem' }}>{s.description}</div>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                            <div style={{ marginTop: '3rem', display: 'flex', justifyContent: 'flex-end' }}>
+                                                <button onClick={() => setCurrentStep(2)} disabled={selections.length === 0} style={{
+                                                    background: selections.length > 0 ? '#00FFFF' : 'rgba(255, 255, 255, 0.1)',
+                                                    color: selections.length > 0 ? '#000' : 'rgba(255, 255, 255, 0.5)',
+                                                    border: 'none',
+                                                    padding: '1rem 2rem',
+                                                    borderRadius: '8px',
+                                                    fontWeight: 800,
+                                                    fontSize: '1rem',
+                                                    cursor: selections.length > 0 ? 'pointer' : 'not-allowed',
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    gap: '10px',
+                                                    transition: 'all 0.3s ease',
+                                                    boxShadow: selections.length > 0 ? '0 0 20px rgba(0, 209, 255, 0.3)' : 'none'
+                                                }}>
+                                                    DEFINIR NIVEL DE IMPACTO <i data-lucide="arrow-right" style={{ width: '18px', height: '18px' }}></i>
+                                                </button>
+                                            </div>
+                                        </motion.div>
+                                    )}
+
+                                    {currentStep === 2 && (
+                                        <motion.div key="step2" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.4 }}>
+                                            <h3 style={{ fontSize: '1.4rem', color: '#fff', marginBottom: '2rem', fontWeight: 800 }}>Escala de Ejecución:</h3>
+                                            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                                                {volumes.map(v => (
+                                                    <div key={v.id} onClick={() => setVolume(v.id)} style={{
+                                                        background: volume === v.id ? 'rgba(0, 209, 255, 0.1)' : 'rgba(255, 255, 255, 0.03)',
+                                                        border: volume === v.id ? '1px solid #00FFFF' : '1px solid rgba(255, 255, 255, 0.1)',
+                                                        padding: '1.5rem',
+                                                        borderRadius: '12px',
+                                                        cursor: 'pointer',
+                                                        display: 'flex',
+                                                        alignItems: 'center',
+                                                        justifyContent: 'space-between',
+                                                        transition: 'all 0.3s ease',
+                                                        boxShadow: volume === v.id ? '0 0 15px rgba(0, 209, 255, 0.2)' : 'none'
+                                                    }}>
+                                                        <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                                                            <span style={{ color: '#fff', fontWeight: 600, fontSize: '1.1rem' }}>{v.label}</span>
+                                                            <span style={{ color: '#A1A1AA', fontSize: '0.85rem' }}>{v.description}</span>
+                                                        </div>
+                                                        {volume === v.id && (
+                                                            <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} style={{ width: '20px', height: '20px', borderRadius: '50%', background: '#00FFFF', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#000" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                                            </motion.div>
+                                                        )}
+                                                    </div>
+                                                ))}
+                                            </div>
+
+                                            <div style={{ marginTop: '3rem', display: 'flex', justifyContent: 'flex-end' }}>
+                                                <button onClick={() => setCurrentStep(3)} style={{
+                                                    background: '#00FFFF',
+                                                    color: '#000',
+                                                    border: 'none',
+                                                    padding: '1rem 2rem',
+                                                    borderRadius: '8px',
+                                                    fontWeight: 800,
+                                                    fontSize: '1rem',
+                                                    cursor: 'pointer',
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'center',
+                                                    gap: '10px',
+                                                    transition: 'all 0.3s ease',
+                                                    boxShadow: '0 0 20px rgba(0, 209, 255, 0.4)',
+                                                    width: '100%'
+                                                }}>
+                                                    CALCULAR POWER SCORE <i data-lucide="zap" style={{ width: '18px', height: '18px' }}></i>
+                                                </button>
+                                            </div>
+                                        </motion.div>
+                                    )}
+
+                                    {currentStep === 3 && (
+                                        <motion.div key="step3" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.4 }}>
+                                            <h3 style={{ fontSize: '1.1rem', color: '#A1A1AA', marginBottom: '2rem', fontWeight: 600, letterSpacing: '0.1em' }}>ÍNDICE DE POTENCIAL DE CRECIMIENTO (POWER SCORE)</h3>
+                                            
+                                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', margin: '3rem 0' }}>
+                                                <div style={{ fontSize: '6rem', fontWeight: 900, color: '#00FFFF', textShadow: '0 0 30px rgba(0, 209, 255, 0.6)', lineHeight: 1 }}>
+                                                    {animatedScore}<span style={{ fontSize: '3rem', color: 'rgba(0, 209, 255, 0.5)' }}>%</span>
+                                                </div>
+                                                
+                                                <div style={{ width: '100%', height: '8px', background: 'rgba(255,255,255,0.1)', borderRadius: '4px', marginTop: '2rem', overflow: 'hidden' }}>
+                                                    <motion.div 
+                                                        initial={{ width: 0 }} 
+                                                        animate={{ width: `${animatedScore}%` }} 
+                                                        transition={{ duration: 1.5, ease: "easeOut" }}
+                                                        style={{ height: '100%', background: 'linear-gradient(90deg, #00FFFF, #B026FF)', boxShadow: '0 0 10px #00FFFF' }}
+                                                    />
+                                                </div>
+                                            </div>
+
+                                            <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'flex-end' }}>
+                                                <button onClick={handleCheckout} disabled={isProcessing} style={{
+                                                    background: 'linear-gradient(90deg, #00FFFF, #B026FF)',
+                                                    color: '#fff',
+                                                    border: 'none',
+                                                    padding: '1rem 2rem',
+                                                    borderRadius: '8px',
+                                                    fontWeight: 800,
+                                                    fontSize: '1rem',
+                                                    cursor: isProcessing ? 'not-allowed' : 'pointer',
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'center',
+                                                    gap: '10px',
+                                                    transition: 'all 0.3s ease',
+                                                    boxShadow: '0 0 20px rgba(176, 38, 255, 0.4)',
+                                                    width: '100%'
+                                                }}>
+                                                    {isProcessing ? 'SINCRONIZANDO...' : `SOLICITAR AUDITORÍA DE ESTE PLAN (Score: ${finalScore})`}
+                                                </button>
+                                            </div>
+                                        </motion.div>
+                                    )}
+
+                                </AnimatePresence>
+                            </div>
+                        </motion.div>
+                    </div>
+                </section>
+            );
+        };
+
+        // ─── App ─────────────────────────────────────────────────────────────────
+        const App = () => {
+            useEffect(() => {
+                if (window.lucide) {
+                    window.lucide.createIcons();
+                }
+            });
+
+            return (
+                <div>
+                    <Navbar />
+                    <Hero />
+                    <BentoGrid />
+                    <LuanSection />
+                    <SocialProof />
+                    <Portfolio />
+                    <RedesSociales />
+                    <Cotizador />
+                    <Contact />
+                    <Footer />
+                    <LuanChat />
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+
+</html>
