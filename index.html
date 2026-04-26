@@ -110,18 +110,20 @@
                     }}
                 >
                     <div style={{ display: 'flex', alignItems: 'center', width: isMobile ? '100%' : 'auto', justifyContent: isMobile ? 'space-between' : 'flex-start' }}>
-                        <div style={{ fontSize: isMobile ? '1.1rem' : '1.8rem', fontWeight: 900, display: 'flex', alignItems: 'center', zIndex: 110 }} className="text-cyan navbar-logo">
-                            <span className="navbar-logo-full">UNITARY</span>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                            {isMobile && (
+                                <button onClick={() => setMenuOpen(!menuOpen)} style={{ background: 'transparent', border: 'none', color: '#00FFFF', cursor: 'pointer', padding: '0', display: 'flex', alignItems: 'center', justifyContent: 'center', marginRight: '4px' }}>
+                                    <i data-lucide={menuOpen ? "x" : "menu"} style={{ width: '28px', height: '28px' }}></i>
+                                </button>
+                            )}
+                            <div style={{ fontSize: isMobile ? '1.1rem' : '1.8rem', fontWeight: 900, display: 'flex', alignItems: 'center', zIndex: 110 }} className="text-cyan navbar-logo">
+                                <span className="navbar-logo-full">UNITARY</span>
+                            </div>
                         </div>
                         {isMobile && (
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                <a href="#cotizador" className="btn btn-primary navbar-cta" style={{ padding: '0.4rem 0.8rem', fontSize: '0.75rem', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', boxSizing: 'border-box' }}>
-                                    COTIZADOR IA
-                                </a>
-                                <button onClick={() => setMenuOpen(!menuOpen)} style={{ background: 'transparent', border: 'none', color: '#00FFFF', cursor: 'pointer', padding: '0.4rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                    <i data-lucide={menuOpen ? "x" : "menu"} style={{ width: '24px', height: '24px' }}></i>
-                                </button>
-                            </div>
+                            <a href="#cotizador" className="btn btn-primary navbar-cta" style={{ padding: '0.4rem 0.8rem', fontSize: '0.75rem', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', boxSizing: 'border-box' }}>
+                                COTIZADOR IA
+                            </a>
                         )}
                     </div>
 
