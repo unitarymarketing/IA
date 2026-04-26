@@ -1986,3 +1986,15 @@ a {
 /* Safari Glassmorphism */
 .glass-card, .magic-glass, .navbar, .glass-panel, .portfolio-card, .btn-outline { -webkit-backdrop-filter: blur(10px) !important; backdrop-filter: blur(10px) !important; }
 
+
+
+/* --- LUXURY TIMELINE & MOBILE POLISH (ITERATION 6) --- */
+@media (max-width: 768px) {
+  .hero-title { font-size: 2rem !important; }
+  .cotizador-services-grid { display: flex !important; flex-direction: column !important; position: relative !important; gap: 1.5rem !important; }
+  .cotizador-services-grid::before { content: ''; position: absolute; top: 1rem; bottom: 1rem; left: 11px; width: 2px; background: linear-gradient(to bottom, #00FFFF, #B026FF); z-index: 0; }
+  .cotizador-module-btn { position: relative; z-index: 1; margin-left: 2rem !important; overflow: visible !important; }
+  .cotizador-module-btn::before { content: ''; position: absolute; top: 50%; left: -2rem; transform: translateY(-50%) translateX(5px); width: 14px; height: 14px; border-radius: 50%; background: #05050A; border: 2px solid #00FFFF; z-index: 2; transition: all 0.3s ease; }
+  .cotizador-module-btn.selected::before { background: #00FFFF; box-shadow: 0 0 15px #00FFFF; }
+  .portfolio-card, .asym-ia, .asym-vert { min-height: 250px !important; }
+}

@@ -1094,7 +1094,7 @@
                                     transition={{ duration: 0.5, type: "spring", bounce: 0.2 }}
                                     className={item.className}
                                     onClick={() => setSelectedItem(item)}
-                                    style={{ display: 'flex', minHeight: '350px', height: '100%', position: 'relative', padding: '2rem' }}
+                                    style={{ display: 'flex', minHeight: window.innerWidth < 768 ? '250px' : '350px', height: '100%', position: 'relative', padding: '2rem' }}
                                 >
                                     <div className="portfolio-media-wrapper" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, overflow: 'hidden', borderRadius: 'inherit' }}>
                                         <div className="card-bg" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0 }}>
@@ -1464,9 +1464,9 @@
                                     {currentStep === 1 && (
                                         <motion.div key="step1" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.4 }}>
                                             <h3 style={{ fontSize: '1.4rem', color: '#fff', marginBottom: '2rem', fontWeight: 800 }}>Módulos de Arquitectura:</h3>
-                                            <div className="cotizador-services-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
+                                            <div className="cotizador-services-grid" style={{ display: 'grid', gridTemplateColumns: window.innerWidth < 768 ? '1fr' : 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
                                                 {services.map(s => (
-                                                    <div key={s.id} onClick={() => toggleService(s.id)} className="cotizador-module-btn" style={{
+                                                    <div key={s.id} onClick={() => toggleService(s.id)} className={`cotizador-module-btn ${selections.includes(s.id) ? 'selected' : ''}`} style={{
                                                         background: selections.includes(s.id) ? 'rgba(0, 209, 255, 0.1)' : 'rgba(255, 255, 255, 0.03)',
                                                         border: selections.includes(s.id) ? '1px solid #00FFFF' : '1px solid rgba(255, 255, 255, 0.1)',
                                                         padding: '1.5rem',
