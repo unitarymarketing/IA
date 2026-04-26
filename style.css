@@ -1969,3 +1969,20 @@ a {
   .hero-right { height: 50vh !important; max-height: 50vh !important; }
   .hero-bg-mobile { box-shadow: 0 0 50px rgba(0, 209, 255, 0.4); border-radius: 20px; }
 }
+
+
+/* --- LUXURY SAAS POLYFILLS & MOBILE FIXES (ITERATION 5) --- */
+@media (max-width: 768px) {
+  .mobile-only-break { display: block !important; }
+  .hero-title { font-size: 2.25rem !important; line-height: 1.1 !important; }
+  .portfolio-grid { display: grid !important; grid-template-columns: 1fr !important; height: auto !important; min-height: 50vh !important; overflow: visible !important; }
+  .portfolio-card, .asym-ia, .asym-vert { grid-column: span 1 !important; min-height: 350px !important; height: auto !important; overflow: visible !important; }
+}
+@media (min-width: 769px) {
+  .mobile-only-break { display: none !important; }
+  .hero-title { font-size: 5rem !important; }
+}
+
+/* Safari Glassmorphism */
+.glass-card, .magic-glass, .navbar, .glass-panel, .portfolio-card, .btn-outline { -webkit-backdrop-filter: blur(10px) !important; backdrop-filter: blur(10px) !important; }
+

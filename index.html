@@ -179,9 +179,7 @@
                     className="hero-left"
                 >
                     <h1 className="hero-title">
-                        Unitary<br />
-                        Marketing<br />
-                        Digital AI
+                        UNITARY MARKETING<br className="mobile-only-break" /> DIGITAL AI
                     </h1>
                     <motion.div
                         initial={{ opacity: 0 }}
@@ -1067,7 +1065,7 @@
                                 key={cat}
                                 onClick={() => setFilter(cat)}
                                 className={`btn ${filter === cat ? 'btn-primary' : 'btn-outline'}`}
-                                style={{ padding: '8px 20px', fontSize: '0.8rem' }}
+                                style={{ padding: '8px 20px', fontSize: '0.8rem', whiteSpace: 'nowrap' }}
                             >
                                 {cat}
                             </button>
