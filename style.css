@@ -1,4 +1,4 @@
-/* Unitary Marketing IA - Cybernetic Neon Design System */
+﻿/* Unitary Marketing IA - Cybernetic Neon Design System */
 
 :root {
   --color-bg-primary: #05050A; /* Deep space black */
@@ -1922,7 +1922,8 @@ a {
          c u r s o r :   n o t - a l l o w e d ; 
          b o x - s h a d o w :   n o n e ; 
  } 
-  
+ 
+ 
  
 
 /* --- ADDITIONAL MOBILE OPTIMIZATIONS --- */
@@ -1938,9 +1939,23 @@ a {
   .hero-right { position: absolute; top: 0; left: 0; right: 0; bottom: 0; height: 100vh; opacity: 0.25; display: flex; justify-content: center; align-items: center; }
   .hero-video-element { display: none; }
   .hero-video-wrapper { -webkit-mask-image: none !important; mask-image: none !important; background: none; }
-  .hero-bg-mobile { display: block !important; width: 100%; height: 100%; background-image: url('Diseño 2/Gemini_Generated_Image_p98ixip98ixip98i.png'); background-size: cover; background-position: center; background-repeat: no-repeat; }
+  .hero-bg-mobile { display: block !important; width: 100%; height: 100%; background-image: url('DiseÃ±o 2/Gemini_Generated_Image_p98ixip98ixip98i.png'); background-size: cover; background-position: center; background-repeat: no-repeat; }
   .glass-card { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
   .cotizador-services-grid { grid-template-columns: 1fr !important; }
   .cotizador-module-btn, .cotizador-volume-btn { min-height: 48px; }
   .portfolio-card, .asym-web, .asym-ia, .asym-dash, .asym-content, .asym-vert { grid-column: span 1 !important; grid-row: span 1 !important; width: 100% !important; }
+}
+
+
+/* --- REFINED MOBILE OPTIMIZATIONS (ITERATION 2) --- */
+@media (max-width: 768px) {
+  .navbar-logo-full { display: block !important; }
+  .navbar-logo-mobile { display: none !important; }
+  .navbar-cta { padding: 0.5rem 1rem !important; font-size: 0.85rem !important; }
+  .hero-section { display: flex !important; flex-direction: column !important; padding: 0 1.5rem !important; }
+  .hero-left { padding: 80px 0 20px !important; text-align: center; order: 1; }
+  .hero-right { position: relative !important; height: 50vh !important; opacity: 1 !important; display: flex; justify-content: center; align-items: center; order: 2; margin-bottom: 2rem; width: 100% !important; }
+  .luan-grid { grid-template-columns: 1fr !important; }
+  .luan-benefits-container { gap: 2rem !important; }
+  .luan-cta-button { width: 100% !important; justify-content: center !important; }
 }

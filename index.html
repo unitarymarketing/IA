@@ -342,13 +342,13 @@
                                 La infraestructura invisible que escala tus procesos. Luan no es un bot, es un agente de inteligencia avanzada diseñado para cerrar ventas mientras vos dormís.
                             </p>
 
-                            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '3.5rem' }}>
+                            <div className="luan-benefits-container" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '3.5rem' }}>
                                 <div style={{ background: 'rgba(0, 209, 255, 0.05)', border: '1px solid rgba(0, 209, 255, 0.4)', padding: '0.6rem 1.2rem', borderRadius: '50px', color: '#00FFFF', fontWeight: 700, fontSize: '0.85rem', boxShadow: '0 0 15px rgba(0, 209, 255, 0.15)', backdropFilter: 'blur(5px)' }}>⚡ Operaciones 24/7</div>
                                 <div style={{ background: 'rgba(0, 209, 255, 0.05)', border: '1px solid rgba(0, 209, 255, 0.4)', padding: '0.6rem 1.2rem', borderRadius: '50px', color: '#00FFFF', fontWeight: 700, fontSize: '0.85rem', boxShadow: '0 0 15px rgba(0, 209, 255, 0.15)', backdropFilter: 'blur(5px)' }}>🌐 +50 Idiomas</div>
                                 <div style={{ background: 'rgba(0, 209, 255, 0.05)', border: '1px solid rgba(0, 209, 255, 0.4)', padding: '0.6rem 1.2rem', borderRadius: '50px', color: '#00FFFF', fontWeight: 700, fontSize: '0.85rem', boxShadow: '0 0 15px rgba(0, 209, 255, 0.15)', backdropFilter: 'blur(5px)' }}>🎯 Error 0%</div>
                             </div>
 
-                            <button className="btn btn-primary" onClick={() => window.dispatchEvent(new CustomEvent('openLuanChat'))} style={{ padding: '1rem 3rem', fontSize: '1.1rem', boxShadow: '0 0 20px rgba(0, 209, 255, 0.4), inset 0 0 10px rgba(0, 209, 255, 0.2)' }}>
+                            <button className="btn btn-primary luan-cta-button" onClick={() => window.dispatchEvent(new CustomEvent('openLuanChat'))} style={{ padding: '1rem 3rem', fontSize: '1.1rem', boxShadow: '0 0 20px rgba(0, 209, 255, 0.4), inset 0 0 10px rgba(0, 209, 255, 0.2)' }}>
                                 Hablar con Luan
                             </button>
                         </motion.div>
@@ -416,7 +416,7 @@
                 return () => window.removeEventListener('resize', handleResize);
             }, []);
 
-            const displayPartners = isMobile ? partners : [...partners, ...partners, ...partners, ...partners, ...partners, ...partners];
+            const displayPartners = [...partners, ...partners, ...partners, ...partners, ...partners, ...partners];
 
             return (
                 <section style={{ width: '100%', marginTop: '8rem', marginBottom: '3rem', overflow: 'hidden' }}>
@@ -427,26 +427,20 @@
                     </div>
                     <div style={{ position: 'relative', width: '100%' }}>
                         {/* Lateral fades */}
-                        {!isMobile && (
-                            <>
-                                <div style={{ position: 'absolute', top: 0, bottom: 0, left: 0, width: '128px', background: 'linear-gradient(to right, #05050A, transparent)', zIndex: 10, pointerEvents: 'none' }}></div>
-                                <div style={{ position: 'absolute', top: 0, bottom: 0, right: 0, width: '128px', background: 'linear-gradient(to left, #05050A, transparent)', zIndex: 10, pointerEvents: 'none' }}></div>
-                            </>
-                        )}
-                        {/* Ticker / Grid */}
+                        <div style={{ position: 'absolute', top: 0, bottom: 0, left: 0, width: '128px', background: 'linear-gradient(to right, #05050A, transparent)', zIndex: 10, pointerEvents: 'none' }}></div>
+                        <div style={{ position: 'absolute', top: 0, bottom: 0, right: 0, width: '128px', background: 'linear-gradient(to left, #05050A, transparent)', zIndex: 10, pointerEvents: 'none' }}></div>
+                        
+                        {/* Ticker */}
                         <motion.div
-                            className={isMobile ? "social-proof-grid" : "social-proof-ticker"}
+                            className="social-proof-ticker"
                             style={{ 
-                                display: isMobile ? 'grid' : 'flex', 
-                                gap: isMobile ? '2rem' : '8rem', 
-                                gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : 'none',
+                                display: 'flex', 
+                                gap: isMobile ? '4rem' : '8rem', 
                                 alignItems: 'center', 
-                                whiteSpace: isMobile ? 'normal' : 'nowrap',
-                                justifyContent: 'center',
-                                padding: isMobile ? '0 1rem' : '0'
+                                whiteSpace: 'nowrap'
                             }}
-                            animate={isMobile ? { x: 0 } : { x: ["0%", "-50%"] }}
-                            transition={isMobile ? { duration: 0 } : { duration: 30, ease: "linear", repeat: Infinity }}
+                            animate={{ x: ["0%", "-50%"] }}
+                            transition={{ duration: 30, ease: "linear", repeat: Infinity }}
                         >
                             {displayPartners.map((partner, index) => (
                                 <div key={index} style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', minWidth: isMobile ? 'auto' : '150px' }}>
@@ -455,7 +449,7 @@
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         style={{
-                                            fontSize: isMobile ? '1rem' : 'clamp(1rem, 1.5vw, 1.5rem)',
+                                            fontSize: isMobile ? '1.2rem' : 'clamp(1rem, 1.5vw, 1.5rem)',
                                             fontWeight: 700,
                                             color: 'rgba(255,255,255,0.6)',
                                             cursor: 'pointer',
@@ -828,6 +822,13 @@
             const [isOpen, setIsOpen] = useState(false);
             const [message, setMessage] = useState('');
             const [isSending, setIsSending] = useState(false);
+            const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+            useEffect(() => {
+                const handleResize = () => setIsMobile(window.innerWidth < 768);
+                window.addEventListener('resize', handleResize);
+                return () => window.removeEventListener('resize', handleResize);
+            }, []);
 
             useEffect(() => {
                 const handleOpen = () => setIsOpen(true);
@@ -854,7 +855,7 @@
             };
 
             return (
-                <div style={{ position: 'fixed', bottom: '2rem', right: '2rem', zIndex: 50 }}>
+                <div style={{ position: 'fixed', bottom: isMobile ? '5rem' : '2rem', right: isMobile ? '1rem' : '2rem', zIndex: 100 }}>
                     <AnimatePresence>
                         {isOpen && (
                             <motion.div
