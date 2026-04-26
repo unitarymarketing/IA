@@ -316,7 +316,7 @@ a {
   .bento-uniform-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .bento-uniform-grid { grid-template-columns: 1fr; }
 }
 
@@ -398,7 +398,7 @@ a {
 
 /* Hero Typography */
 .hero-title {
-  font-size: clamp(2.5rem, 8vw, 10rem);
+  font-size: clamp(3.5rem, 8vw, 10rem);
   line-height: 0.85;
   letter-spacing: -0.04em;
   text-transform: uppercase;
@@ -677,18 +677,6 @@ a {
 }
 
 /* Responsive Overrides */
-.mobile-menu-btn {
-  display: none;
-  background: none;
-  border: none;
-  color: var(--color-text-main);
-  cursor: pointer;
-  z-index: 1001;
-}
-.luan-video-contain {
-  object-fit: cover;
-}
-
 @media (max-width: 1024px) {
   .bento-col-8 { grid-column: span 12; }
   .bento-col-4 { grid-column: span 12; }
@@ -697,44 +685,10 @@ a {
 
 @media (max-width: 768px) {
   .section { padding: var(--spacing-16) 0; }
-  .hero-title { font-size: clamp(2.5rem, 10vw, 3.5rem) !important; }
-  
-  .mobile-menu-btn { display: flex; }
-  .nav-desktop-cta { display: none !important; }
-  .nav-links {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: rgba(5, 5, 10, 0.98);
-    backdrop-filter: blur(20px);
-    padding: 2rem;
-    border-bottom: 1px solid rgba(0, 209, 255, 0.2);
-    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-    transition: clip-path 0.4s ease-in-out;
-    align-items: center;
-    gap: 1.5rem;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-  }
-  .nav-links.open {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  }
-  .nav-mobile-cta {
-    display: inline-flex !important;
-    margin-top: 1rem;
-    width: 100%;
-  }
-
+  .hero-title { font-size: 3rem !important; }
+  .nav-links { display: none; /* simple mobile hide for now, or implement hamburger */ }
   .bento-col-8, .bento-col-4, .bento-col-6 { grid-column: span 12; }
-  
-  .luan-video-contain {
-    object-fit: contain !important;
-    background: rgba(0,0,0,0.5);
-  }
 }
-
 
 /* === ASYMMETRIC PORTFOLIO === */
 .portfolio-grid {
