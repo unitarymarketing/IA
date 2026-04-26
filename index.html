@@ -106,7 +106,14 @@
                     style={{
                         background: scrolled ? 'rgba(5, 5, 10, 0.95)' : 'rgba(5, 5, 10, 0)',
                         borderBottom: scrolled ? '1px solid rgba(0, 209, 255, 0.2)' : '1px solid transparent',
-                        padding: isMobile ? '0.75rem 1.25rem' : '1rem 3rem'
+                        padding: isMobile ? '0.75rem 1.25rem' : '1rem 3rem',
+                        position: 'fixed',
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        zIndex: 1000,
+                        backdropFilter: 'blur(10px)',
+                        WebkitBackdropFilter: 'blur(10px)'
                     }}
                 >
                     <div style={{ display: 'flex', alignItems: 'center', width: isMobile ? '100%' : 'auto', justifyContent: isMobile ? 'space-between' : 'flex-start' }}>
@@ -168,7 +175,7 @@
 
         // ─── Hero: Split-screen monumental layout ─────────────────────────────────
         const Hero = () => (
-            <section id="inicio" className="hero-section">
+            <section id="inicio" className="hero-section" style={{ paddingTop: '5rem' }}>
                 {/* Background glows */}
                 <div className="glow-blob glow-cyan" style={{ top: '20%', left: '-10%', width: '600px', height: '600px', opacity: 0.2 }}></div>
                 <div className="glow-blob glow-purple" style={{ bottom: '20%', right: '-10%', width: '600px', height: '600px', opacity: 0.2 }}></div>
@@ -1089,7 +1096,7 @@
                                     onClick={() => setSelectedItem(item)}
                                     style={{ display: 'flex', minHeight: '350px', height: '100%', position: 'relative', padding: '2rem' }}
                                 >
-                                    <div className="portfolio-media-wrapper" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1 }}>
+                                    <div className="portfolio-media-wrapper" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, overflow: 'hidden', borderRadius: 'inherit' }}>
                                         <div className="card-bg" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0 }}>
                                             {item.type === "image" && (
                                                 <img src={item.media} alt={item.title} style={{ display: 'block', width: '100%', height: '100%', objectFit: 'cover', position: 'relative', zIndex: 1 }} />
@@ -1098,11 +1105,11 @@
                                                 <video src={item.media} autoPlay loop muted playsInline style={{ display: 'block', width: '100%', height: '100%', objectFit: 'cover', position: 'relative', zIndex: 1 }} />
                                             )}
                                         </div>
-                                        <div className="overlay"></div>
+                                        <div className="overlay" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(5,5,10,0.8), transparent 60%)', zIndex: 2 }}></div>
                                     </div>
 
                                     {/* Content Info Overlaid inside card */}
-                                     <div className="portfolio-content">
+                                     <div className="portfolio-content" style={{ position: 'relative', zIndex: 10, marginTop: 'auto', alignSelf: 'flex-start' }}>
                                          <span style={{ fontFamily: "'Inter', sans-serif", color: 'rgba(0, 209, 255, 0.7)', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem', display: 'block' }}>
                                              {item.category} • UNITARY MARKETING IA
                                          </span>
