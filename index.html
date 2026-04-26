@@ -49,6 +49,18 @@
         const Navbar = () => {
             const [scrolled, setScrolled] = useState(false);
             const [activeSection, setActiveSection] = useState('inicio');
+            const [menuOpen, setMenuOpen] = useState(false);
+            const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+            useEffect(() => {
+                const handleResize = () => setIsMobile(window.innerWidth < 768);
+                window.addEventListener('resize', handleResize);
+                return () => window.removeEventListener('resize', handleResize);
+            }, []);
+
+            useEffect(() => {
+                if (window.lucide) window.lucide.createIcons();
+            }, [menuOpen, isMobile]);
 
             useEffect(() => {
                 const handleScroll = () => {
@@ -93,26 +105,61 @@
                     className={`navbar`}
                     style={{
                         background: scrolled ? 'rgba(5, 5, 10, 0.95)' : 'rgba(5, 5, 10, 0)',
-                        borderBottom: scrolled ? '1px solid rgba(0, 209, 255, 0.2)' : '1px solid transparent'
+                        borderBottom: scrolled ? '1px solid rgba(0, 209, 255, 0.2)' : '1px solid transparent',
+                        padding: isMobile ? '0.75rem 1rem' : '1rem 3rem'
                     }}
                 >
-                    <div style={{ fontSize: '1.8rem', fontWeight: 900, display: 'flex', alignItems: 'center', gap: '8px' }} className="text-cyan navbar-logo">
-                        <span className="navbar-logo-full">UNITARY</span>
-                        <span className="navbar-logo-mobile" style={{ display: 'none' }}>U</span>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', width: isMobile ? '100%' : 'auto', justifyContent: isMobile ? 'space-between' : 'flex-start' }}>
+                        {isMobile && (
+                            <button onClick={() => setMenuOpen(!menuOpen)} style={{ background: 'transparent', border: '1px solid rgba(0,209,255,0.3)', borderRadius: '8px', color: '#00FFFF', cursor: 'pointer', padding: '0.4rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                <i data-lucide={menuOpen ? "x" : "menu"} style={{ width: '20px', height: '20px' }}></i>
+                            </button>
+                        )}
+                        <div style={{ fontSize: isMobile ? '1.2rem' : '1.8rem', fontWeight: 900, display: 'flex', alignItems: 'center', gap: '8px', zIndex: 110 }} className="text-cyan navbar-logo">
+                            <span className="navbar-logo-full">UNITARY</span>
+                        </div>
+                        {isMobile && (
+                            <a href="#cotizador" className="btn btn-primary navbar-cta" style={{ padding: '0.5rem 1rem', fontSize: '0.85rem', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', boxSizing: 'border-box' }}>
+                                Cotizador
+                            </a>
+                        )}
                     </div>
 
-                    <div className="nav-links">
-                        <a href="#inicio" className={`nav-link ${activeSection === 'inicio' ? 'active' : ''}`}>Inicio</a>
-                        <a href="#servicios" className={`nav-link ${activeSection === 'servicios' ? 'active' : ''}`}>Servicios</a>
-                        <a href="#luan" className={`nav-link ${activeSection === 'luan' ? 'active' : ''}`}>Luan</a>
-                        <a href="#portfolio" className={`nav-link ${activeSection === 'portfolio' ? 'active' : ''}`}>Portfolio</a>
-                        <a href="#redes-sociales" className={`nav-link ${activeSection === 'redes-sociales' ? 'active' : ''}`}>Redes Sociales</a>
-                        <a href="#contacto" className={`nav-link ${activeSection === 'contacto' ? 'active' : ''}`}>Contacto</a>
-                    </div>
+                    {!isMobile && (
+                        <>
+                            <div className="nav-links">
+                                <a href="#inicio" className={`nav-link ${activeSection === 'inicio' ? 'active' : ''}`}>Inicio</a>
+                                <a href="#servicios" className={`nav-link ${activeSection === 'servicios' ? 'active' : ''}`}>Servicios</a>
+                                <a href="#luan" className={`nav-link ${activeSection === 'luan' ? 'active' : ''}`}>Luan</a>
+                                <a href="#portfolio" className={`nav-link ${activeSection === 'portfolio' ? 'active' : ''}`}>Portfolio</a>
+                                <a href="#redes-sociales" className={`nav-link ${activeSection === 'redes-sociales' ? 'active' : ''}`}>Redes Sociales</a>
+                                <a href="#contacto" className={`nav-link ${activeSection === 'contacto' ? 'active' : ''}`}>Contacto</a>
+                            </div>
 
-                    <a href="#cotizador" className="btn btn-primary" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', boxSizing: 'border-box', boxShadow: activeSection === 'cotizador' ? '0 0 20px rgba(0, 209, 255, 0.8)' : '' }}>
-                        Cotizador IA
-                    </a>
+                            <a href="#cotizador" className="btn btn-primary" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', boxSizing: 'border-box', boxShadow: activeSection === 'cotizador' ? '0 0 20px rgba(0, 209, 255, 0.8)' : '' }}>
+                                Cotizador IA
+                            </a>
+                        </>
+                    )}
+
+                    {/* Mobile Dropdown Menu */}
+                    <AnimatePresence>
+                        {isMobile && menuOpen && (
+                            <motion.div
+                                initial={{ opacity: 0, height: 0 }}
+                                animate={{ opacity: 1, height: 'auto' }}
+                                exit={{ opacity: 0, height: 0 }}
+                                style={{ position: 'absolute', top: '100%', left: 0, right: 0, background: 'rgba(5, 5, 10, 0.98)', borderBottom: '1px solid rgba(0, 209, 255, 0.2)', padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1rem', zIndex: 100, overflow: 'hidden' }}
+                            >
+                                <a href="#inicio" onClick={() => setMenuOpen(false)} style={{ color: activeSection === 'inicio' ? '#00FFFF' : '#A1A1AA', textDecoration: 'none', fontSize: '1rem', fontWeight: 600 }}>Inicio</a>
+                                <a href="#servicios" onClick={() => setMenuOpen(false)} style={{ color: activeSection === 'servicios' ? '#00FFFF' : '#A1A1AA', textDecoration: 'none', fontSize: '1rem', fontWeight: 600 }}>Servicios</a>
+                                <a href="#luan" onClick={() => setMenuOpen(false)} style={{ color: activeSection === 'luan' ? '#00FFFF' : '#A1A1AA', textDecoration: 'none', fontSize: '1rem', fontWeight: 600 }}>Luan</a>
+                                <a href="#portfolio" onClick={() => setMenuOpen(false)} style={{ color: activeSection === 'portfolio' ? '#00FFFF' : '#A1A1AA', textDecoration: 'none', fontSize: '1rem', fontWeight: 600 }}>Portfolio</a>
+                                <a href="#redes-sociales" onClick={() => setMenuOpen(false)} style={{ color: activeSection === 'redes-sociales' ? '#00FFFF' : '#A1A1AA', textDecoration: 'none', fontSize: '1rem', fontWeight: 600 }}>Redes Sociales</a>
+                                <a href="#contacto" onClick={() => setMenuOpen(false)} style={{ color: activeSection === 'contacto' ? '#00FFFF' : '#A1A1AA', textDecoration: 'none', fontSize: '1rem', fontWeight: 600 }}>Contacto</a>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
                 </motion.nav>
             );
         };

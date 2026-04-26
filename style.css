@@ -1959,3 +1959,13 @@ a {
   .luan-benefits-container { gap: 2rem !important; }
   .luan-cta-button { width: 100% !important; justify-content: center !important; }
 }
+
+
+/* --- COMPACT MOBILE REFINEMENTS (ITERATION 3) --- */
+@media (max-width: 768px) {
+  section[style], .section { margin-top: 3rem !important; margin-bottom: 2rem !important; padding: 1rem 0 !important; }
+  .hero-section { padding-top: 1rem !important; margin-top: 1rem !important; }
+  .hero-left { padding-top: 1rem !important; margin-top: 0 !important; }
+  .hero-right { height: 40vh !important; }
+  .hero-bg-mobile { box-shadow: 0 0 50px rgba(0, 209, 255, 0.4); border-radius: 20px; }
+}
