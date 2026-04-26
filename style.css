@@ -1924,3 +1924,23 @@ a {
  } 
   
  
+
+/* --- ADDITIONAL MOBILE OPTIMIZATIONS --- */
+@media (max-width: 768px) {
+  .navbar { justify-content: space-between; }
+  .navbar-logo { position: absolute; left: 50%; transform: translateX(-50%); }
+  .navbar-logo-full { display: none; }
+  .navbar-logo-mobile { display: block !important; }
+  .hero-section { padding: 0 1.5rem !important; }
+  .hero-left { padding: 120px 0 40px !important; text-align: center; }
+  .hero-title { font-size: 2.5rem !important; text-align: center; }
+  .hero-subtitle { text-align: center; }
+  .hero-right { position: absolute; top: 0; left: 0; right: 0; bottom: 0; height: 100vh; opacity: 0.25; display: flex; justify-content: center; align-items: center; }
+  .hero-video-element { display: none; }
+  .hero-video-wrapper { -webkit-mask-image: none !important; mask-image: none !important; background: none; }
+  .hero-bg-mobile { display: block !important; width: 100%; height: 100%; background-image: url('Diseño 2/Gemini_Generated_Image_p98ixip98ixip98i.png'); background-size: cover; background-position: center; background-repeat: no-repeat; }
+  .glass-card { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+  .cotizador-services-grid { grid-template-columns: 1fr !important; }
+  .cotizador-module-btn, .cotizador-volume-btn { min-height: 48px; }
+  .portfolio-card, .asym-web, .asym-ia, .asym-dash, .asym-content, .asym-vert { grid-column: span 1 !important; grid-row: span 1 !important; width: 100% !important; }
+}

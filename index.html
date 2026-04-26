@@ -96,8 +96,9 @@
                         borderBottom: scrolled ? '1px solid rgba(0, 209, 255, 0.2)' : '1px solid transparent'
                     }}
                 >
-                    <div style={{ fontSize: '1.8rem', fontWeight: 900, display: 'flex', alignItems: 'center', gap: '8px' }} className="text-cyan">
-                        <span>UNITARY</span>
+                    <div style={{ fontSize: '1.8rem', fontWeight: 900, display: 'flex', alignItems: 'center', gap: '8px' }} className="text-cyan navbar-logo">
+                        <span className="navbar-logo-full">UNITARY</span>
+                        <span className="navbar-logo-mobile" style={{ display: 'none' }}>U</span>
                     </div>
 
                     <div className="nav-links">
@@ -144,7 +145,7 @@
                     </motion.div>
                 </motion.div>
 
-                {/* RIGHT COLUMN: Video monumental */}
+                {/* RIGHT COLUMN: Video / Static mobile monumental */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95, x: 100 }}
                     animate={{ opacity: 1, scale: 1, x: 0 }}
@@ -152,9 +153,10 @@
                     className="hero-right"
                 >
                     <div className="hero-video-wrapper">
-                        <video autoPlay loop muted playsInline>
+                        <video autoPlay loop muted playsInline className="hero-video-element">
                             <source src="Diseño 2/p2v_Veo%203.1%20Image%20to%20Video_2026-03-10_14-18-18.mp4" type="video/mp4" />
                         </video>
+                        <div className="hero-bg-mobile" style={{ display: 'none' }}></div>
                     </div>
                 </motion.div>
             </section>
@@ -406,7 +408,16 @@
         };
 
         const SocialProof = () => {
-            const tripled = [...partners, ...partners, ...partners, ...partners, ...partners, ...partners];
+            const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+            
+            useEffect(() => {
+                const handleResize = () => setIsMobile(window.innerWidth < 768);
+                window.addEventListener('resize', handleResize);
+                return () => window.removeEventListener('resize', handleResize);
+            }, []);
+
+            const displayPartners = isMobile ? partners : [...partners, ...partners, ...partners, ...partners, ...partners, ...partners];
+
             return (
                 <section style={{ width: '100%', marginTop: '8rem', marginBottom: '3rem', overflow: 'hidden' }}>
                     <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
@@ -416,28 +427,42 @@
                     </div>
                     <div style={{ position: 'relative', width: '100%' }}>
                         {/* Lateral fades */}
-                        <div style={{ position: 'absolute', top: 0, bottom: 0, left: 0, width: '128px', background: 'linear-gradient(to right, #05050A, transparent)', zIndex: 10, pointerEvents: 'none' }}></div>
-                        <div style={{ position: 'absolute', top: 0, bottom: 0, right: 0, width: '128px', background: 'linear-gradient(to left, #05050A, transparent)', zIndex: 10, pointerEvents: 'none' }}></div>
-                        {/* Ticker */}
+                        {!isMobile && (
+                            <>
+                                <div style={{ position: 'absolute', top: 0, bottom: 0, left: 0, width: '128px', background: 'linear-gradient(to right, #05050A, transparent)', zIndex: 10, pointerEvents: 'none' }}></div>
+                                <div style={{ position: 'absolute', top: 0, bottom: 0, right: 0, width: '128px', background: 'linear-gradient(to left, #05050A, transparent)', zIndex: 10, pointerEvents: 'none' }}></div>
+                            </>
+                        )}
+                        {/* Ticker / Grid */}
                         <motion.div
-                            style={{ display: 'flex', gap: '8rem', alignItems: 'center', whiteSpace: 'nowrap' }}
-                            animate={{ x: ["0%", "-50%"] }}
-                            transition={{ duration: 30, ease: "linear", repeat: Infinity }}
+                            className={isMobile ? "social-proof-grid" : "social-proof-ticker"}
+                            style={{ 
+                                display: isMobile ? 'grid' : 'flex', 
+                                gap: isMobile ? '2rem' : '8rem', 
+                                gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : 'none',
+                                alignItems: 'center', 
+                                whiteSpace: isMobile ? 'normal' : 'nowrap',
+                                justifyContent: 'center',
+                                padding: isMobile ? '0 1rem' : '0'
+                            }}
+                            animate={isMobile ? { x: 0 } : { x: ["0%", "-50%"] }}
+                            transition={isMobile ? { duration: 0 } : { duration: 30, ease: "linear", repeat: Infinity }}
                         >
-                            {tripled.map((partner, index) => (
-                                <div key={index} style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', minWidth: '150px' }}>
+                            {displayPartners.map((partner, index) => (
+                                <div key={index} style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', minWidth: isMobile ? 'auto' : '150px' }}>
                                     <a 
                                         href={partner.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         style={{
-                                            fontSize: 'clamp(1rem, 1.5vw, 1.5rem)',
+                                            fontSize: isMobile ? '1rem' : 'clamp(1rem, 1.5vw, 1.5rem)',
                                             fontWeight: 700,
                                             color: 'rgba(255,255,255,0.6)',
                                             cursor: 'pointer',
                                             textDecoration: 'none',
                                             transition: 'all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1)',
-                                            display: 'inline-block'
+                                            display: 'inline-block',
+                                            textAlign: 'center'
                                         }}
                                         onMouseEnter={e => {
                                             e.target.style.color = '#00FFFF';
@@ -1384,9 +1409,9 @@
                                     {currentStep === 1 && (
                                         <motion.div key="step1" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.4 }}>
                                             <h3 style={{ fontSize: '1.4rem', color: '#fff', marginBottom: '2rem', fontWeight: 800 }}>Módulos de Arquitectura:</h3>
-                                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
+                                            <div className="cotizador-services-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
                                                 {services.map(s => (
-                                                    <div key={s.id} onClick={() => toggleService(s.id)} style={{
+                                                    <div key={s.id} onClick={() => toggleService(s.id)} className="cotizador-module-btn" style={{
                                                         background: selections.includes(s.id) ? 'rgba(0, 209, 255, 0.1)' : 'rgba(255, 255, 255, 0.03)',
                                                         border: selections.includes(s.id) ? '1px solid #00FFFF' : '1px solid rgba(255, 255, 255, 0.1)',
                                                         padding: '1.5rem',
@@ -1433,9 +1458,9 @@
                                     {currentStep === 2 && (
                                         <motion.div key="step2" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.4 }}>
                                             <h3 style={{ fontSize: '1.4rem', color: '#fff', marginBottom: '2rem', fontWeight: 800 }}>Escala de Ejecución:</h3>
-                                            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                                            <div className="cotizador-volumes-grid" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                                                 {volumes.map(v => (
-                                                    <div key={v.id} onClick={() => setVolume(v.id)} style={{
+                                                    <div key={v.id} onClick={() => setVolume(v.id)} className="cotizador-volume-btn" style={{
                                                         background: volume === v.id ? 'rgba(0, 209, 255, 0.1)' : 'rgba(255, 255, 255, 0.03)',
                                                         border: volume === v.id ? '1px solid #00FFFF' : '1px solid rgba(255, 255, 255, 0.1)',
                                                         padding: '1.5rem',
