@@ -876,7 +876,7 @@
             const [isOpen, setIsOpen] = useState(false);
             const [message, setMessage] = useState('');
             const [chatHistory, setChatHistory] = useState([
-                { sender: 'bot', text: 'Hola, soy Lau. ¿En qué te puedo ayudar hoy?' }
+                { sender: 'bot', text: 'Hola, soy Luan. ¿En qué te puedo ayudar hoy?' }
             ]);
             const [isSending, setIsSending] = useState(false);
             const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -898,7 +898,7 @@
                 if (messagesEndRef.current) {
                     messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
                 }
-            }, [chatHistory, isOpen]);
+            }, [chatHistory, isOpen, isSending]);
 
             const handleSendMessage = async () => {
                 if (!message.trim()) return;
@@ -919,10 +919,14 @@
                     const contentType = response.headers.get("content-type");
                     if (contentType && contentType.includes("application/json")) {
                         const data = await response.json();
-                        // Intentamos extraer el campo donde el AI Agent suele poner su respuesta
-                        botReply = data.output || data.text || data.response || data.message || "Recibido (respuesta en formato no reconocido)";
+                        botReply = data.output || data.text || data.response || data.message || "Recibido";
                     } else {
                         botReply = await response.text();
+                    }
+
+                    // Ignoramos el mensaje por defecto de n8n si el webhook no está en modo "When Last Node Finishes"
+                    if (botReply === 'Workflow was started') {
+                        botReply = '¡Mensaje enviado a mi base de datos! (Nota para el administrador: Configura el nodo Webhook en n8n para que responda "When Last Node Finishes" y así podré contestar aquí mismo).';
                     }
 
                     setChatHistory(prev => [...prev, { sender: 'bot', text: botReply }]);
@@ -965,11 +969,11 @@
                                 }}
                             >
                                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '0.5rem' }}>
-                                    <h3 style={{ margin: 0, color: '#fff', fontSize: '1.1rem', fontWeight: 700 }}>Lau Chat</h3>
+                                    <h3 style={{ margin: 0, color: '#fff', fontSize: '1.1rem', fontWeight: 700 }}>Luan Chat</h3>
                                     <button onClick={() => setIsOpen(false)} style={{ background: 'none', border: 'none', color: '#A1A1AA', cursor: 'pointer', fontSize: '1.2rem', padding: 0 }}>&times;</button>
                                 </div>
                                 
-                                <div style={{ flex: 1, overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '0.8rem', paddingRight: '0.5rem' }}>
+                                <div className="luan-chat-scroll" style={{ flex: 1, overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '0.8rem', paddingRight: '0.5rem' }}>
                                     {chatHistory.map((chat, index) => (
                                         <div key={index} style={{ 
                                             alignSelf: chat.sender === 'user' ? 'flex-end' : 'flex-start',
