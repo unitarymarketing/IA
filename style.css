@@ -1,4 +1,4 @@
-﻿/* Unitary Marketing IA - Cybernetic Neon Design System */
+/* Unitary Marketing IA - Cybernetic Neon Design System */
 
 :root {
   --color-bg-primary: #05050A; /* Deep space black */
@@ -1939,7 +1939,7 @@ a {
   .hero-right { position: absolute; top: 0; left: 0; right: 0; bottom: 0; height: 100vh; opacity: 0.25; display: flex; justify-content: center; align-items: center; }
   .hero-video-element { display: none; }
   .hero-video-wrapper { -webkit-mask-image: none !important; mask-image: none !important; background: none; }
-  .hero-bg-mobile { display: block !important; width: 100%; height: 100%; background-image: url('DiseÃ±o 2/Gemini_Generated_Image_p98ixip98ixip98i.png'); background-size: cover; background-position: center; background-repeat: no-repeat; }
+  .hero-bg-mobile { display: block !important; width: 100%; height: 100%; background-image: url('Diseño 2/Gemini_Generated_Image_p98ixip98ixip98i.png'); background-size: cover; background-position: center; background-repeat: no-repeat; }
   .glass-card { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
   .cotizador-services-grid { grid-template-columns: 1fr !important; }
   .cotizador-module-btn, .cotizador-volume-btn { min-height: 48px; }
@@ -2000,7 +2000,7 @@ a {
 }
 
 /* --- LUAN CHAT CUSTOM SCROLLBAR --- */
-.luan-chat-scroll::-webkit-scrollbar {
+.luan-chat-scroll { scrollbar-width: thin; scrollbar-color: rgba(0, 209, 255, 0.5) transparent; } .luan-chat-scroll::-webkit-scrollbar {
   width: 6px;
 }
 .luan-chat-scroll::-webkit-scrollbar-track {
