@@ -573,14 +573,14 @@
                                 filter: 'drop-shadow(0 0 8px rgba(255,255,255,0.5))',
                             }}
                         >
-                            UNITARY AI
+                            UNITARY MARKETING AI
                         </motion.div>
 
-                        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '2rem', marginBottom: '2rem', fontSize: '0.875rem', fontWeight: 500 }}>
+                        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '2rem', marginBottom: '2rem', fontSize: '0.9rem', fontWeight: 600, position: 'relative', zIndex: 60 }}>
                             {Object.keys(legalTexts).map(link => (
-                                <a key={link} href="#" onClick={(e) => { e.preventDefault(); setActiveModal(link); }} style={{ color: '#A1A1AA', textDecoration: 'none', transition: 'all 0.3s ease' }}
+                                <a key={link} href="#" onClick={(e) => { e.preventDefault(); setActiveModal(link); }} style={{ color: '#fff', textDecoration: 'underline', textUnderlineOffset: '4px', transition: 'all 0.3s ease', cursor: 'pointer' }}
                                     onMouseEnter={e => { e.target.style.color = '#00FFFF'; e.target.style.filter = 'drop-shadow(0 0 10px #00FFFF)'; }}
-                                    onMouseLeave={e => { e.target.style.color = '#A1A1AA'; e.target.style.filter = 'none'; }}
+                                    onMouseLeave={e => { e.target.style.color = '#fff'; e.target.style.filter = 'none'; }}
                                 >
                                     {link}
                                 </a>
