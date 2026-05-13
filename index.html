@@ -7,10 +7,10 @@
     <title>Unitary Marketing IA - Innovación Sin Límites</title>
 
     <!-- SEO & Social Media Info -->
-    <link rel="icon" type="image/png" href="Diseño 2/Luan.png">
+    <link rel="icon" type="image/png" href="Diseño 2/Logo Unitary.png">
     <meta property="og:title" content="Unitary Marketing IA | Omnipresencia Global">
     <meta property="og:description" content="Agencia de Marketing Digital potenciada por IA. Escalamos tu marca con avatares, automatización y narrativa de élite.">
-    <meta property="og:image" content="Diseño 2/Luan.png">
+    <meta property="og:image" content="Diseño 2/Logo Unitary.png">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
 
@@ -969,19 +969,13 @@
                                 }}
                             >
                                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '0.5rem' }}>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                                        <img src="Diseño 2/Logo Unitary.png" alt="Luan Logo" style={{ width: '28px', height: '28px', borderRadius: '50%', objectFit: 'cover', border: '1px solid rgba(0, 209, 255, 0.5)' }} />
-                                        <h3 style={{ margin: 0, color: '#fff', fontSize: '1.1rem', fontWeight: 700 }}>Luan Chat</h3>
-                                    </div>
+                                    <h3 style={{ margin: 0, color: '#fff', fontSize: '1.1rem', fontWeight: 700 }}>Luan Chat</h3>
                                     <button onClick={() => setIsOpen(false)} style={{ background: 'none', border: 'none', color: '#A1A1AA', cursor: 'pointer', fontSize: '1.2rem', padding: 0 }}>&times;</button>
                                 </div>
                                 
                                 <div className="luan-chat-scroll" style={{ flex: 1, overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '0.8rem', paddingRight: '0.5rem' }}>
                                     {chatHistory.map((chat, index) => (
                                         <div key={index} style={{ display: 'flex', gap: '0.5rem', alignSelf: chat.sender === 'user' ? 'flex-end' : 'flex-start', maxWidth: '85%' }}>
-                                            {chat.sender === 'bot' && (
-                                                <img src="Diseño 2/Logo Unitary.png" alt="Luan" style={{ width: '24px', height: '24px', borderRadius: '50%', objectFit: 'cover', border: '1px solid rgba(0, 209, 255, 0.3)', marginTop: '0.2rem', flexShrink: 0 }} />
-                                            )}
                                             <div style={{ 
                                                 background: chat.sender === 'user' ? 'rgba(0, 209, 255, 0.2)' : 'rgba(255, 255, 255, 0.1)',
                                                 border: chat.sender === 'user' ? '1px solid rgba(0, 209, 255, 0.3)' : '1px solid rgba(255, 255, 255, 0.1)',
@@ -999,7 +993,6 @@
                                     ))}
                                     {isSending && (
                                         <div style={{ display: 'flex', gap: '0.5rem', alignSelf: 'flex-start', maxWidth: '85%' }}>
-                                            <img src="Diseño 2/Logo Unitary.png" alt="Luan" style={{ width: '24px', height: '24px', borderRadius: '50%', objectFit: 'cover', border: '1px solid rgba(0, 209, 255, 0.3)', marginTop: '0.2rem', flexShrink: 0 }} />
                                             <div style={{ background: 'rgba(255, 255, 255, 0.05)', padding: '0.8rem 1rem', borderRadius: '12px 12px 12px 0', color: '#A1A1AA', fontSize: '0.9rem', backdropFilter: 'blur(5px)' }}>
                                                 Escribiendo...
                                             </div>
