@@ -964,35 +964,45 @@
                                     borderRadius: '16px',
                                     display: 'flex',
                                     flexDirection: 'column',
-                                    gap: '1rem',
+                                    gap: '2.5rem',
                                     boxSizing: 'border-box'
                                 }}
                             >
                                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '0.5rem' }}>
-                                    <h3 style={{ margin: 0, color: '#fff', fontSize: '1.1rem', fontWeight: 700 }}>Luan Chat</h3>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                                        <img src="Diseño 2/Logo Unitary.png" alt="Luan Logo" style={{ width: '28px', height: '28px', borderRadius: '50%', objectFit: 'cover', border: '1px solid rgba(0, 209, 255, 0.5)' }} />
+                                        <h3 style={{ margin: 0, color: '#fff', fontSize: '1.1rem', fontWeight: 700 }}>Luan Chat</h3>
+                                    </div>
                                     <button onClick={() => setIsOpen(false)} style={{ background: 'none', border: 'none', color: '#A1A1AA', cursor: 'pointer', fontSize: '1.2rem', padding: 0 }}>&times;</button>
                                 </div>
                                 
                                 <div className="luan-chat-scroll" style={{ flex: 1, overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '0.8rem', paddingRight: '0.5rem' }}>
                                     {chatHistory.map((chat, index) => (
-                                        <div key={index} style={{ 
-                                            alignSelf: chat.sender === 'user' ? 'flex-end' : 'flex-start',
-                                            background: chat.sender === 'user' ? 'rgba(0, 209, 255, 0.2)' : 'rgba(255, 255, 255, 0.1)',
-                                            border: chat.sender === 'user' ? '1px solid rgba(0, 209, 255, 0.3)' : '1px solid rgba(255, 255, 255, 0.1)',
-                                            padding: '0.8rem 1rem',
-                                            borderRadius: chat.sender === 'user' ? '12px 12px 0 12px' : '12px 12px 12px 0',
-                                            maxWidth: '85%',
-                                            color: '#fff',
-                                            fontSize: '0.9rem',
-                                            lineHeight: 1.4,
-                                            wordBreak: 'break-word'
-                                        }}>
-                                            {chat.text}
+                                        <div key={index} style={{ display: 'flex', gap: '0.5rem', alignSelf: chat.sender === 'user' ? 'flex-end' : 'flex-start', maxWidth: '85%' }}>
+                                            {chat.sender === 'bot' && (
+                                                <img src="Diseño 2/Logo Unitary.png" alt="Luan" style={{ width: '24px', height: '24px', borderRadius: '50%', objectFit: 'cover', border: '1px solid rgba(0, 209, 255, 0.3)', marginTop: '0.2rem', flexShrink: 0 }} />
+                                            )}
+                                            <div style={{ 
+                                                background: chat.sender === 'user' ? 'rgba(0, 209, 255, 0.2)' : 'rgba(255, 255, 255, 0.1)',
+                                                border: chat.sender === 'user' ? '1px solid rgba(0, 209, 255, 0.3)' : '1px solid rgba(255, 255, 255, 0.1)',
+                                                padding: '0.8rem 1rem',
+                                                borderRadius: chat.sender === 'user' ? '12px 12px 0 12px' : '12px 12px 12px 0',
+                                                color: '#fff',
+                                                fontSize: '0.9rem',
+                                                lineHeight: 1.4,
+                                                wordBreak: 'break-word',
+                                                backdropFilter: 'blur(5px)'
+                                            }}>
+                                                {chat.text}
+                                            </div>
                                         </div>
                                     ))}
                                     {isSending && (
-                                        <div style={{ alignSelf: 'flex-start', background: 'rgba(255, 255, 255, 0.05)', padding: '0.8rem 1rem', borderRadius: '12px 12px 12px 0', color: '#A1A1AA', fontSize: '0.9rem' }}>
-                                            Escribiendo...
+                                        <div style={{ display: 'flex', gap: '0.5rem', alignSelf: 'flex-start', maxWidth: '85%' }}>
+                                            <img src="Diseño 2/Logo Unitary.png" alt="Luan" style={{ width: '24px', height: '24px', borderRadius: '50%', objectFit: 'cover', border: '1px solid rgba(0, 209, 255, 0.3)', marginTop: '0.2rem', flexShrink: 0 }} />
+                                            <div style={{ background: 'rgba(255, 255, 255, 0.05)', padding: '0.8rem 1rem', borderRadius: '12px 12px 12px 0', color: '#A1A1AA', fontSize: '0.9rem', backdropFilter: 'blur(5px)' }}>
+                                                Escribiendo...
+                                            </div>
                                         </div>
                                     )}
                                     <div ref={messagesEndRef} />
