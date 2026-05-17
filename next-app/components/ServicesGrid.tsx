@@ -5,7 +5,7 @@ import { useState } from 'react';
 // Diccionario de traducciones integrado
 const translations = {
   es: {
-    title: "Nuestros Servicios",
+    title: "Nuestro Ecosistema",
     card1Title: "KOMMO & N8N AUTOMATIZACIÓN",
     card1Desc: "Centralizá tus leads con KOMMO y automatizá tus procesos con N8N para escalar tu negocio.",
     card2Title: "MARKETING DIGITAL",
@@ -16,7 +16,7 @@ const translations = {
     card4Desc: "Impulsá tu carrera con portfolios profesionales y elegantes, diseñados para destacar tu talento.",
   },
   en: {
-    title: "Our Services",
+    title: "Our Ecosystem",
     card1Title: "KOMMO & N8N AUTOMATION",
     card1Desc: "Centralize your leads with KOMMO and automate your processes with N8N to scale your business.",
     card2Title: "DIGITAL MARKETING",
@@ -33,113 +33,108 @@ export default function ServicesGrid() {
   const t = translations[lang];
 
   return (
-    <section className="py-20 px-6 max-w-7xl mx-auto bg-transparent">
-      {/* Selector de Idioma Estilizado */}
-      <div className="flex justify-end mb-10">
-        <div className="bg-[#0B0F19]/80 border border-white/10 p-1 rounded-xl flex gap-1 backdrop-blur-md">
-          <button 
-            onClick={() => setLang('es')} 
-            className={`px-4 py-1.5 rounded-lg text-xs font-semibold transition-all ${lang === 'es' ? 'bg-gradient-to-r from-cyan-500 to-indigo-600 text-white shadow-md' : 'text-gray-400 hover:text-white'}`}
-          >
-            ES
-          </button>
-          <button 
-            onClick={() => setLang('en')} 
-            className={`px-4 py-1.5 rounded-lg text-xs font-semibold transition-all ${lang === 'en' ? 'bg-gradient-to-r from-cyan-500 to-indigo-600 text-white shadow-md' : 'text-gray-400 hover:text-white'}`}
-          >
-            EN
-          </button>
-        </div>
-      </div>
-
-      {/* Grid de Tarjetas con gap-10 */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-        
-        {/* Tarjeta 1 - Automatización */}
-        <div className="relative group overflow-hidden p-8 bg-[#0B0F19]/60 backdrop-blur-xl border border-white/10 rounded-2xl hover:border-cyan-500/30 transition-all duration-500 flex flex-col justify-between min-h-[320px]">
-          <div className="absolute top-0 right-0 w-48 h-48 bg-cyan-500/10 rounded-full blur-3xl group-hover:bg-cyan-500/20 transition-all duration-500"></div>
-          
-          <div className="flex justify-between items-start relative z-10 mb-6">
-            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500/20 to-transparent border border-cyan-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
-                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
-                <line x1="6" y1="6" x2="6.01" y2="6"></line>
-                <line x1="6" y1="18" x2="6.01" y2="18"></line>
-              </svg>
+    <section id="servicios" className="py-20 px-6 max-w-7xl mx-auto bg-transparent">
+        {/* Encabezado */}
+        <div className="flex flex-col md:flex-row justify-between items-center mb-10">
+            <div className="text-left w-full md:w-auto">
+                <h2 style={{
+                    fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+                    fontWeight: 900,
+                    background: 'linear-gradient(to right, #00FFFF, #8b5cf6, #FF00FF)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                    textTransform: 'uppercase',
+                    letterSpacing: '-0.04em',
+                    paddingBottom: '4px',
+                    textShadow: '0 0 40px rgba(0, 255, 255, 0.3)'
+                }}>
+                    {t.title}
+                </h2>
+                <div style={{ width: '120px', height: '5px', background: 'linear-gradient(to right, #00FFFF, #FF00FF)', marginTop: '0.5rem', borderRadius: '4px' }}></div>
             </div>
-            <div className="text-cyan-400 font-bold tracking-widest text-[10px] uppercase bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20">Automation Hub</div>
-          </div>
-
-          <div className="relative z-10">
-            <h3 className="text-xl md:text-2xl font-bold text-white mb-3 tracking-wide group-hover:text-cyan-300 transition-colors">{t.card1Title}</h3>
-            <p className="text-gray-400 text-sm leading-relaxed">{t.card1Desc}</p>
-          </div>
-        </div>
-
-        {/* Tarjeta 2 - Marketing */}
-        <div className="relative group overflow-hidden p-8 bg-[#0B0F19]/60 backdrop-blur-xl border border-white/10 rounded-2xl hover:border-indigo-500/30 transition-all duration-500 flex flex-col justify-between min-h-[320px]">
-          <div className="absolute bottom-0 right-0 w-48 h-48 bg-indigo-500/10 rounded-full blur-3xl group-hover:bg-indigo-500/20 transition-all duration-500"></div>
-          
-          <div className="flex justify-between items-start relative z-10 mb-6">
-            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-indigo-500/20 to-transparent border border-indigo-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#818cf8" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M3 3v18h18"></path>
-                <path d="m19 9-5 5-4-4-3 3"></path>
-              </svg>
+            
+            {/* Selector de Idioma Estilizado */}
+            <div className="bg-[#0B0F19]/80 border border-white/10 p-1 rounded-xl flex gap-1 backdrop-blur-md mt-6 md:mt-0 self-start md:self-center">
+                <button 
+                    onClick={() => setLang('es')} 
+                    className={`px-4 py-1.5 rounded-lg text-xs font-semibold transition-all ${lang === 'es' ? 'bg-gradient-to-r from-cyan-500 to-indigo-600 text-white shadow-md' : 'text-gray-400 hover:text-white'}`}
+                >
+                    ES
+                </button>
+                <button 
+                    onClick={() => setLang('en')} 
+                    className={`px-4 py-1.5 rounded-lg text-xs font-semibold transition-all ${lang === 'en' ? 'bg-gradient-to-r from-cyan-500 to-indigo-600 text-white shadow-md' : 'text-gray-400 hover:text-white'}`}
+                >
+                    EN
+                </button>
             </div>
-            <div className="text-indigo-400 font-bold tracking-widest text-[10px] uppercase bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">Growth</div>
-          </div>
-
-          <div className="relative z-10">
-            <h3 className="text-xl md:text-2xl font-bold text-white mb-3 tracking-wide group-hover:text-indigo-300 transition-colors">{t.card2Title}</h3>
-            <p className="text-gray-400 text-sm leading-relaxed">{t.card2Desc}</p>
-          </div>
         </div>
 
-        {/* Tarjeta 3 - Web Dev */}
-        <div className="relative group overflow-hidden p-8 bg-[#0B0F19]/60 backdrop-blur-xl border border-white/10 rounded-2xl hover:border-fuchsia-500/30 transition-all duration-500 flex flex-col justify-between min-h-[320px]">
-          <div className="absolute top-0 left-0 w-48 h-48 bg-fuchsia-500/10 rounded-full blur-3xl group-hover:bg-fuchsia-500/20 transition-all duration-500"></div>
-          
-          <div className="flex justify-between items-start relative z-10 mb-6">
-            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-fuchsia-500/20 to-transparent border border-fuchsia-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#e879f9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="16 18 22 12 16 6"></polyline>
-                <polyline points="8 6 2 12 8 18"></polyline>
-              </svg>
+        {/* Grid de Tarjetas con gap-10 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            
+            {/* Tarjeta 1 - Automatización */}
+            <div className="relative group overflow-hidden p-8 bg-[#0B0F19]/40 backdrop-blur-2xl border border-white/10 rounded-2xl hover:border-cyan-500/50 transition-all duration-500 flex flex-col justify-between min-h-[360px] shadow-2xl" style={{ backgroundImage: "url('Diseño 2/Automatización.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+                <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-all duration-500"></div>
+                <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/20 rounded-full blur-3xl group-hover:bg-cyan-500/40 transition-all duration-500 z-0"></div>
+                
+                <div className="flex justify-end items-start relative z-10 mb-6">
+                    <div className="text-cyan-300 font-bold tracking-widest text-[11px] uppercase bg-black/60 backdrop-blur-md px-4 py-1.5 rounded-full border border-cyan-500/30 shadow-[0_0_15px_rgba(34,211,238,0.3)]" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>Automation Hub</div>
+                </div>
+
+                <div className="relative z-10 mt-auto">
+                    <h3 className="text-2xl md:text-3xl font-black text-white mb-3 tracking-wide group-hover:text-cyan-300 transition-colors drop-shadow-xl" style={{ fontFamily: "'Inter', sans-serif", textShadow: '0 2px 10px rgba(0,0,0,0.9)' }}>{t.card1Title}</h3>
+                    <p className="text-gray-200 text-sm md:text-base leading-relaxed font-medium" style={{ fontFamily: "'Roboto', sans-serif", textShadow: '0 2px 8px rgba(0,0,0,0.9)' }}>{t.card1Desc}</p>
+                </div>
             </div>
-            <div className="text-fuchsia-400 font-bold tracking-widest text-[10px] uppercase bg-fuchsia-500/10 px-3 py-1 rounded-full border border-fuchsia-500/20">Development</div>
-          </div>
 
-          <div className="relative z-10">
-            <h3 className="text-xl md:text-2xl font-bold text-white mb-3 tracking-wide group-hover:text-fuchsia-300 transition-colors">{t.card3Title}</h3>
-            <p className="text-gray-400 text-sm leading-relaxed">{t.card3Desc}</p>
-          </div>
-        </div>
+            {/* Tarjeta 2 - Marketing */}
+            <div className="relative group overflow-hidden p-8 bg-[#0B0F19]/40 backdrop-blur-2xl border border-white/10 rounded-2xl hover:border-indigo-500/50 transition-all duration-500 flex flex-col justify-between min-h-[360px] shadow-2xl" style={{ backgroundImage: "url('Diseño 2/Marketing.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+                <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-all duration-500"></div>
+                <div className="absolute bottom-0 right-0 w-64 h-64 bg-indigo-500/20 rounded-full blur-3xl group-hover:bg-indigo-500/40 transition-all duration-500 z-0"></div>
+                
+                <div className="flex justify-end items-start relative z-10 mb-6">
+                    <div className="text-indigo-300 font-bold tracking-widest text-[11px] uppercase bg-black/60 backdrop-blur-md px-4 py-1.5 rounded-full border border-indigo-500/30 shadow-[0_0_15px_rgba(99,102,241,0.3)]" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>Growth</div>
+                </div>
 
-        {/* Tarjeta 4 - Portfolios */}
-        <div className="relative group overflow-hidden p-8 bg-[#0B0F19]/60 backdrop-blur-xl border border-white/10 rounded-2xl hover:border-purple-500/30 transition-all duration-500 flex flex-col justify-between min-h-[320px]">
-          <div className="absolute bottom-0 right-0 w-48 h-48 bg-purple-500/10 rounded-full blur-3xl group-hover:bg-purple-500/20 transition-all duration-500"></div>
-          
-          <div className="flex justify-between items-start relative z-10 mb-6">
-            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500/20 to-transparent border border-purple-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c084fc" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4"></path>
-                <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
-                <path d="M3 15h6"></path>
-                <path d="M3 18h6"></path>
-              </svg>
+                <div className="relative z-10 mt-auto">
+                    <h3 className="text-2xl md:text-3xl font-black text-white mb-3 tracking-wide group-hover:text-indigo-300 transition-colors drop-shadow-xl" style={{ fontFamily: "'Inter', sans-serif", textShadow: '0 2px 10px rgba(0,0,0,0.9)' }}>{t.card2Title}</h3>
+                    <p className="text-gray-200 text-sm md:text-base leading-relaxed font-medium" style={{ fontFamily: "'Roboto', sans-serif", textShadow: '0 2px 8px rgba(0,0,0,0.9)' }}>{t.card2Desc}</p>
+                </div>
             </div>
-            <div className="text-purple-400 font-bold tracking-widest text-[10px] uppercase bg-purple-500/10 px-3 py-1 rounded-full border border-purple-500/20">Design</div>
-          </div>
 
-          <div className="relative z-10">
-            <h3 className="text-xl md:text-2xl font-bold text-white mb-3 tracking-wide group-hover:text-purple-300 transition-colors">{t.card4Title}</h3>
-            <p className="text-gray-400 text-sm leading-relaxed">{t.card4Desc}</p>
-          </div>
+            {/* Tarjeta 3 - Web Dev */}
+            <div className="relative group overflow-hidden p-8 bg-[#0B0F19]/40 backdrop-blur-2xl border border-white/10 rounded-2xl hover:border-fuchsia-500/50 transition-all duration-500 flex flex-col justify-between min-h-[360px] shadow-2xl" style={{ backgroundImage: "url('Diseño 2/Web.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+                <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-all duration-500"></div>
+                <div className="absolute top-0 left-0 w-64 h-64 bg-fuchsia-500/20 rounded-full blur-3xl group-hover:bg-fuchsia-500/40 transition-all duration-500 z-0"></div>
+                
+                <div className="flex justify-end items-start relative z-10 mb-6">
+                    <div className="text-fuchsia-300 font-bold tracking-widest text-[11px] uppercase bg-black/60 backdrop-blur-md px-4 py-1.5 rounded-full border border-fuchsia-500/30 shadow-[0_0_15px_rgba(217,70,239,0.3)]" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>Development</div>
+                </div>
+
+                <div className="relative z-10 mt-auto">
+                    <h3 className="text-2xl md:text-3xl font-black text-white mb-3 tracking-wide group-hover:text-fuchsia-300 transition-colors drop-shadow-xl" style={{ fontFamily: "'Inter', sans-serif", textShadow: '0 2px 10px rgba(0,0,0,0.9)' }}>{t.card3Title}</h3>
+                    <p className="text-gray-200 text-sm md:text-base leading-relaxed font-medium" style={{ fontFamily: "'Roboto', sans-serif", textShadow: '0 2px 8px rgba(0,0,0,0.9)' }}>{t.card3Desc}</p>
+                </div>
+            </div>
+
+            {/* Tarjeta 4 - Portfolios */}
+            <div className="relative group overflow-hidden p-8 bg-[#0B0F19]/40 backdrop-blur-2xl border border-white/10 rounded-2xl hover:border-purple-500/50 transition-all duration-500 flex flex-col justify-between min-h-[360px] shadow-2xl" style={{ backgroundImage: "url('Diseño 2/Portfolio.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+                <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-all duration-500"></div>
+                <div className="absolute bottom-0 right-0 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl group-hover:bg-purple-500/40 transition-all duration-500 z-0"></div>
+                
+                <div className="flex justify-end items-start relative z-10 mb-6">
+                    <div className="text-purple-300 font-bold tracking-widest text-[11px] uppercase bg-black/60 backdrop-blur-md px-4 py-1.5 rounded-full border border-purple-500/30 shadow-[0_0_15px_rgba(168,85,247,0.3)]" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>Design</div>
+                </div>
+
+                <div className="relative z-10 mt-auto">
+                    <h3 className="text-2xl md:text-3xl font-black text-white mb-3 tracking-wide group-hover:text-purple-300 transition-colors drop-shadow-xl" style={{ fontFamily: "'Inter', sans-serif", textShadow: '0 2px 10px rgba(0,0,0,0.9)' }}>{t.card4Title}</h3>
+                    <p className="text-gray-200 text-sm md:text-base leading-relaxed font-medium" style={{ fontFamily: "'Roboto', sans-serif", textShadow: '0 2px 8px rgba(0,0,0,0.9)' }}>{t.card4Desc}</p>
+                </div>
+            </div>
+
         </div>
-
-      </div>
     </section>
   );
 }
