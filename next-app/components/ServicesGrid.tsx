@@ -1,4 +1,5 @@
 import PortfolioCard from './PortfolioCard';
+import WebDevCard from './WebDevCard';
 
 export default function ServicesGrid() {
   return (
@@ -55,19 +56,8 @@ export default function ServicesGrid() {
                 </div>
             </div>
 
-            {/* Tarjeta 3 - Web Dev */}
-            <div className="relative w-full h-[450px] md:h-[600px] rounded-[20px] border border-white/10 overflow-hidden bg-cover bg-center shadow-2xl transition-transform duration-500 hover:scale-[1.02]" style={{ backgroundImage: "url('Diseño 2/Web.png')" }}>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none"></div>
-                
-                <div className="absolute bottom-0 left-0 w-[85%] md:w-[60%] p-8 md:p-[50px] flex flex-col justify-end text-left pointer-events-none">
-                    <h3 className="text-white uppercase m-0" style={{ fontFamily: "'Poppins', sans-serif", fontSize: 'clamp(24px, 3vw, 36px)', fontWeight: 700, lineHeight: 1.2 }}>
-                        DESARROLLO WEB
-                    </h3>
-                    <p className="text-[#d1d5db]" style={{ fontFamily: "'Inter', sans-serif", fontSize: 'clamp(15px, 2vw, 20px)', fontWeight: 400, marginTop: '20px', lineHeight: 1.6 }}>
-                        Sitios web de alta velocidad desarrollados con arquitectura robusta en Next.js, diseño premium exclusivo y optimización estructural para SEO.
-                    </p>
-                </div>
-            </div>
+            {/* Tarjeta 3 - Web Dev (Componente Aislado React/Tailwind) */}
+            <WebDevCard />
 
             {/* Tarjeta 4 - Portfolios (Componente Aislado React/Tailwind) */}
             <PortfolioCard />
