@@ -47,6 +47,78 @@
 
         // --- COMPONENTS ---
 
+        const CookieBanner = () => {
+            const [isVisible, setIsVisible] = useState(false);
+
+            useEffect(() => {
+                const consent = localStorage.getItem('unitary_cookie_consent');
+                if (!consent) {
+                    setIsVisible(true);
+                }
+            }, []);
+
+            const handleAccept = () => {
+                localStorage.setItem('unitary_cookie_consent', 'true');
+                setIsVisible(false);
+            };
+
+            return (
+                <AnimatePresence>
+                    {isVisible && (
+                        <motion.div
+                            initial={{ y: 100, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            exit={{ y: 100, opacity: 0 }}
+                            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                            style={{
+                                position: 'fixed',
+                                bottom: '20px',
+                                left: '20px',
+                                right: '20px',
+                                zIndex: 9999,
+                                display: 'flex',
+                                justifyContent: 'center'
+                            }}
+                        >
+                            <div style={{
+                                background: 'rgba(10, 10, 15, 0.95)',
+                                backdropFilter: 'blur(10px)',
+                                border: '1px solid rgba(0, 209, 255, 0.3)',
+                                borderRadius: '16px',
+                                padding: '1.5rem',
+                                maxWidth: '800px',
+                                width: '100%',
+                                display: 'flex',
+                                flexDirection: window.innerWidth < 768 ? 'column' : 'row',
+                                alignItems: 'center',
+                                gap: '1.5rem',
+                                boxShadow: '0 10px 40px rgba(0,0,0,0.5), 0 0 20px rgba(0, 209, 255, 0.1)'
+                            }}>
+                                <p style={{
+                                    fontFamily: "'Roboto', sans-serif",
+                                    color: '#e2e8f0',
+                                    fontSize: '0.95rem',
+                                    lineHeight: 1.5,
+                                    margin: 0,
+                                    flex: 1
+                                }}>
+                                    Utilizamos cookies para optimizar tu experiencia y analizar el tráfico del sitio. Al continuar navegando, aceptas nuestra <a href="cookies.html" style={{ color: '#00FFFF', textDecoration: 'underline' }}>Política de Cookies</a>.
+                                </p>
+                                <button onClick={handleAccept} className="btn btn-primary" style={{
+                                    whiteSpace: 'nowrap',
+                                    padding: '0.6rem 1.5rem',
+                                    fontSize: '0.9rem',
+                                    width: window.innerWidth < 768 ? '100%' : 'auto'
+                                }}>
+                                    Aceptar
+                                </button>
+                            </div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            );
+        };
+
         const Navbar = () => {
             const [scrolled, setScrolled] = useState(false);
             const [activeSection, setActiveSection] = useState('inicio');
@@ -1708,6 +1780,7 @@
                     <Contact />
                     <Footer />
                     <LuanChat />
+                    <CookieBanner />
                 </div>
             );
         };
