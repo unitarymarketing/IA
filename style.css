@@ -2007,3 +2007,13 @@ a {
 .luan-chat-scroll::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
 }
+
+/* Animacion Ken Burns para fondos dinamicos */
+@keyframes kenBurns {
+  0% { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.15) translate(-2%, -2%); }
+}
+
+.animate-ken-burns {
+  animation: kenBurns 20s ease-in-out infinite alternate;
+}
