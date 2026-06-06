@@ -1980,7 +1980,7 @@ a {
 }
 @media (min-width: 769px) {
   .mobile-only-break { display: none !important; }
-  .hero-title { font-size: 5rem !important; }
+  .hero-title { font-size: clamp(3.2rem, 5vw, 6.5rem) !important; }
 }
 
 /* Safari Glassmorphism */
