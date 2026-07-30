@@ -1,4 +1,4 @@
-import ServicesGrid from '@/components/ServicesGrid';
+import ServicesGrid from '../../components/ServicesGrid';
 
 export const metadata = {
   title: 'Nuestros Servicios - Unitary Marketing AI',
