@@ -27,7 +27,7 @@
       "min": 1500,
       "max": 5000
     },
-    "estimatedTimeWeeks": "4-8",
+    "estimatedTimeWeeks": "4 a 8 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Consultorios%20y%20Cl%C3%ADnicas%20M%C3%A9dicas"
   },
@@ -42,24 +42,24 @@
       "software",
       "automatización"
     ],
-    "operationalPain": "Ausentismo de pacientes, historias clínicas desorganizadas y cuellos de botella en la recepción.",
+    "operationalPain": "Falta de seguimiento post-operatorio, turnos encimados e inventario de insumos sin control.",
     "solutionModules": [
-      "Portal de Pacientes",
-      "Recordatorios por WhatsApp",
-      "Historia Clínica Electrónica",
-      "Telemedicina Integrada"
+      "Seguimiento Post-Operatorio Automatizado",
+      "Gestión de Turnos y Quirófanos",
+      "Control de Insumos y Botox",
+      "Firma Digital de Consentimientos"
     ],
     "techStack": [
       "Next.js",
-      "React Native",
-      "Firebase",
-      "Twilio"
+      "Node.js",
+      "PostgreSQL",
+      "AWS"
     ],
     "priceRangeUSD": {
-      "min": 1500,
-      "max": 5000
+      "min": 2000,
+      "max": 6000
     },
-    "estimatedTimeWeeks": "4-8",
+    "estimatedTimeWeeks": "5 a 8 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Medicina%20Est%C3%A9tica%20y%20Cirug%C3%ADa"
   },
@@ -74,24 +74,24 @@
       "software",
       "automatización"
     ],
-    "operationalPain": "Ausentismo de pacientes, historias clínicas desorganizadas y cuellos de botella en la recepción.",
+    "operationalPain": "Dificultad en el seguimiento de tratamientos largos, presupuestos perdidos y falta de fidelización.",
     "solutionModules": [
-      "Portal de Pacientes",
-      "Recordatorios por WhatsApp",
-      "Historia Clínica Electrónica",
-      "Telemedicina Integrada"
+      "Odontograma Digital",
+      "Gestión de Presupuestos y Pagos",
+      "Recordatorios de Controles Anuales",
+      "App de Fidelización"
     ],
     "techStack": [
       "Next.js",
       "React Native",
       "Firebase",
-      "Twilio"
+      "Stripe"
     ],
     "priceRangeUSD": {
       "min": 1500,
-      "max": 5000
+      "max": 4500
     },
-    "estimatedTimeWeeks": "4-8",
+    "estimatedTimeWeeks": "4 a 7 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Odontolog%C3%ADa%20y%20Cl%C3%ADnicas%20Dentales"
   },
@@ -106,24 +106,24 @@
       "software",
       "automatización"
     ],
-    "operationalPain": "Alta carga administrativa, falta de control en tiempo real y comunicación fragmentada con clientes o pacientes.",
+    "operationalPain": "Pérdida de plazos legales, gestión documental caótica y comunicación ineficiente con clientes.",
     "solutionModules": [
-      "Automatización de Reservas/Turnos",
-      "Gestión Documental Cloud",
-      "CRM y Seguimiento",
-      "Dashboard Analítico"
+      "Gestión Documental Segura",
+      "Alertas de Plazos Legales",
+      "Portal de Estado de Causas",
+      "Firma Digital Integrada"
     ],
     "techStack": [
       "Next.js",
       "Node.js",
       "PostgreSQL",
-      "AWS"
+      "AWS S3"
     ],
     "priceRangeUSD": {
-      "min": 1500,
-      "max": 5000
+      "min": 2500,
+      "max": 7000
     },
-    "estimatedTimeWeeks": "4-8",
+    "estimatedTimeWeeks": "6 a 10 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Estudios%20Jur%C3%ADdicos%20y%20Escriban%C3%ADas"
   },
@@ -138,24 +138,24 @@
       "software",
       "automatización"
     ],
-    "operationalPain": "Alta carga administrativa, falta de control en tiempo real y comunicación fragmentada con clientes o pacientes.",
+    "operationalPain": "Recepción tardía de comprobantes de clientes, liquidaciones manuales propensas a errores y vencimientos olvidados.",
     "solutionModules": [
-      "Automatización de Reservas/Turnos",
-      "Gestión Documental Cloud",
-      "CRM y Seguimiento",
-      "Dashboard Analítico"
+      "Portal de Carga de Facturas OCR",
+      "Alertas de Vencimientos Impositivos",
+      "Dashboard Financiero para Clientes",
+      "Integración con AFIP/SII"
     ],
     "techStack": [
       "Next.js",
-      "Node.js",
+      "Python OCR",
       "PostgreSQL",
       "AWS"
     ],
     "priceRangeUSD": {
-      "min": 1500,
-      "max": 5000
+      "min": 2000,
+      "max": 6500
     },
-    "estimatedTimeWeeks": "4-8",
+    "estimatedTimeWeeks": "5 a 9 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Estudios%20Contables%20e%20Impuestos"
   },
@@ -170,24 +170,24 @@
       "software",
       "automatización"
     ],
-    "operationalPain": "Alta carga administrativa, falta de control en tiempo real y comunicación fragmentada con clientes o pacientes.",
+    "operationalPain": "Reclamos vecinales desorganizados por WhatsApp, morosidad en expensas y falta de transparencia en gastos.",
     "solutionModules": [
-      "Automatización de Reservas/Turnos",
-      "Gestión Documental Cloud",
-      "CRM y Seguimiento",
-      "Dashboard Analítico"
+      "Sistema de Tickets y Reclamos",
+      "Pasarela de Pagos de Expensas",
+      "Muro de Comunicados",
+      "Rendición de Cuentas Transparente"
     ],
     "techStack": [
       "Next.js",
       "Node.js",
-      "PostgreSQL",
-      "AWS"
+      "MongoDB",
+      "MercadoPago API"
     ],
     "priceRangeUSD": {
-      "min": 1500,
-      "max": 5000
+      "min": 1800,
+      "max": 4500
     },
-    "estimatedTimeWeeks": "4-8",
+    "estimatedTimeWeeks": "4 a 8 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Consorcios%20y%20Administraciones"
   },
@@ -202,12 +202,12 @@
       "software",
       "automatización"
     ],
-    "operationalPain": "Descoordinación entre obra y oficina, presupuestos desactualizados y seguimiento de clientes pobre.",
+    "operationalPain": "Seguimiento pobre de leads (compradores/inquilinos) y falta de métricas sobre qué propiedades generan más interés.",
     "solutionModules": [
-      "CRM Inmobiliario",
-      "Visitas Virtuales 3D",
-      "Gestión de Obras",
-      "Firma Digital"
+      "CRM Inmobiliario Específico",
+      "Recorridos Virtuales 360",
+      "Portal de Propietarios e Inquilinos",
+      "Scoring de Leads con IA"
     ],
     "techStack": [
       "Next.js",
@@ -216,10 +216,10 @@
       "AWS S3"
     ],
     "priceRangeUSD": {
-      "min": 1500,
-      "max": 5000
+      "min": 2000,
+      "max": 7500
     },
-    "estimatedTimeWeeks": "4-8",
+    "estimatedTimeWeeks": "6 a 12 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Inmobiliarias%20y%20Desarrolladoras"
   },
@@ -234,24 +234,24 @@
       "software",
       "automatización"
     ],
-    "operationalPain": "Descoordinación entre obra y oficina, presupuestos desactualizados y seguimiento de clientes pobre.",
+    "operationalPain": "Descoordinación entre directores de obra, acopio de materiales desfasado y presupuestos desactualizados por inflación.",
     "solutionModules": [
-      "CRM Inmobiliario",
-      "Visitas Virtuales 3D",
-      "Gestión de Obras",
-      "Firma Digital"
+      "Gestor de Avance de Obra",
+      "Control de Acopio de Materiales",
+      "Presupuestador Dinámico",
+      "Reporte Fotográfico en Tiempo Real"
     ],
     "techStack": [
       "Next.js",
-      "Three.js",
-      "MongoDB",
-      "AWS S3"
+      "React Native",
+      "PostgreSQL",
+      "GCP"
     ],
     "priceRangeUSD": {
-      "min": 1500,
-      "max": 5000
+      "min": 2500,
+      "max": 8000
     },
-    "estimatedTimeWeeks": "4-8",
+    "estimatedTimeWeeks": "7 a 14 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Constructoras%20y%20Reformas"
   },
@@ -266,24 +266,24 @@
       "software",
       "automatización"
     ],
-    "operationalPain": "Descoordinación entre obra y oficina, presupuestos desactualizados y seguimiento de clientes pobre.",
+    "operationalPain": "Dificultad para aprobar renders con clientes, control de revisiones caótico y falta de portfolio interactivo.",
     "solutionModules": [
-      "CRM Inmobiliario",
-      "Visitas Virtuales 3D",
-      "Gestión de Obras",
-      "Firma Digital"
+      "Visor 3D Interactivo Web",
+      "Plataforma de Aprobación de Revisiones",
+      "Portfolio Dinámico e Inmersivo",
+      "Gestor de Proveedores"
     ],
     "techStack": [
       "Next.js",
       "Three.js",
-      "MongoDB",
-      "AWS S3"
+      "WebGL",
+      "Vercel"
     ],
     "priceRangeUSD": {
-      "min": 1500,
-      "max": 5000
+      "min": 2000,
+      "max": 6000
     },
-    "estimatedTimeWeeks": "4-8",
+    "estimatedTimeWeeks": "5 a 10 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Arquitectura%20y%20Dise%C3%B1o"
   },
@@ -293,17 +293,16 @@
     "category": "Logística & Comercio",
     "keywords": [
       "logística",
-      "logística",
       "b2b",
       "software",
       "automatización"
     ],
-    "operationalPain": "Falta de visibilidad de inventario, rutas ineficientes y demoras en el procesamiento de pedidos.",
+    "operationalPain": "Pérdida de mercadería en depósitos, ruteo manual ineficiente e imposibilidad de dar estado de envío en tiempo real.",
     "solutionModules": [
-      "Tracking en Tiempo Real",
-      "Gestión de Flotas",
-      "WMS Básico",
-      "Notificaciones Automatizadas"
+      "WMS (Warehouse Management System)",
+      "Algoritmo de Ruteo Óptimo",
+      "Tracking API para Clientes B2B",
+      "App de Choferes"
     ],
     "techStack": [
       "Next.js",
@@ -312,10 +311,10 @@
       "Google Maps API"
     ],
     "priceRangeUSD": {
-      "min": 1500,
-      "max": 5000
+      "min": 3500,
+      "max": 12000
     },
-    "estimatedTimeWeeks": "4-8",
+    "estimatedTimeWeeks": "8 a 16 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Log%C3%ADstica%20y%20Fulfillment"
   },
@@ -330,24 +329,24 @@
       "software",
       "automatización"
     ],
-    "operationalPain": "Falta de visibilidad de inventario, rutas ineficientes y demoras en el procesamiento de pedidos.",
+    "operationalPain": "Cotizaciones lentas por falta de estandarización, flota desaprovechada y clientes ansiosos por falta de comunicación.",
     "solutionModules": [
-      "Tracking en Tiempo Real",
-      "Gestión de Flotas",
-      "WMS Básico",
-      "Notificaciones Automatizadas"
+      "Calculadora de Volumen Espacial",
+      "Cotizador Automatizado Integrado",
+      "Geolocalización de Camiones",
+      "Checklist de Inventario Pre/Post"
     ],
     "techStack": [
       "Next.js",
-      "Go",
-      "PostgreSQL",
-      "Google Maps API"
+      "Node.js",
+      "MongoDB",
+      "Mapbox API"
     ],
     "priceRangeUSD": {
-      "min": 1500,
+      "min": 1800,
       "max": 5000
     },
-    "estimatedTimeWeeks": "4-8",
+    "estimatedTimeWeeks": "4 a 8 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Mudanzas%20y%20Fletes"
   },
@@ -362,24 +361,24 @@
       "software",
       "automatización"
     ],
-    "operationalPain": "Falta de visibilidad de inventario, rutas ineficientes y demoras en el procesamiento de pedidos.",
+    "operationalPain": "Toma de pedidos por WhatsApp sujeta a errores, quiebre de stock no notificado y catálogo estático.",
     "solutionModules": [
-      "Tracking en Tiempo Real",
-      "Gestión de Flotas",
-      "WMS Básico",
-      "Notificaciones Automatizadas"
+      "Portal B2B de Autogestión de Pedidos",
+      "Integración ERP (Tango/SAP)",
+      "Catálogo con Precios Dinámicos",
+      "Alertas de Reposición (Reorder Point)"
     ],
     "techStack": [
       "Next.js",
-      "Go",
+      "NestJS",
       "PostgreSQL",
-      "Google Maps API"
+      "Redis"
     ],
     "priceRangeUSD": {
-      "min": 1500,
-      "max": 5000
+      "min": 3000,
+      "max": 10000
     },
-    "estimatedTimeWeeks": "4-8",
+    "estimatedTimeWeeks": "6 a 12 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Distribuidoras%20y%20Mayoristas%20B2B"
   },
@@ -394,24 +393,24 @@
       "software",
       "automatización"
     ],
-    "operationalPain": "Falta de visibilidad de inventario, rutas ineficientes y demoras en el procesamiento de pedidos.",
+    "operationalPain": "Tasas de abandono de carrito altas, integraciones de envío frágiles y falta de personalización en la experiencia de compra.",
     "solutionModules": [
-      "Tracking en Tiempo Real",
-      "Gestión de Flotas",
-      "WMS Básico",
-      "Notificaciones Automatizadas"
+      "Headless E-commerce",
+      "Motor de Recomendación con IA",
+      "Checkout Optimizado 1-Click",
+      "Integración Multi-Courier"
     ],
     "techStack": [
       "Next.js",
-      "Go",
-      "PostgreSQL",
-      "Google Maps API"
+      "Shopify/Medusa",
+      "Stripe",
+      "Algolia"
     ],
     "priceRangeUSD": {
-      "min": 1500,
-      "max": 5000
+      "min": 2500,
+      "max": 8000
     },
-    "estimatedTimeWeeks": "4-8",
+    "estimatedTimeWeeks": "5 a 10 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20E-commerce%20y%20Comercio%20Digital"
   },
@@ -426,24 +425,24 @@
       "software",
       "automatización"
     ],
-    "operationalPain": "Alta carga administrativa, falta de control en tiempo real y comunicación fragmentada con clientes o pacientes.",
+    "operationalPain": "Filtro manual de miles de CVs, entrevistas descoordinadas y reportes de desempeño aislados en hojas de cálculo.",
     "solutionModules": [
-      "Automatización de Reservas/Turnos",
-      "Gestión Documental Cloud",
-      "CRM y Seguimiento",
-      "Dashboard Analítico"
+      "ATS (Applicant Tracking System) Propio",
+      "Parsing de CVs con IA",
+      "Agendamiento de Entrevistas Automático",
+      "Portal de Onboarding"
     ],
     "techStack": [
       "Next.js",
-      "Node.js",
+      "Python (NLP)",
       "PostgreSQL",
       "AWS"
     ],
     "priceRangeUSD": {
-      "min": 1500,
-      "max": 5000
+      "min": 2500,
+      "max": 7500
     },
-    "estimatedTimeWeeks": "4-8",
+    "estimatedTimeWeeks": "6 a 12 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Consultoras%20de%20RRHH"
   },
@@ -458,24 +457,24 @@
       "software",
       "automatización"
     ],
-    "operationalPain": "Alta carga administrativa, falta de control en tiempo real y comunicación fragmentada con clientes o pacientes.",
+    "operationalPain": "Deserción estudiantil temprana, plataformas de e-learning genéricas y poco engagement, y control manual de certificaciones.",
     "solutionModules": [
-      "Automatización de Reservas/Turnos",
-      "Gestión Documental Cloud",
-      "CRM y Seguimiento",
-      "Dashboard Analítico"
+      "LMS (Learning Management System) Custom",
+      "Gamificación y Badges",
+      "Emisión Automática de Certificados",
+      "Foros y Comunidad Integrados"
     ],
     "techStack": [
       "Next.js",
       "Node.js",
-      "PostgreSQL",
-      "AWS"
+      "MongoDB",
+      "AWS S3"
     ],
     "priceRangeUSD": {
-      "min": 1500,
-      "max": 5000
+      "min": 3000,
+      "max": 9000
     },
-    "estimatedTimeWeeks": "4-8",
+    "estimatedTimeWeeks": "6 a 14 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Academias%20y%20EdTech"
   },
@@ -490,24 +489,24 @@
       "software",
       "automatización"
     ],
-    "operationalPain": "Alta carga administrativa, falta de control en tiempo real y comunicación fragmentada con clientes o pacientes.",
+    "operationalPain": "Falta de reportes técnicos de instalación en campo, mantenimiento preventivo olvidado e inventario de cámaras desactualizado.",
     "solutionModules": [
-      "Automatización de Reservas/Turnos",
-      "Gestión Documental Cloud",
-      "CRM y Seguimiento",
-      "Dashboard Analítico"
+      "App de Técnicos en Terreno",
+      "Agenda de Mantenimiento Preventivo",
+      "Portal de Clientes (Tickets de Servicio)",
+      "Gestión de Stock de Equipos"
     ],
     "techStack": [
       "Next.js",
-      "Node.js",
-      "PostgreSQL",
-      "AWS"
+      "React Native",
+      "Firebase",
+      "GCP"
     ],
     "priceRangeUSD": {
-      "min": 1500,
-      "max": 5000
+      "min": 2000,
+      "max": 6500
     },
-    "estimatedTimeWeeks": "4-8",
+    "estimatedTimeWeeks": "5 a 9 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Seguridad%2C%20Alarmas%20y%20CCTV"
   },
@@ -522,24 +521,24 @@
       "software",
       "automatización"
     ],
-    "operationalPain": "Descoordinación entre obra y oficina, presupuestos desactualizados y seguimiento de clientes pobre.",
+    "operationalPain": "Lentitud para generar propuestas con cálculos de ahorro energético y desorganización en las cuadrillas de instalación.",
     "solutionModules": [
-      "CRM Inmobiliario",
-      "Visitas Virtuales 3D",
-      "Gestión de Obras",
-      "Firma Digital"
+      "Calculadora Solar B2B/B2C",
+      "Generador Automático de Propuestas",
+      "Asignación de Cuadrillas y Rutas",
+      "Monitoreo Integrado de Paneles (API)"
     ],
     "techStack": [
       "Next.js",
-      "Three.js",
-      "MongoDB",
-      "AWS S3"
+      "Python Data Analytics",
+      "PostgreSQL",
+      "AWS IoT"
     ],
     "priceRangeUSD": {
-      "min": 1500,
-      "max": 5000
+      "min": 3000,
+      "max": 8500
     },
-    "estimatedTimeWeeks": "4-8",
+    "estimatedTimeWeeks": "6 a 12 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Energ%C3%ADa%20Solar%20e%20Instalaciones"
   },
@@ -554,24 +553,24 @@
       "software",
       "automatización"
     ],
-    "operationalPain": "Ausentismo de pacientes, historias clínicas desorganizadas y cuellos de botella en la recepción.",
+    "operationalPain": "Reservas de clases desbordadas, pagos manuales y falta de seguimiento de la rutina de los alumnos.",
     "solutionModules": [
-      "Portal de Pacientes",
-      "Recordatorios por WhatsApp",
-      "Historia Clínica Electrónica",
-      "Telemedicina Integrada"
+      "App de Reservas de Clases",
+      "Control de Acceso (QR/NFC)",
+      "Seguimiento de Progreso y Rutinas",
+      "Renovación Automática de Membresías"
     ],
     "techStack": [
       "Next.js",
       "React Native",
       "Firebase",
-      "Twilio"
+      "Stripe"
     ],
     "priceRangeUSD": {
       "min": 1500,
       "max": 5000
     },
-    "estimatedTimeWeeks": "4-8",
+    "estimatedTimeWeeks": "4 a 8 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Gimnasios%20y%20Box%20Fitness"
   },
@@ -586,24 +585,24 @@
       "software",
       "automatización"
     ],
-    "operationalPain": "Alta carga administrativa, falta de control en tiempo real y comunicación fragmentada con clientes o pacientes.",
+    "operationalPain": "Caos en la gestión de assets (archivos pesados), cronogramas de rodaje solapados y feedback de clientes desordenado.",
     "solutionModules": [
-      "Automatización de Reservas/Turnos",
-      "Gestión Documental Cloud",
-      "CRM y Seguimiento",
-      "Dashboard Analítico"
+      "MAM (Media Asset Management) Ligero",
+      "Planificador de Rodajes",
+      "Plataforma de Revisión Frame-a-Frame",
+      "Catálogo/Portfolio Dinámico"
     ],
     "techStack": [
       "Next.js",
       "Node.js",
-      "PostgreSQL",
-      "AWS"
+      "AWS S3 / CloudFront",
+      "Vimeo API"
     ],
     "priceRangeUSD": {
-      "min": 1500,
-      "max": 5000
+      "min": 2500,
+      "max": 7500
     },
-    "estimatedTimeWeeks": "4-8",
+    "estimatedTimeWeeks": "5 a 10 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Productoras%20de%20Video%20y%20Medios"
   },
@@ -618,12 +617,11 @@
       "software",
       "automatización"
     ],
-    "operationalPain": "Alta carga administrativa, falta de control en tiempo real y comunicación fragmentada con clientes o pacientes.",
+    "operationalPain": "Falta de trazabilidad en reclamos de mantenimiento de edificios/oficinas y demoras en repuestos.",
     "solutionModules": [
-      "Automatización de Reservas/Turnos",
-      "Gestión Documental Cloud",
-      "CRM y Seguimiento",
-      "Dashboard Analítico"
+      "Sistema de órdenes de trabajo con tracking de estados",
+      "Mapeo de rutas de cadetes",
+      "Notificaciones en tiempo real"
     ],
     "techStack": [
       "Next.js",
@@ -632,10 +630,10 @@
       "AWS"
     ],
     "priceRangeUSD": {
-      "min": 1500,
-      "max": 5000
+      "min": 700,
+      "max": 6000
     },
-    "estimatedTimeWeeks": "4-8",
+    "estimatedTimeWeeks": "2 a 3 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Mantenimiento%20Corporativo"
   }
