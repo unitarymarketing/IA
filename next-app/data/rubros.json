@@ -1,0 +1,642 @@
+[
+  {
+    "id": "consultorios-y-clinicas-medicas",
+    "title": "Consultorios y Clínicas Médicas",
+    "category": "Salud & Bienestar",
+    "keywords": [
+      "consultorios",
+      "salud",
+      "b2b",
+      "software",
+      "automatización"
+    ],
+    "operationalPain": "Ausentismo de pacientes, historias clínicas desorganizadas y cuellos de botella en la recepción.",
+    "solutionModules": [
+      "Portal de Pacientes",
+      "Recordatorios por WhatsApp",
+      "Historia Clínica Electrónica",
+      "Telemedicina Integrada"
+    ],
+    "techStack": [
+      "Next.js",
+      "React Native",
+      "Firebase",
+      "Twilio"
+    ],
+    "priceRangeUSD": {
+      "min": 1500,
+      "max": 5000
+    },
+    "estimatedTimeWeeks": "4-8",
+    "ctaText": "Solicitar Demo para este Ecosistema",
+    "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Consultorios%20y%20Cl%C3%ADnicas%20M%C3%A9dicas"
+  },
+  {
+    "id": "medicina-estetica-y-cirugia",
+    "title": "Medicina Estética y Cirugía",
+    "category": "Salud & Bienestar",
+    "keywords": [
+      "medicina",
+      "salud",
+      "b2b",
+      "software",
+      "automatización"
+    ],
+    "operationalPain": "Ausentismo de pacientes, historias clínicas desorganizadas y cuellos de botella en la recepción.",
+    "solutionModules": [
+      "Portal de Pacientes",
+      "Recordatorios por WhatsApp",
+      "Historia Clínica Electrónica",
+      "Telemedicina Integrada"
+    ],
+    "techStack": [
+      "Next.js",
+      "React Native",
+      "Firebase",
+      "Twilio"
+    ],
+    "priceRangeUSD": {
+      "min": 1500,
+      "max": 5000
+    },
+    "estimatedTimeWeeks": "4-8",
+    "ctaText": "Solicitar Demo para este Ecosistema",
+    "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Medicina%20Est%C3%A9tica%20y%20Cirug%C3%ADa"
+  },
+  {
+    "id": "odontologia-y-clinicas-dentales",
+    "title": "Odontología y Clínicas Dentales",
+    "category": "Salud & Bienestar",
+    "keywords": [
+      "odontología",
+      "salud",
+      "b2b",
+      "software",
+      "automatización"
+    ],
+    "operationalPain": "Ausentismo de pacientes, historias clínicas desorganizadas y cuellos de botella en la recepción.",
+    "solutionModules": [
+      "Portal de Pacientes",
+      "Recordatorios por WhatsApp",
+      "Historia Clínica Electrónica",
+      "Telemedicina Integrada"
+    ],
+    "techStack": [
+      "Next.js",
+      "React Native",
+      "Firebase",
+      "Twilio"
+    ],
+    "priceRangeUSD": {
+      "min": 1500,
+      "max": 5000
+    },
+    "estimatedTimeWeeks": "4-8",
+    "ctaText": "Solicitar Demo para este Ecosistema",
+    "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Odontolog%C3%ADa%20y%20Cl%C3%ADnicas%20Dentales"
+  },
+  {
+    "id": "estudios-juridicos-y-escribanias",
+    "title": "Estudios Jurídicos y Escribanías",
+    "category": "Servicios Corporativos",
+    "keywords": [
+      "estudios",
+      "servicios corporativos",
+      "b2b",
+      "software",
+      "automatización"
+    ],
+    "operationalPain": "Alta carga administrativa, falta de control en tiempo real y comunicación fragmentada con clientes o pacientes.",
+    "solutionModules": [
+      "Automatización de Reservas/Turnos",
+      "Gestión Documental Cloud",
+      "CRM y Seguimiento",
+      "Dashboard Analítico"
+    ],
+    "techStack": [
+      "Next.js",
+      "Node.js",
+      "PostgreSQL",
+      "AWS"
+    ],
+    "priceRangeUSD": {
+      "min": 1500,
+      "max": 5000
+    },
+    "estimatedTimeWeeks": "4-8",
+    "ctaText": "Solicitar Demo para este Ecosistema",
+    "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Estudios%20Jur%C3%ADdicos%20y%20Escriban%C3%ADas"
+  },
+  {
+    "id": "estudios-contables-e-impuestos",
+    "title": "Estudios Contables e Impuestos",
+    "category": "Servicios Corporativos",
+    "keywords": [
+      "estudios",
+      "servicios corporativos",
+      "b2b",
+      "software",
+      "automatización"
+    ],
+    "operationalPain": "Alta carga administrativa, falta de control en tiempo real y comunicación fragmentada con clientes o pacientes.",
+    "solutionModules": [
+      "Automatización de Reservas/Turnos",
+      "Gestión Documental Cloud",
+      "CRM y Seguimiento",
+      "Dashboard Analítico"
+    ],
+    "techStack": [
+      "Next.js",
+      "Node.js",
+      "PostgreSQL",
+      "AWS"
+    ],
+    "priceRangeUSD": {
+      "min": 1500,
+      "max": 5000
+    },
+    "estimatedTimeWeeks": "4-8",
+    "ctaText": "Solicitar Demo para este Ecosistema",
+    "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Estudios%20Contables%20e%20Impuestos"
+  },
+  {
+    "id": "consorcios-y-administraciones",
+    "title": "Consorcios y Administraciones",
+    "category": "Servicios Corporativos",
+    "keywords": [
+      "consorcios",
+      "servicios corporativos",
+      "b2b",
+      "software",
+      "automatización"
+    ],
+    "operationalPain": "Alta carga administrativa, falta de control en tiempo real y comunicación fragmentada con clientes o pacientes.",
+    "solutionModules": [
+      "Automatización de Reservas/Turnos",
+      "Gestión Documental Cloud",
+      "CRM y Seguimiento",
+      "Dashboard Analítico"
+    ],
+    "techStack": [
+      "Next.js",
+      "Node.js",
+      "PostgreSQL",
+      "AWS"
+    ],
+    "priceRangeUSD": {
+      "min": 1500,
+      "max": 5000
+    },
+    "estimatedTimeWeeks": "4-8",
+    "ctaText": "Solicitar Demo para este Ecosistema",
+    "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Consorcios%20y%20Administraciones"
+  },
+  {
+    "id": "inmobiliarias-y-desarrolladoras",
+    "title": "Inmobiliarias y Desarrolladoras",
+    "category": "Bienes Raíces & Obras",
+    "keywords": [
+      "inmobiliarias",
+      "bienes raíces",
+      "b2b",
+      "software",
+      "automatización"
+    ],
+    "operationalPain": "Descoordinación entre obra y oficina, presupuestos desactualizados y seguimiento de clientes pobre.",
+    "solutionModules": [
+      "CRM Inmobiliario",
+      "Visitas Virtuales 3D",
+      "Gestión de Obras",
+      "Firma Digital"
+    ],
+    "techStack": [
+      "Next.js",
+      "Three.js",
+      "MongoDB",
+      "AWS S3"
+    ],
+    "priceRangeUSD": {
+      "min": 1500,
+      "max": 5000
+    },
+    "estimatedTimeWeeks": "4-8",
+    "ctaText": "Solicitar Demo para este Ecosistema",
+    "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Inmobiliarias%20y%20Desarrolladoras"
+  },
+  {
+    "id": "constructoras-y-reformas",
+    "title": "Constructoras y Reformas",
+    "category": "Bienes Raíces & Obras",
+    "keywords": [
+      "constructoras",
+      "bienes raíces",
+      "b2b",
+      "software",
+      "automatización"
+    ],
+    "operationalPain": "Descoordinación entre obra y oficina, presupuestos desactualizados y seguimiento de clientes pobre.",
+    "solutionModules": [
+      "CRM Inmobiliario",
+      "Visitas Virtuales 3D",
+      "Gestión de Obras",
+      "Firma Digital"
+    ],
+    "techStack": [
+      "Next.js",
+      "Three.js",
+      "MongoDB",
+      "AWS S3"
+    ],
+    "priceRangeUSD": {
+      "min": 1500,
+      "max": 5000
+    },
+    "estimatedTimeWeeks": "4-8",
+    "ctaText": "Solicitar Demo para este Ecosistema",
+    "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Constructoras%20y%20Reformas"
+  },
+  {
+    "id": "arquitectura-y-diseño",
+    "title": "Arquitectura y Diseño",
+    "category": "Bienes Raíces & Obras",
+    "keywords": [
+      "arquitectura",
+      "bienes raíces",
+      "b2b",
+      "software",
+      "automatización"
+    ],
+    "operationalPain": "Descoordinación entre obra y oficina, presupuestos desactualizados y seguimiento de clientes pobre.",
+    "solutionModules": [
+      "CRM Inmobiliario",
+      "Visitas Virtuales 3D",
+      "Gestión de Obras",
+      "Firma Digital"
+    ],
+    "techStack": [
+      "Next.js",
+      "Three.js",
+      "MongoDB",
+      "AWS S3"
+    ],
+    "priceRangeUSD": {
+      "min": 1500,
+      "max": 5000
+    },
+    "estimatedTimeWeeks": "4-8",
+    "ctaText": "Solicitar Demo para este Ecosistema",
+    "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Arquitectura%20y%20Dise%C3%B1o"
+  },
+  {
+    "id": "logistica-y-fulfillment",
+    "title": "Logística y Fulfillment",
+    "category": "Logística & Comercio",
+    "keywords": [
+      "logística",
+      "logística",
+      "b2b",
+      "software",
+      "automatización"
+    ],
+    "operationalPain": "Falta de visibilidad de inventario, rutas ineficientes y demoras en el procesamiento de pedidos.",
+    "solutionModules": [
+      "Tracking en Tiempo Real",
+      "Gestión de Flotas",
+      "WMS Básico",
+      "Notificaciones Automatizadas"
+    ],
+    "techStack": [
+      "Next.js",
+      "Go",
+      "PostgreSQL",
+      "Google Maps API"
+    ],
+    "priceRangeUSD": {
+      "min": 1500,
+      "max": 5000
+    },
+    "estimatedTimeWeeks": "4-8",
+    "ctaText": "Solicitar Demo para este Ecosistema",
+    "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Log%C3%ADstica%20y%20Fulfillment"
+  },
+  {
+    "id": "mudanzas-y-fletes",
+    "title": "Mudanzas y Fletes",
+    "category": "Logística & Comercio",
+    "keywords": [
+      "mudanzas",
+      "logística",
+      "b2b",
+      "software",
+      "automatización"
+    ],
+    "operationalPain": "Falta de visibilidad de inventario, rutas ineficientes y demoras en el procesamiento de pedidos.",
+    "solutionModules": [
+      "Tracking en Tiempo Real",
+      "Gestión de Flotas",
+      "WMS Básico",
+      "Notificaciones Automatizadas"
+    ],
+    "techStack": [
+      "Next.js",
+      "Go",
+      "PostgreSQL",
+      "Google Maps API"
+    ],
+    "priceRangeUSD": {
+      "min": 1500,
+      "max": 5000
+    },
+    "estimatedTimeWeeks": "4-8",
+    "ctaText": "Solicitar Demo para este Ecosistema",
+    "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Mudanzas%20y%20Fletes"
+  },
+  {
+    "id": "distribuidoras-y-mayoristas-b2b",
+    "title": "Distribuidoras y Mayoristas B2B",
+    "category": "Logística & Comercio",
+    "keywords": [
+      "distribuidoras",
+      "logística",
+      "b2b",
+      "software",
+      "automatización"
+    ],
+    "operationalPain": "Falta de visibilidad de inventario, rutas ineficientes y demoras en el procesamiento de pedidos.",
+    "solutionModules": [
+      "Tracking en Tiempo Real",
+      "Gestión de Flotas",
+      "WMS Básico",
+      "Notificaciones Automatizadas"
+    ],
+    "techStack": [
+      "Next.js",
+      "Go",
+      "PostgreSQL",
+      "Google Maps API"
+    ],
+    "priceRangeUSD": {
+      "min": 1500,
+      "max": 5000
+    },
+    "estimatedTimeWeeks": "4-8",
+    "ctaText": "Solicitar Demo para este Ecosistema",
+    "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Distribuidoras%20y%20Mayoristas%20B2B"
+  },
+  {
+    "id": "e-commerce-y-comercio-digital",
+    "title": "E-commerce y Comercio Digital",
+    "category": "Logística & Comercio",
+    "keywords": [
+      "e-commerce",
+      "logística",
+      "b2b",
+      "software",
+      "automatización"
+    ],
+    "operationalPain": "Falta de visibilidad de inventario, rutas ineficientes y demoras en el procesamiento de pedidos.",
+    "solutionModules": [
+      "Tracking en Tiempo Real",
+      "Gestión de Flotas",
+      "WMS Básico",
+      "Notificaciones Automatizadas"
+    ],
+    "techStack": [
+      "Next.js",
+      "Go",
+      "PostgreSQL",
+      "Google Maps API"
+    ],
+    "priceRangeUSD": {
+      "min": 1500,
+      "max": 5000
+    },
+    "estimatedTimeWeeks": "4-8",
+    "ctaText": "Solicitar Demo para este Ecosistema",
+    "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20E-commerce%20y%20Comercio%20Digital"
+  },
+  {
+    "id": "consultoras-de-rrhh",
+    "title": "Consultoras de RRHH",
+    "category": "Servicios Corporativos",
+    "keywords": [
+      "consultoras",
+      "servicios corporativos",
+      "b2b",
+      "software",
+      "automatización"
+    ],
+    "operationalPain": "Alta carga administrativa, falta de control en tiempo real y comunicación fragmentada con clientes o pacientes.",
+    "solutionModules": [
+      "Automatización de Reservas/Turnos",
+      "Gestión Documental Cloud",
+      "CRM y Seguimiento",
+      "Dashboard Analítico"
+    ],
+    "techStack": [
+      "Next.js",
+      "Node.js",
+      "PostgreSQL",
+      "AWS"
+    ],
+    "priceRangeUSD": {
+      "min": 1500,
+      "max": 5000
+    },
+    "estimatedTimeWeeks": "4-8",
+    "ctaText": "Solicitar Demo para este Ecosistema",
+    "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Consultoras%20de%20RRHH"
+  },
+  {
+    "id": "academias-y-edtech",
+    "title": "Academias y EdTech",
+    "category": "Educación & Formación",
+    "keywords": [
+      "academias",
+      "educación",
+      "b2b",
+      "software",
+      "automatización"
+    ],
+    "operationalPain": "Alta carga administrativa, falta de control en tiempo real y comunicación fragmentada con clientes o pacientes.",
+    "solutionModules": [
+      "Automatización de Reservas/Turnos",
+      "Gestión Documental Cloud",
+      "CRM y Seguimiento",
+      "Dashboard Analítico"
+    ],
+    "techStack": [
+      "Next.js",
+      "Node.js",
+      "PostgreSQL",
+      "AWS"
+    ],
+    "priceRangeUSD": {
+      "min": 1500,
+      "max": 5000
+    },
+    "estimatedTimeWeeks": "4-8",
+    "ctaText": "Solicitar Demo para este Ecosistema",
+    "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Academias%20y%20EdTech"
+  },
+  {
+    "id": "seguridad-alarmas-y-cctv",
+    "title": "Seguridad, Alarmas y CCTV",
+    "category": "Servicios Técnicos",
+    "keywords": [
+      "seguridad,",
+      "servicios técnicos",
+      "b2b",
+      "software",
+      "automatización"
+    ],
+    "operationalPain": "Alta carga administrativa, falta de control en tiempo real y comunicación fragmentada con clientes o pacientes.",
+    "solutionModules": [
+      "Automatización de Reservas/Turnos",
+      "Gestión Documental Cloud",
+      "CRM y Seguimiento",
+      "Dashboard Analítico"
+    ],
+    "techStack": [
+      "Next.js",
+      "Node.js",
+      "PostgreSQL",
+      "AWS"
+    ],
+    "priceRangeUSD": {
+      "min": 1500,
+      "max": 5000
+    },
+    "estimatedTimeWeeks": "4-8",
+    "ctaText": "Solicitar Demo para este Ecosistema",
+    "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Seguridad%2C%20Alarmas%20y%20CCTV"
+  },
+  {
+    "id": "energia-solar-e-instalaciones",
+    "title": "Energía Solar e Instalaciones",
+    "category": "Bienes Raíces & Obras",
+    "keywords": [
+      "energía",
+      "bienes raíces",
+      "b2b",
+      "software",
+      "automatización"
+    ],
+    "operationalPain": "Descoordinación entre obra y oficina, presupuestos desactualizados y seguimiento de clientes pobre.",
+    "solutionModules": [
+      "CRM Inmobiliario",
+      "Visitas Virtuales 3D",
+      "Gestión de Obras",
+      "Firma Digital"
+    ],
+    "techStack": [
+      "Next.js",
+      "Three.js",
+      "MongoDB",
+      "AWS S3"
+    ],
+    "priceRangeUSD": {
+      "min": 1500,
+      "max": 5000
+    },
+    "estimatedTimeWeeks": "4-8",
+    "ctaText": "Solicitar Demo para este Ecosistema",
+    "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Energ%C3%ADa%20Solar%20e%20Instalaciones"
+  },
+  {
+    "id": "gimnasios-y-box-fitness",
+    "title": "Gimnasios y Box Fitness",
+    "category": "Salud & Bienestar",
+    "keywords": [
+      "gimnasios",
+      "salud",
+      "b2b",
+      "software",
+      "automatización"
+    ],
+    "operationalPain": "Ausentismo de pacientes, historias clínicas desorganizadas y cuellos de botella en la recepción.",
+    "solutionModules": [
+      "Portal de Pacientes",
+      "Recordatorios por WhatsApp",
+      "Historia Clínica Electrónica",
+      "Telemedicina Integrada"
+    ],
+    "techStack": [
+      "Next.js",
+      "React Native",
+      "Firebase",
+      "Twilio"
+    ],
+    "priceRangeUSD": {
+      "min": 1500,
+      "max": 5000
+    },
+    "estimatedTimeWeeks": "4-8",
+    "ctaText": "Solicitar Demo para este Ecosistema",
+    "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Gimnasios%20y%20Box%20Fitness"
+  },
+  {
+    "id": "productoras-de-video-y-medios",
+    "title": "Productoras de Video y Medios",
+    "category": "Servicios Corporativos",
+    "keywords": [
+      "productoras",
+      "servicios corporativos",
+      "b2b",
+      "software",
+      "automatización"
+    ],
+    "operationalPain": "Alta carga administrativa, falta de control en tiempo real y comunicación fragmentada con clientes o pacientes.",
+    "solutionModules": [
+      "Automatización de Reservas/Turnos",
+      "Gestión Documental Cloud",
+      "CRM y Seguimiento",
+      "Dashboard Analítico"
+    ],
+    "techStack": [
+      "Next.js",
+      "Node.js",
+      "PostgreSQL",
+      "AWS"
+    ],
+    "priceRangeUSD": {
+      "min": 1500,
+      "max": 5000
+    },
+    "estimatedTimeWeeks": "4-8",
+    "ctaText": "Solicitar Demo para este Ecosistema",
+    "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Productoras%20de%20Video%20y%20Medios"
+  },
+  {
+    "id": "mantenimiento-corporativo",
+    "title": "Mantenimiento Corporativo",
+    "category": "Servicios Técnicos",
+    "keywords": [
+      "mantenimiento",
+      "servicios técnicos",
+      "b2b",
+      "software",
+      "automatización"
+    ],
+    "operationalPain": "Alta carga administrativa, falta de control en tiempo real y comunicación fragmentada con clientes o pacientes.",
+    "solutionModules": [
+      "Automatización de Reservas/Turnos",
+      "Gestión Documental Cloud",
+      "CRM y Seguimiento",
+      "Dashboard Analítico"
+    ],
+    "techStack": [
+      "Next.js",
+      "Node.js",
+      "PostgreSQL",
+      "AWS"
+    ],
+    "priceRangeUSD": {
+      "min": 1500,
+      "max": 5000
+    },
+    "estimatedTimeWeeks": "4-8",
+    "ctaText": "Solicitar Demo para este Ecosistema",
+    "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Mantenimiento%20Corporativo"
+  }
+]
