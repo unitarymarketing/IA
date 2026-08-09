@@ -23,11 +23,6 @@
       "Firebase",
       "Twilio"
     ],
-    "priceRangeUSD": {
-      "min": 1500,
-      "max": 5000
-    },
-    "estimatedTimeWeeks": "4 a 8 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Consultorios%20y%20Cl%C3%ADnicas%20M%C3%A9dicas"
   },
@@ -55,11 +50,6 @@
       "PostgreSQL",
       "AWS"
     ],
-    "priceRangeUSD": {
-      "min": 2000,
-      "max": 6000
-    },
-    "estimatedTimeWeeks": "5 a 8 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Medicina%20Est%C3%A9tica%20y%20Cirug%C3%ADa"
   },
@@ -87,11 +77,6 @@
       "Firebase",
       "Stripe"
     ],
-    "priceRangeUSD": {
-      "min": 1500,
-      "max": 4500
-    },
-    "estimatedTimeWeeks": "4 a 7 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Odontolog%C3%ADa%20y%20Cl%C3%ADnicas%20Dentales"
   },
@@ -119,11 +104,6 @@
       "PostgreSQL",
       "AWS S3"
     ],
-    "priceRangeUSD": {
-      "min": 2500,
-      "max": 7000
-    },
-    "estimatedTimeWeeks": "6 a 10 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Estudios%20Jur%C3%ADdicos%20y%20Escriban%C3%ADas"
   },
@@ -151,11 +131,6 @@
       "PostgreSQL",
       "AWS"
     ],
-    "priceRangeUSD": {
-      "min": 2000,
-      "max": 6500
-    },
-    "estimatedTimeWeeks": "5 a 9 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Estudios%20Contables%20e%20Impuestos"
   },
@@ -183,11 +158,6 @@
       "MongoDB",
       "MercadoPago API"
     ],
-    "priceRangeUSD": {
-      "min": 1800,
-      "max": 4500
-    },
-    "estimatedTimeWeeks": "4 a 8 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Consorcios%20y%20Administraciones"
   },
@@ -215,11 +185,6 @@
       "MongoDB",
       "AWS S3"
     ],
-    "priceRangeUSD": {
-      "min": 2000,
-      "max": 7500
-    },
-    "estimatedTimeWeeks": "6 a 12 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Inmobiliarias%20y%20Desarrolladoras"
   },
@@ -247,11 +212,6 @@
       "PostgreSQL",
       "GCP"
     ],
-    "priceRangeUSD": {
-      "min": 2500,
-      "max": 8000
-    },
-    "estimatedTimeWeeks": "7 a 14 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Constructoras%20y%20Reformas"
   },
@@ -279,11 +239,6 @@
       "WebGL",
       "Vercel"
     ],
-    "priceRangeUSD": {
-      "min": 2000,
-      "max": 6000
-    },
-    "estimatedTimeWeeks": "5 a 10 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Arquitectura%20y%20Dise%C3%B1o"
   },
@@ -310,11 +265,6 @@
       "PostgreSQL",
       "Google Maps API"
     ],
-    "priceRangeUSD": {
-      "min": 3500,
-      "max": 12000
-    },
-    "estimatedTimeWeeks": "8 a 16 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Log%C3%ADstica%20y%20Fulfillment"
   },
@@ -342,11 +292,6 @@
       "MongoDB",
       "Mapbox API"
     ],
-    "priceRangeUSD": {
-      "min": 1800,
-      "max": 5000
-    },
-    "estimatedTimeWeeks": "4 a 8 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Mudanzas%20y%20Fletes"
   },
@@ -374,11 +319,6 @@
       "PostgreSQL",
       "Redis"
     ],
-    "priceRangeUSD": {
-      "min": 3000,
-      "max": 10000
-    },
-    "estimatedTimeWeeks": "6 a 12 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Distribuidoras%20y%20Mayoristas%20B2B"
   },
@@ -406,11 +346,6 @@
       "Stripe",
       "Algolia"
     ],
-    "priceRangeUSD": {
-      "min": 2500,
-      "max": 8000
-    },
-    "estimatedTimeWeeks": "5 a 10 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20E-commerce%20y%20Comercio%20Digital"
   },
@@ -438,11 +373,6 @@
       "PostgreSQL",
       "AWS"
     ],
-    "priceRangeUSD": {
-      "min": 2500,
-      "max": 7500
-    },
-    "estimatedTimeWeeks": "6 a 12 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Consultoras%20de%20RRHH"
   },
@@ -470,11 +400,6 @@
       "MongoDB",
       "AWS S3"
     ],
-    "priceRangeUSD": {
-      "min": 3000,
-      "max": 9000
-    },
-    "estimatedTimeWeeks": "6 a 14 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Academias%20y%20EdTech"
   },
@@ -502,11 +427,6 @@
       "Firebase",
       "GCP"
     ],
-    "priceRangeUSD": {
-      "min": 2000,
-      "max": 6500
-    },
-    "estimatedTimeWeeks": "5 a 9 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Seguridad%2C%20Alarmas%20y%20CCTV"
   },
@@ -534,11 +454,6 @@
       "PostgreSQL",
       "AWS IoT"
     ],
-    "priceRangeUSD": {
-      "min": 3000,
-      "max": 8500
-    },
-    "estimatedTimeWeeks": "6 a 12 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Energ%C3%ADa%20Solar%20e%20Instalaciones"
   },
@@ -566,11 +481,6 @@
       "Firebase",
       "Stripe"
     ],
-    "priceRangeUSD": {
-      "min": 1500,
-      "max": 5000
-    },
-    "estimatedTimeWeeks": "4 a 8 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Gimnasios%20y%20Box%20Fitness"
   },
@@ -598,11 +508,6 @@
       "AWS S3 / CloudFront",
       "Vimeo API"
     ],
-    "priceRangeUSD": {
-      "min": 2500,
-      "max": 7500
-    },
-    "estimatedTimeWeeks": "5 a 10 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Productoras%20de%20Video%20y%20Medios"
   },
@@ -629,11 +534,6 @@
       "PostgreSQL",
       "AWS"
     ],
-    "priceRangeUSD": {
-      "min": 700,
-      "max": 6000
-    },
-    "estimatedTimeWeeks": "2 a 3 semanas",
     "ctaText": "Solicitar Demo para este Ecosistema",
     "ctaUrl": "https://wa.me/5491100000000?text=Hola%21%20Quiero%20solicitar%20una%20demo%20para%20la%20arquitectura%20de%20Mantenimiento%20Corporativo"
   }

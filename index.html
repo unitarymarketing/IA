@@ -209,9 +209,14 @@
                             </div>
                         </div>
                         {isMobile && (
-                            <a href="#cotizador" className="btn btn-primary navbar-cta" style={{ padding: '0.4rem 0.8rem', fontSize: '0.75rem', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', boxSizing: 'border-box' }}>
-                                COTIZADOR IA
-                            </a>
+                            <div style={{ display: 'flex', gap: '0.5rem' }}>
+                                <a href="/diagnostico/" className="btn" style={{ padding: '0.4rem 0.8rem', fontSize: '0.75rem', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', boxSizing: 'border-box', background: 'transparent', border: '1px solid #00FFFF', color: '#00FFFF', borderRadius: '50px', boxShadow: '0 0 10px rgba(0, 255, 255, 0.3)' }}>
+                                    DIAGNÓSTICO
+                                </a>
+                                <a href="#cotizador" className="btn btn-primary navbar-cta" style={{ padding: '0.4rem 0.8rem', fontSize: '0.75rem', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', boxSizing: 'border-box' }}>
+                                    COTIZADOR
+                                </a>
+                            </div>
                         )}
                     </div>
 
@@ -226,9 +231,14 @@
                                 <a href="#contacto" className={`nav-link ${activeSection === 'contacto' ? 'active' : ''}`}>Contacto</a>
                             </div>
 
-                            <a href="#cotizador" className="btn btn-primary" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', boxSizing: 'border-box', boxShadow: activeSection === 'cotizador' ? '0 0 20px rgba(0, 209, 255, 0.8)' : '' }}>
-                                Cotizador IA
-                            </a>
+                            <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+                                <a href="/diagnostico/" className="btn" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', boxSizing: 'border-box', background: 'transparent', border: '1px solid #00FFFF', color: '#00FFFF', boxShadow: '0 0 10px rgba(0, 255, 255, 0.3)', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.9rem', fontWeight: 600 }}>
+                                    Diagnóstico IA
+                                </a>
+                                <a href="#cotizador" className="btn btn-primary" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', boxSizing: 'border-box', boxShadow: activeSection === 'cotizador' ? '0 0 20px rgba(0, 209, 255, 0.8)' : '' }}>
+                                    Cotizador IA
+                                </a>
+                            </div>
                         </>
                     )}
 
@@ -277,6 +287,10 @@
                         transition={{ delay: 1, duration: 1 }}
                     >
                         <p className="hero-subtitle">INNOVACIÓN SIN LÍMITES</p>
+                        <div style={{ display: 'flex', gap: '1rem', marginTop: '2rem', flexWrap: 'wrap' }}>
+                            <a href="#contacto" className="btn btn-primary" style={{ textDecoration: 'none', padding: '1rem 2rem', fontSize: '1rem', borderRadius: '50px' }}>Contacto</a>
+                            <a href="/diagnostico/" className="btn btn-outline" style={{ textDecoration: 'none', padding: '1rem 2rem', fontSize: '1rem', borderRadius: '50px', border: '1px solid rgba(0, 209, 255, 0.5)', color: '#00FFFF', background: 'rgba(0, 209, 255, 0.05)', backdropFilter: 'blur(5px)' }}>Probar Diagnóstico por Industria</a>
+                        </div>
                     </motion.div>
                 </motion.div>
 
@@ -296,6 +310,50 @@
                 </motion.div>
             </section>
         );
+
+        // ─── Diagnostico Promo ────────────────────────────────────────────────────
+        const DiagnosticoPromo = () => {
+            return (
+                <section className="py-20 px-6 max-w-7xl mx-auto bg-transparent">
+                    <motion.div 
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-50px" }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="relative w-full rounded-[32px] overflow-hidden shadow-2xl p-8 md:p-[45px] flex flex-col md:flex-row items-center justify-between gap-10"
+                        style={{ 
+                            background: 'rgba(255, 255, 255, 0.05)', 
+                            border: '1px solid rgba(255, 255, 255, 0.1)', 
+                            backdropFilter: 'blur(20px)',
+                            boxShadow: '0px 20px 60px rgba(0, 0, 0, 0.8), inset 0 0 40px rgba(0, 242, 254, 0.1)'
+                        }}
+                    >
+                        <div className="flex-1 text-left z-10" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'flex-start' }}>
+                            <h3 className="text-white uppercase m-0" style={{ fontFamily: "'Inter', sans-serif", fontSize: 'clamp(24px, 3vw, 36px)', fontWeight: 900, lineHeight: 1.2, letterSpacing: '-0.02em', background: 'linear-gradient(to right, #ffffff, #a5b4fc)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                                ¿Qué arquitectura de IA e Infraestructura necesita tu empresa?
+                            </h3>
+                            <p className="text-[#b0b3c1]" style={{ fontFamily: "'Inter', sans-serif", fontSize: 'clamp(16px, 2vw, 18px)', fontWeight: 300, lineHeight: 1.6, margin: '0 0 1rem 0' }}>
+                                Seleccioná tu rubro B2B y descubrí los módulos exactos, stack técnico e inversión estimada en tiempo real.
+                            </p>
+                            <a href="/diagnostico/" className="btn btn-primary" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', padding: '1rem 2.5rem', borderRadius: '50px', fontWeight: 800, fontSize: '1rem', boxShadow: '0 0 20px rgba(0, 209, 255, 0.4)' }}>
+                                Realizar Diagnóstico Interactivo
+                            </a>
+                        </div>
+                        <div className="flex-1 flex justify-center z-10 w-full" style={{ display: 'flex', justifyContent: 'center' }}>
+                            <div style={{ position: 'relative', width: '250px', height: '250px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                <div style={{ position: 'absolute', inset: '0', borderRadius: '50%', border: '1px solid rgba(0, 209, 255, 0.3)', animation: 'pulse 3s infinite' }}></div>
+                                <div style={{ position: 'absolute', inset: '20px', borderRadius: '50%', border: '1px solid rgba(176, 38, 255, 0.3)', animation: 'ping 2s infinite opacity-50' }}></div>
+                                <div style={{ width: '100px', height: '100px', borderRadius: '50%', background: 'rgba(0, 209, 255, 0.2)', backdropFilter: 'blur(10px)', border: '1px solid rgba(0, 209, 255, 0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 0 30px rgba(0, 255, 255, 0.3)' }}>
+                                    <i data-lucide="cpu" style={{ width: '48px', height: '48px', color: '#00FFFF' }}></i>
+                                </div>
+                            </div>
+                        </div>
+                        {/* Borde Neón */}
+                        <div className="absolute inset-0 rounded-[32px] pointer-events-none" style={{ padding: '1px', background: 'linear-gradient(135deg, rgba(0, 242, 254, 0.4), rgba(5, 6, 11, 0.1), rgba(217, 70, 239, 0.2))', WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)', WebkitMaskComposite: 'xor', maskComposite: 'exclude' }}></div>
+                    </motion.div>
+                </section>
+            );
+        };
 
         // ─── ServicesGrid: Bilingual Luxury Dark Mode Services ──────────────────
         // ─── ServicesGrid: Simplified Layout ──────────────────────────────────────────
@@ -651,6 +709,7 @@
                         </motion.div>
 
                         <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '2rem', marginBottom: '2rem', fontSize: '0.9rem', fontWeight: 600, position: 'relative', zIndex: 60 }}>
+                            <a href="/diagnostico/" target="_blank" rel="noopener noreferrer" style={{ color: '#00FFFF', textDecoration: 'underline', textUnderlineOffset: '4px', transition: 'all 0.3s ease', cursor: 'pointer', textShadow: '0 0 10px rgba(0,255,255,0.5)' }} onMouseEnter={e => { e.target.style.color = '#fff'; e.target.style.filter = 'drop-shadow(0 0 10px #fff)'; }} onMouseLeave={e => { e.target.style.color = '#00FFFF'; e.target.style.filter = 'none'; }}>Diagnóstico IA B2B</a>
                             <a href="terminos.html" target="_blank" rel="noopener noreferrer" style={{ color: '#fff', textDecoration: 'underline', textUnderlineOffset: '4px', transition: 'all 0.3s ease', cursor: 'pointer' }} onMouseEnter={e => { e.target.style.color = '#00FFFF'; e.target.style.filter = 'drop-shadow(0 0 10px #00FFFF)'; }} onMouseLeave={e => { e.target.style.color = '#fff'; e.target.style.filter = 'none'; }}>Términos de Servicio</a>
                             <a href="privacidad.html" target="_blank" rel="noopener noreferrer" style={{ color: '#fff', textDecoration: 'underline', textUnderlineOffset: '4px', transition: 'all 0.3s ease', cursor: 'pointer' }} onMouseEnter={e => { e.target.style.color = '#00FFFF'; e.target.style.filter = 'drop-shadow(0 0 10px #00FFFF)'; }} onMouseLeave={e => { e.target.style.color = '#fff'; e.target.style.filter = 'none'; }}>Política de Privacidad</a>
                             <a href="cookies.html" target="_blank" rel="noopener noreferrer" style={{ color: '#fff', textDecoration: 'underline', textUnderlineOffset: '4px', transition: 'all 0.3s ease', cursor: 'pointer' }} onMouseEnter={e => { e.target.style.color = '#00FFFF'; e.target.style.filter = 'drop-shadow(0 0 10px #00FFFF)'; }} onMouseLeave={e => { e.target.style.color = '#fff'; e.target.style.filter = 'none'; }}>Política de Cookies</a>
@@ -1786,6 +1845,7 @@
                 <div>
                     <Navbar />
                     <Hero />
+                    <DiagnosticoPromo />
                     <ServicesGrid />
                     <LuanSection />
                     <SocialProof />
