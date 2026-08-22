@@ -52,7 +52,7 @@ export default function LuanChatWidget() {
         setIsLoading(true);
 
         try {
-            const response = await fetch('https://n8n-n8n.crypuw.easypanel.host/webhook/webpage', {
+            const response = await fetch('https://proyectoluan-luan-n8n.crypuw.easypanel.host/webhook/webpage', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -65,7 +65,7 @@ export default function LuanChatWidget() {
 
             if (response.ok) {
                 const data = await response.json();
-                const botReply = data.output || data.response || data.text || data.message || (typeof data === 'string' ? data : "Entendido. ¿En qué más puedo ayudarte con la infraestructura de tu empresa?");
+                const botReply = data.output || data.response || data.text || data.message || (typeof data === 'string' ? data : "Mensaje recibido. ¿En qué más puedo asistirte?");
                 setMessages([...newMessages, { role: 'bot', content: botReply }]);
             } else {
                 setMessages([...newMessages, { role: 'system', content: 'Tuve un micro-corte de conexión. Por favor intentá nuevamente o escribime directo por WhatsApp.' }]);
