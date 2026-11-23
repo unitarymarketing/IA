@@ -20,11 +20,14 @@ export default function LinksPage() {
   const [whatsappHref, setWhatsappHref] = useState<string>(
     `https://wa.me/${UNITARY_CONTACT.whatsappNumber}?text=${encodeURIComponent(DEFAULT_WHATSAPP_TEXT)}`
   );
+  const [videoError, setVideoError] = useState<boolean>(false);
   const [imgError, setImgError] = useState<boolean>(false);
+  const [reducedMotion, setReducedMotion] = useState<boolean>(false);
   const [emailCopied, setEmailCopied] = useState<boolean>(false);
   const [toastMessage, setToastMessage] = useState<string>('');
   const [toastVisible, setToastVisible] = useState<boolean>(false);
 
+  const videoRef = useRef<HTMLVideoElement | null>(null);
   const toastTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const copyIconTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -75,7 +78,34 @@ export default function LinksPage() {
       console.error('Error al leer parámetros de origen (?src=):', err);
     }
 
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const applyMotionPreference = (prefersReduce: boolean) => {
+      setReducedMotion(prefersReduce);
+      if (videoRef.current) {
+        videoRef.current.defaultMuted = true;
+        videoRef.current.muted = true;
+        if (prefersReduce) {
+          videoRef.current.pause();
+        } else {
+          videoRef.current.play().catch(() => {});
+        }
+      }
+    };
+
+    applyMotionPreference(mediaQuery.matches);
+
+    const handleMotionChange = (e: MediaQueryListEvent) => {
+      applyMotionPreference(e.matches);
+    };
+
+    if (typeof mediaQuery.addEventListener === 'function') {
+      mediaQuery.addEventListener('change', handleMotionChange);
+    }
+
     return () => {
+      if (typeof mediaQuery.removeEventListener === 'function') {
+        mediaQuery.removeEventListener('change', handleMotionChange);
+      }
       if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
       if (copyIconTimerRef.current) clearTimeout(copyIconTimerRef.current);
     };
@@ -191,11 +221,27 @@ export default function LinksPage() {
       {/* Contenedor principal mobile-first centrado (max-width 430px) */}
       <main className="relative z-10 mx-auto flex min-h-screen w-full max-w-[430px] flex-col justify-between pb-8">
         <div className="w-full">
-          {/* 1. BANNER FULL-WIDTH CON LOGO REAL + IDENTIDAD DE MARCA */}
+          {/* 1. BANNER FULL-WIDTH CON VIDEO LOOP + IDENTIDAD DE MARCA */}
           <header className="relative flex flex-col items-center text-center opacity-0 animate-fade-up">
-            {/* Banner panorámico del logo real fundido con el fondo #080D17 */}
+            {/* Banner panorámico en video loop fundido con el fondo #080D17 */}
             <div className="relative w-full h-48 sm:h-52 overflow-hidden bg-[#050912]">
-              {!imgError ? (
+              {!videoError && !reducedMotion ? (
+                <video
+                  ref={videoRef}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                  poster="/images/unitary-marketing.webp"
+                  aria-label="Animación de marca Unitary Marketing AI"
+                  className="h-full w-full object-cover object-center scale-[1.08]"
+                  onError={() => setVideoError(true)}
+                >
+                  <source src="/videos/unitary-banner.webm" type="video/webm" />
+                  <source src="/videos/unitary-banner.mp4" type="video/mp4" />
+                </video>
+              ) : !imgError ? (
                 <img
                   src="/images/unitary-marketing.webp"
                   alt="Logo Unitary Marketing AI"
