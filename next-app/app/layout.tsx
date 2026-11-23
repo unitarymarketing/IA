@@ -1,10 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
-import CookieBanner from '../components/CookieBanner'
-import LuanChatWidget from '../components/LuanChatWidget'
+import ConditionalShell from '../components/ConditionalShell'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -24,14 +21,7 @@ export default function RootLayout({
         <link rel="icon" href="/videos/Logo Unitary.png" />
       </head>
       <body className={`${inter.className} bg-[#0A0A0A] text-[#F5F5F5] flex flex-col min-h-screen`}>
-        <Navbar />
-        <div className="flex-1">
-          {children}
-        </div>
-        
-        <LuanChatWidget />
-        <CookieBanner />
-        <Footer />
+        <ConditionalShell>{children}</ConditionalShell>
       </body>
     </html>
   )
